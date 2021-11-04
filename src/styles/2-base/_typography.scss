@@ -1,0 +1,74 @@
+//Define all font families and wights
+
+//Poppins
+//Poppins Thin
+@font-face {
+    font-family: "Poppins";
+    src: url('../../src/assets/fonts/Poppins-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+//Poppins Extra-Light
+@font-face {
+    font-family: "Poppins";
+    src: url('../../src/assets/fonts/Poppins-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+//Poppins Light
+@font-face {
+    font-family: "Poppins";
+    src: url('../../src/assets/fonts/Poppins-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+//Poppins Regular
+@font-face {
+    font-family: "Poppins";
+    src: url('../../src/assets/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+//Poppins Medium
+@font-face {
+    font-family: "Poppins";
+    src: url('../../src/assets/fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+//Poppins Semi-Bold
+@font-face {
+    font-family: "Poppins";
+    src: url('../../src/assets/fonts/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+//Poppins Bold
+@font-face {
+    font-family: "Poppins";
+    src: url('../../src/assets/fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+//Poppins Extra-Bold
+@font-face {
+    font-family: "Poppins";
+    src: url('../../src/assets/fonts/Poppins-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+//Poppins Black
+@font-face {
+    font-family: "Poppins";
+    src: url('../../src/assets/fonts/Poppins-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+//Typographica
+//Poppins Bold
+@font-face {
+    font-family: "Typographica";
+    src: url('../../src/assets/fonts/Typographica.ttf') format('truetype');
+    font-style: normal;
+}

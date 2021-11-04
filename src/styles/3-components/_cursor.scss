@@ -1,0 +1,13 @@
+//Styling for Custom Cursor
+.cursor {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    //mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index:999;
+    background-color: none;
+    border:3px solid $dark_grey;
+}

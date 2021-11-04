@@ -1,0 +1,32 @@
+//Basic Layout Containers and Elements
+body{
+    font-family: "Poppins";
+    -ms-user-select: None;
+    -moz-user-select: None;
+    -webkit-user-select: None;
+    user-select: None;
+}
+
+.main-section{
+    height: 100vh;
+}
+
+.container{
+    width: 90%;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    .flex-item{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

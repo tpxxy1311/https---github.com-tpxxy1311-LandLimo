@@ -1,0 +1,17 @@
+//Starting Page
+
+//Landing Section
+.landing-section-home{
+    .flex-container{
+        justify-content: center;
+        height: 100%;
+        .flex-item{
+            height: 100%;
+            h1{
+                font-size: 5.5em;
+                font-weight: 800;
+                line-height: 1em;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+//Single Output File by Sass which is converted to CSS. It is intend to only @import other files.
+
+//1-utilities
+@import '1-utilities/variables';
+@import '1-utilities/mixins';
+
+//2-base
+@import '2-base/reset';
+@import '2-base/locomotivescroll';
+@import '2-base/typography';
+
+//3-components
+@import '3-components/buttons';
+@import '3-components/links';
+@import '3-components/cursor';
+@import '3-components/header';
+@import '3-components/footer';
+@import '3-components/layout';
+
+//4-pages
+@import '4-pages/loading';
+@import '4-pages/home';
+@import '4-pages/erdbeer-rhabarber';
+@import '4-pages/apfel-birne';
+@import '4-pages/orange-ingwer';
+@import '4-pages/impressum'
