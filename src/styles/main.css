@@ -215,14 +215,17 @@ html.has-scroll-dragging {
   overflow: hidden;
   font-size: 1.15rem;
   border-radius: 50px;
-  color: #fff;
+  color: #FFFFFF;
   pointer-events: auto;
   cursor: pointer;
-  background: #e7e7e7;
+  background: #C6C6C6;
   border: none;
-  padding: 1.5rem 3rem;
+  padding: 1.3rem 2.8rem;
+  font-family: "Poppins";
   margin: 0;
-  font-size: inherit;
+  margin-top: 7%;
+  font-size: 1.1rem;
+  font-weight: 600;
   position: relative;
   display: inline-block;
 }
@@ -283,7 +286,7 @@ html.has-scroll-dragging {
 
 .bt-base::before {
   content: '';
-  background: #000;
+  background: #929292;
   width: 120%;
   height: 0;
   padding-bottom: 120%;
@@ -312,10 +315,10 @@ html.has-scroll-dragging {
   overflow: hidden;
   font-size: 1.15rem;
   border-radius: 50px;
-  color: #fff;
+  color: #FFFFFF;
   pointer-events: auto;
   cursor: pointer;
-  background: #e7e7e7;
+  background: #C6C6C6;
   border: none;
   padding: 1rem 1.2rem;
   margin: 0;
@@ -330,10 +333,6 @@ html.has-scroll-dragging {
   mix-blend-mode: difference;
   z-index: 10;
   font-size: 1.5rem;
-}
-
-.bt-social span .fa-instagram {
-  font-size: 20px;
 }
 
 .bt-social:hover span {
@@ -364,7 +363,7 @@ html.has-scroll-dragging {
 
 .bt-social::before {
   content: '';
-  background: #000;
+  background: #929292;
   width: 120%;
   height: 0;
   padding-bottom: 120%;
@@ -466,8 +465,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -481,12 +480,24 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.flex-container .combi-item {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .landing-section-home .flex-container {
@@ -512,5 +523,15 @@ body {
 
 .product-section-er .flex-container {
   height: 100%;
+}
+
+.product-section-er .flex-container .flex-item img {
+  width: 75%;
+}
+
+.product-section-er .flex-container .flex-item .text-box h2 {
+  font-size: 4.5em;
+  font-weight: 800;
+  line-height: 1em;
 }
 /*# sourceMappingURL=main.css.map */
