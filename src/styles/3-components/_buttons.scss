@@ -1,0 +1,137 @@
+//Button Styles with Hover-Animation
+
+//Basic Button
+.bt-base {
+	overflow: hidden;
+	font-size: 1.15rem;
+	border-radius: 50px;
+	color: #fff;
+    pointer-events: auto;
+	cursor: pointer;
+	background: #e7e7e7;
+	border: none;
+	padding: 1.5rem 3rem;
+	margin: 0;
+	font-size: inherit;
+	position: relative;
+	display: inline-block;
+}
+
+.bt-base span {
+	display: block;
+	position: relative;
+	mix-blend-mode: difference;
+	z-index: 10;
+}
+
+.bt-base:hover span {
+	animation: MoveScaleUpInitial 0.3s forwards, MoveScaleUpEnd 0.3s forwards 0.3s;
+}
+
+@keyframes MoveScaleUpInitial {
+	to {
+		transform: translate3d(0,-105%,0) scale3d(1,2,1);
+		opacity: 0;
+	}
+}
+
+@keyframes MoveScaleUpEnd {
+	from {
+		transform: translate3d(0,100%,0) scale3d(1,2,1);
+		opacity: 0;
+	}
+	to {
+		transform: translate3d(0,0,0);
+		opacity: 1;
+	}
+}
+
+.bt-base::before {
+	content: '';
+	background: #000;
+	width: 120%;
+	height: 0;
+	padding-bottom: 120%;
+	top: -10%;
+	left: -10%;
+	border-radius: 50%;
+	transform: translate3d(0,68%,0) scale3d(0,0,0);
+    transition: transform 1.2s cubic-bezier(0.1, 0, 0.3, 1);
+    position: absolute;
+}
+
+.bt-base:hover::before {
+	transform: translate3d(0,0,0) scale3d(1.2,1.2,1);
+	transition: transform 0.5s cubic-bezier(0.1, 0, 0.3, 1);
+}
+
+//Social Media Button
+.bt-social {
+	overflow: hidden;
+	font-size: 1.15rem;
+	border-radius: 50px;
+	color: #fff;
+    pointer-events: auto;
+	cursor: pointer;
+	background: #e7e7e7;
+	border: none;
+	padding: 1rem 1.2rem;
+	margin: 0;
+	font-size: inherit;
+	position: relative;
+	display: inline-block;
+}
+
+.bt-social span {
+	display: block;
+	position: relative;
+	mix-blend-mode: difference;
+	z-index: 10;
+    font-size: 1.5rem;
+}
+
+.bt-social span .fa-instagram{
+  font-size:20px;
+}
+
+.bt-social:hover span {
+    animation: MoveScaleUpInitial 0.3s forwards, MoveScaleUpEnd 0.3s forwards 0.3s;
+}
+
+@keyframes MoveScaleUpInitial {
+	to {
+		transform: translate3d(0,-105%,0) scale3d(1,2,1);
+		opacity: 0;
+	}
+}
+
+@keyframes MoveScaleUpEnd {
+	from {
+		transform: translate3d(0,100%,0) scale3d(1,2,1);
+		opacity: 0;
+	}
+	to {
+		transform: translate3d(0,0,0);
+		opacity: 1;
+	}
+}
+
+.bt-social::before {
+	content: '';
+	background: #000;
+	width: 120%;
+	height: 0;
+	padding-bottom: 120%;
+	top: -10%;
+	left: -10%;
+	border-radius: 50%;
+	transform: translate3d(0,68%,0) scale3d(0,0,0);
+    transition: transform 1.2s cubic-bezier(0.1, 0, 0.3, 1);
+    position: absolute;
+}
+
+.bt-social:hover::before {
+	transform: translate3d(0,0,0) scale3d(1.2,1.2,1);
+	transition: transform 0.5s cubic-bezier(0.1, 0, 0.3, 1);
+}
+

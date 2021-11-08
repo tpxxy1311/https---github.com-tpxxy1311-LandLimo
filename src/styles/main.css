@@ -124,8 +124,7 @@ html.has-scroll-dragging {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: black;
-  opacity: 0.5;
+  background-color: #C6C6C630;
   width: 7px;
   border-radius: 10px;
   margin: 2px;
@@ -212,6 +211,184 @@ html.has-scroll-dragging {
   font-style: normal;
 }
 
+.bt-base {
+  overflow: hidden;
+  font-size: 1.15rem;
+  border-radius: 50px;
+  color: #fff;
+  pointer-events: auto;
+  cursor: pointer;
+  background: #e7e7e7;
+  border: none;
+  padding: 1.5rem 3rem;
+  margin: 0;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+}
+
+.bt-base span {
+  display: block;
+  position: relative;
+  mix-blend-mode: difference;
+  z-index: 10;
+}
+
+.bt-base:hover span {
+  -webkit-animation: MoveScaleUpInitial 0.3s forwards, MoveScaleUpEnd 0.3s forwards 0.3s;
+          animation: MoveScaleUpInitial 0.3s forwards, MoveScaleUpEnd 0.3s forwards 0.3s;
+}
+
+@-webkit-keyframes MoveScaleUpInitial {
+  to {
+    -webkit-transform: translate3d(0, -105%, 0) scale3d(1, 2, 1);
+            transform: translate3d(0, -105%, 0) scale3d(1, 2, 1);
+    opacity: 0;
+  }
+}
+
+@keyframes MoveScaleUpInitial {
+  to {
+    -webkit-transform: translate3d(0, -105%, 0) scale3d(1, 2, 1);
+            transform: translate3d(0, -105%, 0) scale3d(1, 2, 1);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes MoveScaleUpEnd {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0) scale3d(1, 2, 1);
+            transform: translate3d(0, 100%, 0) scale3d(1, 2, 1);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes MoveScaleUpEnd {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0) scale3d(1, 2, 1);
+            transform: translate3d(0, 100%, 0) scale3d(1, 2, 1);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.bt-base::before {
+  content: '';
+  background: #000;
+  width: 120%;
+  height: 0;
+  padding-bottom: 120%;
+  top: -10%;
+  left: -10%;
+  border-radius: 50%;
+  -webkit-transform: translate3d(0, 68%, 0) scale3d(0, 0, 0);
+          transform: translate3d(0, 68%, 0) scale3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 1.2s cubic-bezier(0.1, 0, 0.3, 1);
+  transition: -webkit-transform 1.2s cubic-bezier(0.1, 0, 0.3, 1);
+  transition: transform 1.2s cubic-bezier(0.1, 0, 0.3, 1);
+  transition: transform 1.2s cubic-bezier(0.1, 0, 0.3, 1), -webkit-transform 1.2s cubic-bezier(0.1, 0, 0.3, 1);
+  position: absolute;
+}
+
+.bt-base:hover::before {
+  -webkit-transform: translate3d(0, 0, 0) scale3d(1.2, 1.2, 1);
+          transform: translate3d(0, 0, 0) scale3d(1.2, 1.2, 1);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.1, 0, 0.3, 1);
+  transition: -webkit-transform 0.5s cubic-bezier(0.1, 0, 0.3, 1);
+  transition: transform 0.5s cubic-bezier(0.1, 0, 0.3, 1);
+  transition: transform 0.5s cubic-bezier(0.1, 0, 0.3, 1), -webkit-transform 0.5s cubic-bezier(0.1, 0, 0.3, 1);
+}
+
+.bt-social {
+  overflow: hidden;
+  font-size: 1.15rem;
+  border-radius: 50px;
+  color: #fff;
+  pointer-events: auto;
+  cursor: pointer;
+  background: #e7e7e7;
+  border: none;
+  padding: 1rem 1.2rem;
+  margin: 0;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+}
+
+.bt-social span {
+  display: block;
+  position: relative;
+  mix-blend-mode: difference;
+  z-index: 10;
+  font-size: 1.5rem;
+}
+
+.bt-social span .fa-instagram {
+  font-size: 20px;
+}
+
+.bt-social:hover span {
+  -webkit-animation: MoveScaleUpInitial 0.3s forwards, MoveScaleUpEnd 0.3s forwards 0.3s;
+          animation: MoveScaleUpInitial 0.3s forwards, MoveScaleUpEnd 0.3s forwards 0.3s;
+}
+
+@keyframes MoveScaleUpInitial {
+  to {
+    -webkit-transform: translate3d(0, -105%, 0) scale3d(1, 2, 1);
+            transform: translate3d(0, -105%, 0) scale3d(1, 2, 1);
+    opacity: 0;
+  }
+}
+
+@keyframes MoveScaleUpEnd {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0) scale3d(1, 2, 1);
+            transform: translate3d(0, 100%, 0) scale3d(1, 2, 1);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.bt-social::before {
+  content: '';
+  background: #000;
+  width: 120%;
+  height: 0;
+  padding-bottom: 120%;
+  top: -10%;
+  left: -10%;
+  border-radius: 50%;
+  -webkit-transform: translate3d(0, 68%, 0) scale3d(0, 0, 0);
+          transform: translate3d(0, 68%, 0) scale3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 1.2s cubic-bezier(0.1, 0, 0.3, 1);
+  transition: -webkit-transform 1.2s cubic-bezier(0.1, 0, 0.3, 1);
+  transition: transform 1.2s cubic-bezier(0.1, 0, 0.3, 1);
+  transition: transform 1.2s cubic-bezier(0.1, 0, 0.3, 1), -webkit-transform 1.2s cubic-bezier(0.1, 0, 0.3, 1);
+  position: absolute;
+}
+
+.bt-social:hover::before {
+  -webkit-transform: translate3d(0, 0, 0) scale3d(1.2, 1.2, 1);
+          transform: translate3d(0, 0, 0) scale3d(1.2, 1.2, 1);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.1, 0, 0.3, 1);
+  transition: -webkit-transform 0.5s cubic-bezier(0.1, 0, 0.3, 1);
+  transition: transform 0.5s cubic-bezier(0.1, 0, 0.3, 1);
+  transition: transform 0.5s cubic-bezier(0.1, 0, 0.3, 1), -webkit-transform 0.5s cubic-bezier(0.1, 0, 0.3, 1);
+}
+
 .cursor {
   position: absolute;
   height: 20px;
@@ -274,7 +451,7 @@ body {
   user-select: None;
 }
 
-.main-section {
+.base-section {
   height: 100vh;
 }
 
@@ -327,5 +504,13 @@ body {
   font-size: 5.5em;
   font-weight: 800;
   line-height: 1em;
+}
+
+.product-section-er {
+  background-image: radial-gradient(at 84% 21%, rgba(255, 152, 143, 0.8) 0, transparent 55%), radial-gradient(at 12% 79%, rgba(239, 154, 172, 0.8) 0, transparent 53%);
+}
+
+.product-section-er .flex-container {
+  height: 100%;
 }
 /*# sourceMappingURL=main.css.map */

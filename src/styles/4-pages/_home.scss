@@ -1,4 +1,4 @@
-//Starting Page
+//Home Page
 
 //Landing Section
 .landing-section-home{
@@ -13,5 +13,13 @@
                 line-height: 1em;
             }
         }
+    }
+}
+
+//Product Section "Erdbeer-Rhabarber"
+.product-section-er{
+    background-image: $background-image-er;
+    .flex-container{
+        height: 100%;
     }
 }
