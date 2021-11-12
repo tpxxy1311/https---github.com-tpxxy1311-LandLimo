@@ -233,7 +233,6 @@ html.has-scroll-dragging {
 .bt-base span {
   display: block;
   position: relative;
-  mix-blend-mode: difference;
   z-index: 10;
 }
 
@@ -530,6 +529,42 @@ body {
 }
 
 .product-section-er .flex-container .flex-item .text-box h2 {
+  font-size: 4.5em;
+  font-weight: 800;
+  line-height: 1em;
+}
+
+.product-section-abm {
+  background-image: radial-gradient(at 84% 21%, #b3d256 0, transparent 55%), radial-gradient(at 12% 79%, #bbd2b2 0, transparent 53%);
+}
+
+.product-section-abm .flex-container {
+  height: 100%;
+}
+
+.product-section-abm .flex-container .flex-item img {
+  width: 75%;
+}
+
+.product-section-abm .flex-container .flex-item .text-box h2 {
+  font-size: 4.5em;
+  font-weight: 800;
+  line-height: 1em;
+}
+
+.product-section-oi {
+  background-image: radial-gradient(at 84% 21%, #f9b876 0, transparent 55%), radial-gradient(at 12% 79%, #e6ae5c 0, transparent 53%);
+}
+
+.product-section-oi .flex-container {
+  height: 100%;
+}
+
+.product-section-oi .flex-container .flex-item img {
+  width: 75%;
+}
+
+.product-section-oi .flex-container .flex-item .text-box h2 {
   font-size: 4.5em;
   font-weight: 800;
   line-height: 1em;

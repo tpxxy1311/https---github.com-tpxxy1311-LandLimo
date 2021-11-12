@@ -38,3 +38,49 @@
         }
     }
 }
+
+//Product Section "Apfel-Birne-Minzr"
+.product-section-abm{
+    background-image: $background-image-abm;
+    .flex-container{
+        height: 100%;
+        .flex-item{
+            img{
+                width: 75% ;
+            }
+            .text-box{
+                h2{
+                font-size: 4.5em;
+                font-weight: 800;
+                line-height: 1em;
+                }
+            }
+            .bt-abm{
+                
+            }
+        }
+    }
+}
+
+//Product Section "Apfel-Birne-Minzr"
+.product-section-oi{
+    background-image: $background-image-oi;
+    .flex-container{
+        height: 100%;
+        .flex-item{
+            img{
+                width: 75% ;
+            }
+            .text-box{
+                h2{
+                font-size: 4.5em;
+                font-weight: 800;
+                line-height: 1em;
+                }
+            }
+            .bt-oi{
+                
+            }
+        }
+    }
+}

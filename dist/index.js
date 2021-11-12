@@ -184,12 +184,7 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"styles/main.css":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./..\\assets\\fonts\\Poppins-Thin.ttf":[["Poppins-Thin.4d136a6f.ttf","assets/fonts/Poppins-Thin.ttf"],"assets/fonts/Poppins-Thin.ttf"],"./..\\assets\\fonts\\Poppins-ExtraLight.ttf":[["Poppins-ExtraLight.3f546472.ttf","assets/fonts/Poppins-ExtraLight.ttf"],"assets/fonts/Poppins-ExtraLight.ttf"],"./..\\assets\\fonts\\Poppins-Light.ttf":[["Poppins-Light.cc447e90.ttf","assets/fonts/Poppins-Light.ttf"],"assets/fonts/Poppins-Light.ttf"],"./..\\assets\\fonts\\Poppins-Regular.ttf":[["Poppins-Regular.3d15a542.ttf","assets/fonts/Poppins-Regular.ttf"],"assets/fonts/Poppins-Regular.ttf"],"./..\\assets\\fonts\\Poppins-Medium.ttf":[["Poppins-Medium.46ec8fc9.ttf","assets/fonts/Poppins-Medium.ttf"],"assets/fonts/Poppins-Medium.ttf"],"./..\\assets\\fonts\\Poppins-SemiBold.ttf":[["Poppins-SemiBold.264af2ff.ttf","assets/fonts/Poppins-SemiBold.ttf"],"assets/fonts/Poppins-SemiBold.ttf"],"./..\\assets\\fonts\\Poppins-Bold.ttf":[["Poppins-Bold.452c766e.ttf","assets/fonts/Poppins-Bold.ttf"],"assets/fonts/Poppins-Bold.ttf"],"./..\\assets\\fonts\\Poppins-ExtraBold.ttf":[["Poppins-ExtraBold.a3747d9c.ttf","assets/fonts/Poppins-ExtraBold.ttf"],"assets/fonts/Poppins-ExtraBold.ttf"],"./..\\assets\\fonts\\Poppins-Black.ttf":[["Poppins-Black.5a9feb65.ttf","assets/fonts/Poppins-Black.ttf"],"assets/fonts/Poppins-Black.ttf"],"./..\\assets\\fonts\\Typographica.ttf":[["Typographica.2a0aabb0.ttf","assets/fonts/Typographica.ttf"],"assets/fonts/Typographica.ttf"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -394,4 +389,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/main.d2070829.js.map
+//# sourceMappingURL=/index.js.map
