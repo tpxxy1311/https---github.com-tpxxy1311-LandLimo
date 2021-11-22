@@ -14386,16 +14386,62 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //Smooth Scrolling
 var scroll = new _locomotiveScroll.default({
   el: document.querySelector('[data-scroll-container]'),
-  smooth: true
-}); //Custom Cursor
+  smooth: true,
+  smoothMobile: true
+}); //Loading Screen
 
-(0, _jquery.default)(document).on("mousemove", function (e) {
-  setTimeout(function () {
-    (0, _jquery.default)('.cursor').eq(0).css({
-      left: e.pageX,
-      top: e.pageY
+function initLoader() {
+  //Show Button if all Assests are loaded
+  (0, _jquery.default)(window).on("load", function () {
+    setTimeout(function () {
+      (0, _jquery.default)('.bt-loading').addClass('bt-ready');
+    }, 5000);
+  }); //Remove Loading Section on Button Click
+
+  (0, _jquery.default)('.bt-loading').on("click", function () {
+    (0, _jquery.default)('.loading-screen').addClass('remove');
+  });
+} //Initialise Custom Cursor with Event Listener on Scroll
+
+
+function initCursor() {
+  (0, _jquery.default)(document).on("mousemove", function (e) {
+    setTimeout(function () {
+      (0, _jquery.default)('.cursor').eq(0).css({
+        left: e.pageX,
+        top: e.pageY
+      });
+    }, 110);
+  });
+} //Initalise the Background Change Function
+
+
+function initBackgroundChange() {
+  scroll.on("scroll", function () {
+    // Change 33% earlier than scroll position so colour is there when you arrive
+    var scroll = (0, _jquery.default)(window).scrollTop() + (0, _jquery.default)(window).height() / 3;
+    (0, _jquery.default)('.base-section').each(function () {
+      var $this = (0, _jquery.default)(this); // if position is within range of this panel.
+      // So position of (position of top of div <= scroll position) && (position of bottom of div > scroll position).
+      // Remember we set the scroll to 33% earlier in scroll var.
+
+      if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
+        // Remove all classes on body with color-
+        (0, _jquery.default)('body').removeClass(function (index, css) {
+          return (css.match(/(^|\s)color-\S+/g) || []).join(' ');
+        }); // Add class of currently active div
+
+        (0, _jquery.default)('body').addClass('color-' + (0, _jquery.default)(this).data('color'));
+      }
     });
-  }, 110);
+  });
+} //Run all functions when Document is ready
+
+
+(0, _jquery.default)(function () {
+  initLoader();
+  initBackgroundChange();
+  initCursor();
 });
 },{"locomotive-scroll":"../node_modules/locomotive-scroll/dist/locomotive-scroll.esm.js","jquery":"../node_modules/jquery/dist/jquery.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -14425,7 +14471,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52816" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58183" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

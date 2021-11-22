@@ -13,6 +13,12 @@
 <body>
 <!-- Custom Cursor -->
 <div class="cursor"></div>
+<!-- Loading Screen -->
+<section class="base-section loading-screen">
+    <div class="container flex-container">
+        <button class="bt-base bt-loading"><span>Jetzt Entdecken<ion-icon name="chevron-forward-outline" style="vertical-align: middle;"></ion-icon></span></button>
+    </div>
+</section>
 <!-- Header -->
 <header>
     <div class="flex-container">
@@ -30,10 +36,10 @@
     </div>
 </header>
 <!-- LocomotiveScroll Container for Smooth Scrolling -->
-<div data-scroll-container>
+<div data-scroll-container class="scroll-container">
 <!-- Content -->
 <!-- Landing Page -->
-<section class="base-section landing-section-home">
+<section data-scroll-section class="base-section landing-section-home">
     <div class="container flex-container">
         <div class="flex-item">
             <h1>
@@ -45,16 +51,16 @@
     </div>
 </section>
 <!-- Product Section "Erdbeer-Rhabarber" -->
-<section class="base-section product-section-er">
+<section data-scroll-section class="base-section product-section-er" data-color="red">
     <div class="container flex-container">
         <div class="flex-item">
             <img src="assets/products/mockup-er.png" alt="LandLimo Dose"/>
         </div>
         <div class="flex-item combi-item">
             <div class="text-box">
-                <h2>
-                    <span>Erdbeer</span>
-                    <span>Rhabarber</span>
+                <h2 data-scroll data-scroll-class="in-view" data-scroll-offset="50%">
+                    <span class="letters">Erdbeer</span>
+                    <span class="letters">Rhabarber</span>
                 </h2>
             </div>
             <button class="bt-base bt-er"><span>Jetzt Entdecken <ion-icon name="chevron-forward-outline" style="vertical-align: middle;"></ion-icon></span></button>
@@ -62,17 +68,17 @@
     </div>
 </section>
 <!-- Product Section "Limette-Minze" -->
-<section class="base-section product-section-abm">
+<section data-scroll-section class="base-section product-section-abm" data-color="green">
     <div class="container flex-container">
         <div class="flex-item">
             <img src="assets/products/mockup-er.png" alt="LandLimo Dose"/>
         </div>
         <div class="flex-item combi-item">
             <div class="text-box">
-                <h2>
-                    <span>Apfel</span>
-                    <span>Birne</span>
-                    <span>Minze</span>
+                <h2 data-scroll data-scroll-class="in-view" data-scroll-offset="50%">
+                    <span class="letters">Apfel</span>
+                    <span class="letters">Birne</span>
+                    <span class="letters">Minze</span>
                 </h2>
             </div>
             <button class="bt-base bt-abm"><span>Jetzt Entdecken <ion-icon name="chevron-forward-outline" style="vertical-align: middle;"></ion-icon></span></button>
@@ -80,16 +86,16 @@
     </div>
 </section>
 <!-- Product Section "Orange-Ingwer" -->
-<section class="base-section product-section-oi">
+<section data-scroll-section class="base-section product-section-oi" data-color="orange">
     <div class="container flex-container">
         <div class="flex-item">
             <img src="assets/products/mockup-er.png" alt="LandLimo Dose"/>
         </div>
         <div class="flex-item combi-item">
             <div class="text-box">
-                <h2>
-                    <span>Orange</span>
-                    <span>Ingwer</span>
+                <h2 data-scroll data-scroll-class="in-view" data-scroll-offset="50%">
+                    <span class="letters">Orange</span>
+                    <span class="letters">Ingwer</span>
                 </h2>
             </div>
             <button class="bt-base bt-oi"><span>Jetzt Entdecken <ion-icon name="chevron-forward-outline" style="vertical-align: middle;"></ion-icon></span></button>

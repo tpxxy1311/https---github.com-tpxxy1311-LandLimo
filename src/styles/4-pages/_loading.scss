@@ -1,0 +1,21 @@
+//Pre-Loading Screen on top of Home Page
+
+.loading-screen{
+    width: 100vw;
+    z-index: 999;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color:white;
+    .flex-container{
+        .bt-loading{
+            display:none;
+        }
+        .bt-ready{
+            display: inline-block;
+        }
+    }
+}
+.remove{
+    display: none;
+}

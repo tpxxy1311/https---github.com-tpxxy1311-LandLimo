@@ -18,7 +18,6 @@
 
 //Product Section "Erdbeer-Rhabarber"
 .product-section-er{
-    background-image: $background-image-er;
     .flex-container{
         height: 100%;
         .flex-item{
@@ -30,6 +29,15 @@
                 font-size: 4.5em;
                 font-weight: 800;
                 line-height: 1em;
+                    span{
+                        width: 100%;
+                        display:block;
+                        opacity:0;
+                        transform: translateY(50%) rotateX(-80deg);
+                        transform-origin: center top;
+                        transform-style: preserve-3d;
+                        transition: opacity 0.8s cubic-bezier(.215,.61,.355,1),transform 1.2s cubic-bezier(.215,.61,.355,1);
+                    }
                 }
             }
             .bt-er{
@@ -39,9 +47,8 @@
     }
 }
 
-//Product Section "Apfel-Birne-Minzr"
+//Product Section "Apfel-Birne-Minze"
 .product-section-abm{
-    background-image: $background-image-abm;
     .flex-container{
         height: 100%;
         .flex-item{
@@ -50,9 +57,18 @@
             }
             .text-box{
                 h2{
-                font-size: 4.5em;
-                font-weight: 800;
-                line-height: 1em;
+                    font-size: 4.5em;
+                    font-weight: 800;
+                    line-height: 1em;
+                        span{
+                            width: 100%;
+                            display:block;
+                            opacity:0;
+                            transform: translateY(50%) rotateX(-80deg);
+                            transform-origin: center top;
+                            transform-style: preserve-3d;
+                            transition: opacity 0.8s cubic-bezier(.215,.61,.355,1),transform 1.2s cubic-bezier(.215,.61,.355,1);
+                        }
                 }
             }
             .bt-abm{
@@ -62,9 +78,8 @@
     }
 }
 
-//Product Section "Apfel-Birne-Minzr"
+//Product Section "Orange Ingwer"
 .product-section-oi{
-    background-image: $background-image-oi;
     .flex-container{
         height: 100%;
         .flex-item{
@@ -73,9 +88,18 @@
             }
             .text-box{
                 h2{
-                font-size: 4.5em;
-                font-weight: 800;
-                line-height: 1em;
+                    font-size: 4.5em;
+                    font-weight: 800;
+                    line-height: 1em;
+                        span{
+                            width: 100%;
+                            display:block;
+                            opacity:0;
+                            transform: translateY(50%) rotateX(-80deg);
+                            transform-origin: center top;
+                            transform-style: preserve-3d;
+                            transition: opacity 0.8s cubic-bezier(.215,.61,.355,1),transform 1.2s cubic-bezier(.215,.61,.355,1);
+                        }
                 }
             }
             .bt-oi{
@@ -83,4 +107,24 @@
             }
         }
     }
+}
+
+//Background Classes
+.color-red{
+    background-image: $background-image-er;
+}
+.color-green{
+    background-image: $background-image-abm;
+}
+.color-orange{
+    background-image: $background-image-oi;
+}
+ 
+//Text Effect Class
+.in-view .letters{
+    opacity: 1 !important;
+    transform: none !important;
+}
+.in-view .letters:nth-child(2){
+    transition-delay: 0.3s!important;
 }
