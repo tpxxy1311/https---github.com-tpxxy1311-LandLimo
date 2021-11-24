@@ -8,11 +8,23 @@
     left:0;
     background-color:white;
     .flex-container{
+        justify-content:center;
+        height: 100%;
+        flex-direction: column;
+        img{
+            width: 50%;
+        }
         .bt-loading{
-            display:none;
+            opacity:0;
         }
         .bt-ready{
-            display: inline-block;
+            opacity: 1 !important;
+        }
+        p{
+            font-size: 1rem;
+            text-align: center;
+            width: 40%;
+            font-weight: 400;
         }
     }
 }

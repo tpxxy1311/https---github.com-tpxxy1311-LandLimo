@@ -15,11 +15,15 @@ function initLoader(){
   $(window).on("load",()=>{
     setTimeout(()=>{
       $('.bt-loading').addClass('bt-ready');
-    },5000)
+    },5000);
   });
   //Remove Loading Section on Button Click
   $('.bt-loading').on("click", ()=>{
     $('.loading-screen').addClass('remove');
+    //Add Effect Class to the Headline on Landing Page
+    setTimeout(()=>{
+      $('.landing-headline').addClass('in-view');
+    },1000);
   })
 }
 

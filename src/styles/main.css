@@ -508,12 +508,34 @@ body {
   background-color: white;
 }
 
+.loading-screen .flex-container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.loading-screen .flex-container img {
+  width: 50%;
+}
+
 .loading-screen .flex-container .bt-loading {
-  display: none;
+  opacity: 0;
 }
 
 .loading-screen .flex-container .bt-ready {
-  display: inline-block;
+  opacity: 1 !important;
+}
+
+.loading-screen .flex-container p {
+  font-size: 1rem;
+  text-align: center;
+  width: 40%;
+  font-weight: 400;
 }
 
 .remove {
@@ -535,6 +557,22 @@ body {
   font-size: 5.5em;
   font-weight: 800;
   line-height: 1em;
+}
+
+.landing-section-home .flex-container .flex-item h1 span {
+  width: 100%;
+  display: block;
+  opacity: 0;
+  -webkit-transform: translateY(50%) rotateX(-80deg);
+          transform: translateY(50%) rotateX(-80deg);
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .product-section-er .flex-container {
@@ -628,7 +666,7 @@ body {
 }
 
 .color-red {
-  background-image: radial-gradient(at 84% 21%, rgba(255, 152, 143, 0.8) 0, transparent 55%), radial-gradient(at 12% 79%, rgba(239, 154, 172, 0.8) 0, transparent 53%);
+  background-image: radial-gradient(at 100% 40%, rgba(255, 152, 143, 0.8) 500px, transparent 55%), radial-gradient(at 12% 79%, rgba(239, 154, 172, 0.8) 0px, transparent 53%);
 }
 
 .color-green {
@@ -636,7 +674,7 @@ body {
 }
 
 .color-orange {
-  background-image: radial-gradient(at 84% 21%, #f9b876 0, transparent 55%), radial-gradient(at 12% 79%, #e6ae5c 0, transparent 53%);
+  background-image: radial-gradient(at 84% 21%, #f9b876 0, transparent 55%), radial-gradient(at 12% 7%, #e6ae5c 0, transparent 53%);
 }
 
 .in-view .letters {
@@ -646,7 +684,12 @@ body {
 }
 
 .in-view .letters:nth-child(2) {
-  -webkit-transition-delay: 0.3s !important;
-          transition-delay: 0.3s !important;
+  -webkit-transition-delay: 0.2s !important;
+          transition-delay: 0.2s !important;
+}
+
+.in-view .letters:nth-child(3) {
+  -webkit-transition-delay: 0.4s !important;
+          transition-delay: 0.4s !important;
 }
 /*# sourceMappingURL=main.css.map */

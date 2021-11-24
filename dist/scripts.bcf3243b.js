@@ -14399,7 +14399,11 @@ function initLoader() {
   }); //Remove Loading Section on Button Click
 
   (0, _jquery.default)('.bt-loading').on("click", function () {
-    (0, _jquery.default)('.loading-screen').addClass('remove');
+    (0, _jquery.default)('.loading-screen').addClass('remove'); //Add Effect Class to the Headline on Landing Page
+
+    setTimeout(function () {
+      (0, _jquery.default)('.landing-headline').addClass('in-view');
+    }, 1000);
   });
 } //Initialise Custom Cursor with Event Listener on Scroll
 
@@ -14471,7 +14475,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58183" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54540" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
