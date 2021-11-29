@@ -14388,7 +14388,7 @@ var scroll = new _locomotiveScroll.default({
   el: document.querySelector('[data-scroll-container]'),
   smooth: true,
   smoothMobile: true
-}); //Loading Screen
+}); //Initialise Loading Screen
 
 function initLoader() {
   //Show Button if all Assests are loaded
@@ -14405,7 +14405,7 @@ function initLoader() {
       (0, _jquery.default)('.landing-headline').addClass('in-view');
     }, 1000);
   });
-} //Initialise Custom Cursor with Event Listener on Scroll
+} //Initialise Custom Cursor
 
 
 function initCursor() {
@@ -14415,7 +14415,17 @@ function initCursor() {
         left: e.pageX,
         top: e.pageY
       });
-    }, 110);
+    }, 0);
+  });
+} //Set Hover Elements for Custom Cursor to change Color
+
+
+function initCursorHover() {
+  (0, _jquery.default)('.hoverable').on("mouseenter", function () {
+    (0, _jquery.default)('.cursor').addClass('hover');
+  });
+  (0, _jquery.default)('.hoverable').on("mouseleave", function () {
+    (0, _jquery.default)('.cursor').removeClass('hover');
   });
 } //Initalise the Background Change Function
 
@@ -14446,6 +14456,7 @@ function initBackgroundChange() {
   initLoader();
   initBackgroundChange();
   initCursor();
+  initCursorHover();
 });
 },{"locomotive-scroll":"../node_modules/locomotive-scroll/dist/locomotive-scroll.esm.js","jquery":"../node_modules/jquery/dist/jquery.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -14475,7 +14486,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54540" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49198" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

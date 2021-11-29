@@ -9,7 +9,7 @@ const scroll = new LocomotiveScroll({
     smoothMobile: true
 });
 
-//Loading Screen
+//Initialise Loading Screen
 function initLoader(){
   //Show Button if all Assests are loaded
   $(window).on("load",()=>{
@@ -27,7 +27,7 @@ function initLoader(){
   })
 }
 
-//Initialise Custom Cursor with Event Listener on Scroll
+//Initialise Custom Cursor
 function initCursor(){
   $(document).on("mousemove", (e) => {
     setTimeout(function() {
@@ -37,8 +37,18 @@ function initCursor(){
             left: e.pageX,
             top: e.pageY,
           });
-      }, 110);
-});
+      }, 0);
+  });
+}
+
+//Set Hover Elements for Custom Cursor to change Color
+function initCursorHover(){
+  $('.hoverable').on("mouseenter", () => {
+    $('.cursor').addClass('hover');
+  });
+  $('.hoverable').on("mouseleave", () => {
+    $('.cursor').removeClass('hover');
+  });
 }
 
 //Initalise the Background Change Function
@@ -69,4 +79,5 @@ $(function() {
   initLoader();
   initBackgroundChange();
   initCursor();
+  initCursorHover();
 });

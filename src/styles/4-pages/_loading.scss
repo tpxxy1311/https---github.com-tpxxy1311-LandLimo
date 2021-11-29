@@ -1,5 +1,4 @@
 //Pre-Loading Screen on top of Home Page
-
 .loading-screen{
     width: 100vw;
     z-index: 999;
@@ -12,7 +11,7 @@
         height: 100%;
         flex-direction: column;
         img{
-            width: 50%;
+            width: 30%;
         }
         .bt-loading{
             opacity:0;

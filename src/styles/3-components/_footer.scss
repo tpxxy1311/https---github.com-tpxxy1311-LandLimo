@@ -1,0 +1,37 @@
+//Fully Responsive Page Footer which is show on every page
+footer{
+    width: 100vw;
+    .flex-container{
+        width: 90%;
+        margin:auto;
+        padding: 5% 4%;
+        .logo{
+            width: 12%;
+            img{
+                width: 100%;
+            }
+            span{
+                font-size: 0.8rem;
+            }
+        }
+        .links{
+            flex-grow: 0.2;
+            display: flex;
+            justify-content: space-between;
+            ul{
+                li:not(:last-child){
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        .contact{
+            #mail{
+                margin-top: 10px;
+                a{
+                    font-weight: 700;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}

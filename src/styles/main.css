@@ -387,17 +387,60 @@ html.has-scroll-dragging {
   transition: transform 0.5s cubic-bezier(0.1, 0, 0.3, 1), -webkit-transform 0.5s cubic-bezier(0.1, 0, 0.3, 1);
 }
 
+.link-underline {
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.link-underline::before {
+  content: '';
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  -webkit-transform: scale3d(0, 1, 1);
+          transform: scale3d(0, 1, 1);
+  -webkit-transition: -webkit-transform ease-out 0.4s;
+  transition: -webkit-transform ease-out 0.4s;
+  transition: transform ease-out 0.4s;
+  transition: transform ease-out 0.4s, -webkit-transform ease-out 0.4s;
+  position: absolute;
+  width: 100%;
+  height: 1.5px;
+  background: black;
+  border-radius: 100px;
+  top: 100%;
+  left: 0;
+  pointer-events: none;
+}
+
+.link-underline:hover::before {
+  -webkit-transform-origin: 0% 50%;
+          transform-origin: 0% 50%;
+  -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+}
+
 .cursor {
   position: absolute;
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   border-radius: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 9999;
   background-color: none;
-  border: 3px solid #929292;
+  border: 2px solid #929292;
+  -webkit-transition: height 0.3s ease-in-out, width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out, width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.hover {
+  height: 20px !important;
+  width: 20px !important;
+  border: none;
+  background-color: grey;
 }
 
 header {
@@ -439,6 +482,53 @@ header .flex-container nav ul li:not(:last-child) {
 
 header .flex-container nav ul li a {
   font-size: 1em;
+}
+
+footer {
+  width: 100vw;
+}
+
+footer .flex-container {
+  width: 90%;
+  margin: auto;
+  padding: 5% 4%;
+}
+
+footer .flex-container .logo {
+  width: 12%;
+}
+
+footer .flex-container .logo img {
+  width: 100%;
+}
+
+footer .flex-container .logo span {
+  font-size: 0.8rem;
+}
+
+footer .flex-container .links {
+  -webkit-box-flex: 0.2;
+      -ms-flex-positive: 0.2;
+          flex-grow: 0.2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .flex-container .links ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+footer .flex-container .contact #mail {
+  margin-top: 10px;
+}
+
+footer .flex-container .contact #mail a {
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 body {
@@ -520,7 +610,7 @@ body {
 }
 
 .loading-screen .flex-container img {
-  width: 50%;
+  width: 30%;
 }
 
 .loading-screen .flex-container .bt-loading {
@@ -666,15 +756,15 @@ body {
 }
 
 .color-red {
-  background-image: radial-gradient(at 100% 40%, rgba(255, 152, 143, 0.8) 500px, transparent 55%), radial-gradient(at 12% 79%, rgba(239, 154, 172, 0.8) 0px, transparent 53%);
+  background-image: radial-gradient(at 100% 40%, rgba(255, 152, 143, 0.8) 500px, transparent 55%);
 }
 
 .color-green {
-  background-image: radial-gradient(at 84% 21%, #b3d256 0, transparent 55%), radial-gradient(at 12% 79%, #bbd2b2 0, transparent 53%);
+  background-image: radial-gradient(at 100% 49%, #b4d156cb 500px, transparent 70%);
 }
 
 .color-orange {
-  background-image: radial-gradient(at 84% 21%, #f9b876 0, transparent 55%), radial-gradient(at 12% 7%, #e6ae5c 0, transparent 53%);
+  background-image: radial-gradient(at 100% 40%, #f9b876 500px, transparent 55%);
 }
 
 .in-view .letters {
