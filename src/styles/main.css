@@ -128,8 +128,8 @@ html.has-scroll-dragging {
   width: 7px;
   border-radius: 10px;
   margin: 2px;
-  cursor: -webkit-grab;
-  cursor: grab;
+  cursor: -webkit-none;
+  cursor: none;
 }
 
 .has-scroll-dragging .c-scrollbar_thumb {
@@ -217,7 +217,7 @@ html.has-scroll-dragging {
   border-radius: 50px;
   color: #FFFFFF;
   pointer-events: auto;
-  cursor: pointer;
+  cursor: none;
   background: #C6C6C6;
   border: none;
   padding: 1.3rem 2.8rem;
@@ -388,7 +388,7 @@ html.has-scroll-dragging {
 }
 
 .link-underline {
-  cursor: pointer;
+  cursor: none;
   position: relative;
   white-space: nowrap;
   text-decoration: none;
@@ -537,6 +537,7 @@ body {
   -moz-user-select: None;
   -webkit-user-select: None;
   user-select: None;
+  cursor: none;
 }
 
 .base-section {
@@ -595,7 +596,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: white;
+  background-color: #ffffff56;
 }
 
 .loading-screen .flex-container {
