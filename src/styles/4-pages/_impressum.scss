@@ -1,0 +1,66 @@
+//Impress Page
+.impress-section{
+    .flex-container{
+        padding-top: 15%;
+        padding-left: 4%;
+        padding-right: 4%;
+        flex-wrap: wrap;
+        h1{
+            font-weight: 800;
+            font-size: 5.5em;
+            width: 100%;
+        }
+        .flex-item{
+            width: 100%;
+            justify-content: flex-end;
+            margin-top: 7%;
+            div{
+                width: 60%;
+                p{
+                    line-height: 1.5;
+                }
+                h3{
+                    font-weight: 600;
+                    margin-bottom: 5px;
+                }
+            }
+            div:not(:last-child){
+                margin-bottom: 3%;
+            }
+        }
+    }
+}
+
+//Privacy Page
+.privacy-section{
+    .flex-container{
+        padding-top: 15%;
+        padding-left: 4%;
+        padding-right: 4%;
+        flex-wrap: wrap;
+        h1{
+            font-weight: 800;
+            font-size: 5.5em;
+            width: 100%;
+            text-align: right;
+        }
+        .flex-item{
+            width: 100%;
+            justify-content: flex-start;
+            margin-top: 7%;
+            div{
+                width: 60%;
+                p{
+                    line-height: 1.5;
+                }
+                h3{
+                    font-weight: 600;
+                    margin-bottom: 5px;
+                }
+            }
+            div:not(:last-child){
+                margin-bottom: 3%;
+            }
+        }
+    }
+}

@@ -387,6 +387,11 @@ html.has-scroll-dragging {
   transition: transform 0.5s cubic-bezier(0.1, 0, 0.3, 1), -webkit-transform 0.5s cubic-bezier(0.1, 0, 0.3, 1);
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .link-underline {
   cursor: none;
   position: relative;
@@ -581,6 +586,9 @@ body {
 }
 
 .flex-container .combi-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -782,6 +790,85 @@ body {
 .in-view .letters:nth-child(3) {
   -webkit-transition-delay: 0.4s !important;
           transition-delay: 0.4s !important;
+}
+
+.impress-section .flex-container {
+  padding-top: 15%;
+  padding-left: 4%;
+  padding-right: 4%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.impress-section .flex-container h1 {
+  font-weight: 800;
+  font-size: 5.5em;
+  width: 100%;
+}
+
+.impress-section .flex-container .flex-item {
+  width: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 7%;
+}
+
+.impress-section .flex-container .flex-item div {
+  width: 60%;
+}
+
+.impress-section .flex-container .flex-item div p {
+  line-height: 1.5;
+}
+
+.impress-section .flex-container .flex-item div h3 {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.impress-section .flex-container .flex-item div:not(:last-child) {
+  margin-bottom: 3%;
+}
+
+.privacy-section .flex-container {
+  padding-top: 15%;
+  padding-left: 4%;
+  padding-right: 4%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.privacy-section .flex-container h1 {
+  font-weight: 800;
+  font-size: 5.5em;
+  width: 100%;
+  text-align: right;
+}
+
+.privacy-section .flex-container .flex-item {
+  width: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 7%;
+}
+
+.privacy-section .flex-container .flex-item div {
+  width: 60%;
+}
+
+.privacy-section .flex-container .flex-item div p {
+  line-height: 1.5;
+}
+
+.privacy-section .flex-container .flex-item div h3 {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.privacy-section .flex-container .flex-item div:not(:last-child) {
+  margin-bottom: 3%;
 }
 
 
