@@ -10,14 +10,16 @@
     <title>LandLimo > Datenschutz</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
-<body>
+<body data-barba="wrapper">
 <!-- Custom Cursor -->
 <div class="cursor"></div>
 <!-- Header -->
 <header>
     <div class="flex-container">
         <div class="logo hoverable">
-           <img src="../src/assets/logos/logo_neutral.svg" alt="Land Limo"/>
+            <a href="index.html">
+                <img src="../src/assets/logos/logo_neutral.svg" alt="Land Limo"/>
+            </a>
         </div>
         <nav>
             <ul>
@@ -32,7 +34,8 @@
 <!-- LocomotiveScroll Container for Smooth Scrolling -->
 <div data-scroll-container class="scroll-container">
 <!-- Content -->
-<section data-scroll-section class="privacy-section">
+<div data-barba="container" data-barba-namespace="datenschutz">
+<section data-scroll-section class="impress-section">
     <div class="container flex-container">
         <h1>Datenschutz</h1>
         <div class="flex-item">
@@ -86,6 +89,7 @@
         </div>
     </footer>
 </section>
+</div>
 </div>
 <!-- Scripts -->   
 <script src='.././src/scripts/index.js'></script>

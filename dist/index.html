@@ -10,10 +10,8 @@
     <title>LandLimo</title>
     <link rel="stylesheet" href="/main.d2070829.css">
     <!-- Preload and Render the other pages -->
-    <link rel="prerender" href="/impressum.html">
-    <link rel="preload" href="https://images.unsplash.com/photo-1638217989553-e6d87c341f68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80" as="img">
 <script src="/main.d2070829.js"></script><script src="/impressum.js"></script></head>
-<body>
+<body data-barba="wrapper">
 <!-- Custom Cursor -->
 <div class="cursor"></div>
 <!-- Loading Screen -->
@@ -29,7 +27,9 @@
 <header>
     <div class="flex-container">
         <div class="logo hoverable">
-           <img src="/logo_neutral.4bcbd0d2.svg" alt="Land Limo">
+            <a href="/index.html">
+                <img src="/logo_neutral.4bcbd0d2.svg" alt="Land Limo">
+            </a>
         </div>
         <nav>
             <ul>
@@ -44,6 +44,7 @@
 <!-- LocomotiveScroll Container for Smooth Scrolling -->
 <div data-scroll-container="" class="scroll-container">
 <!-- Content -->
+<div data-barba="container" data-barba-namespace="home">
 <!-- Landing Page -->
 <section data-scroll-section="" class="base-section landing-section-home">
     <div class="container flex-container">
@@ -140,6 +141,7 @@
         </div>
     </footer>
 </section>
+</div>
 </div>
 <!-- Scripts -->   
 <script src="/scripts.bcf3243b.js"></script>

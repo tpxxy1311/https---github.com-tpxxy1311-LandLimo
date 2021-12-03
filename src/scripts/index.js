@@ -1,6 +1,8 @@
 //Import Modules
 import LocomotiveScroll from 'locomotive-scroll';
 import $ from 'jquery';
+import barba from '@barba/core';
+import gsap from 'gsap';
 
 //Smooth Scrolling
 const scroll = new LocomotiveScroll({
@@ -8,6 +10,42 @@ const scroll = new LocomotiveScroll({
     smooth: true,
     smoothMobile: true
 });
+
+//Barba Hook to update the Cursor and Scroll
+barba.hooks.after(() => {
+	scroll.update();
+  initCursorHover();
+  removeHoverClass();
+});
+
+//Barba Page Transitions
+barba.init({
+	debug: true,
+	transitions: [
+		{
+			name: 'general-transition',
+			once: ({ next }) => {
+				fadeIn(next.container);
+			},
+			leave: ({ current }) => fadeOut(current.container),
+			enter: ({ next }) => {
+				fadeIn(next.container)
+			},
+			beforeEnter() {
+				scroll.setScroll(0,0);
+			}
+		}
+]
+});
+
+//GSAP Animations
+const fadeIn = (container) => {
+	return gsap.from(container, {autoAlpha: 0, duration: 1.5});
+}
+
+const fadeOut = (container) => {
+	return gsap.to(container, {autoAlpha: 0, duration:1.5});
+}
 
 //Initialise Loading Screen
 function initLoader(){
@@ -49,6 +87,11 @@ function initCursorHover(){
   $('.hoverable').on("mouseleave", () => {
     $('.cursor').removeClass('hover');
   });
+}
+
+//Remove 'Hover' Class after Barba Transition
+function removeHoverClass(){
+  $('.cursor').removeClass('hover');
 }
 
 //Initalise the Background Change Function
