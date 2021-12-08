@@ -32,6 +32,7 @@ barba.init({
 				fadeIn(next.container)
 			},
 			beforeEnter() {
+        //Set Page Scroll to the top
 				scroll.setScroll(0,0);
 			}
 		}
@@ -40,10 +41,12 @@ barba.init({
 
 //GSAP Animations
 const fadeIn = (container) => {
+  //Goes form opacity 0 to 1 in 1.5s
 	return gsap.from(container, {autoAlpha: 0, duration: 1.5});
 }
 
 const fadeOut = (container) => {
+  //Goes to opacity 0 from 1 in 1.5s
 	return gsap.to(container, {autoAlpha: 0, duration:1.5});
 }
 
@@ -53,11 +56,13 @@ function initLoader(){
   $(window).on("load",()=>{
     setTimeout(()=>{
       $('.bt-loading').addClass('bt-ready');
+      $('.text-loading').addClass('bt-ready');
     },5000);
   });
   //Remove Loading Section on Button Click
   $('.bt-loading').on("click", ()=>{
     $('.loading-screen').addClass('remove');
+    removeHoverClass();
     //Add Effect Class to the Headline on Landing Page
     setTimeout(()=>{
       $('.landing-headline').addClass('in-view');
@@ -99,6 +104,7 @@ function initBackgroundChange() {
   scroll.on("scroll",()=>{
     // Change 33% earlier than scroll position so colour is there when you arrive
     var scroll = $(window).scrollTop() + ($(window).height()/3);
+    console.log("scroll:"+scroll);
     $('.base-section').each(function () {
       var $this = $(this);
       // if position is within range of this panel.
@@ -111,16 +117,40 @@ function initBackgroundChange() {
       });
         // Add class of currently active div
         $('body').addClass('color-' + $(this).data('color'));
-        
       }
     }); 
   });
 }
 
+function initVideoFade(){
+  scroll.on("scroll", (position)=>{
+    var scroll = position.scroll.y;
+    const checkpoint = 300;
+    var op;
+    if (scroll <= checkpoint) {
+      op = 1 - scroll/checkpoint;
+    } else {
+      op = 0;
+    }
+    $('.bgvideo').css({opacity:op});
+    console.log(scroll);
+  })
+};
+
+
 //Run all functions when Document is ready
 $(function() {
   initLoader();
-  initBackgroundChange();
   initCursor();
   initCursorHover();
+  initBackgroundChange();
+  initVideoFade();
 });
+
+
+
+
+
+
+
+

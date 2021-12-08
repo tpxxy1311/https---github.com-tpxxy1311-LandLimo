@@ -9,7 +9,6 @@
     <meta name="theme-color" content="">
     <title>LandLimo</title>
     <link rel="stylesheet" href="/main.d2070829.css">
-    <!-- Preload and Render the other pages -->
 <script src="/main.d2070829.js"></script><script src="/impressum.js"></script></head>
 <body data-barba="wrapper">
 <!-- Custom Cursor -->
@@ -18,9 +17,9 @@
 <section class="base-section loading-screen">
     <div class="container flex-container">
         <img src="/logo_neutral.4bcbd0d2.svg" alt="Land Limo">
-        <p>Diese Website nutzt Sound und Audio-Effekte um Ihre Nutzererfahrung zu verbessern</p>
-        <p>Ohne Ton starten <ion-icon name="volume-mute-outline" style="vertical-align: middle;"></ion-icon></p>
         <button class="bt-base bt-loading hoverable"><span>Jetzt Entdecken<ion-icon name="chevron-forward-outline" style="vertical-align: middle;"></ion-icon></span></button>
+        <p class="text-loading">Diese Website nutzt Sound und Audio-Effekte um Ihre Nutzererfahrung zu verbessern</p>
+        <a class="link-underline hoverable text-loading">Ohne Ton starten <ion-icon name="volume-mute-outline" style="vertical-align: middle;"></ion-icon></a>
     </div>
 </section>
 <!-- Header -->
@@ -28,7 +27,7 @@
     <div class="flex-container">
         <div class="logo hoverable">
             <a href="/index.html">
-                <img src="/logo_neutral.4bcbd0d2.svg" alt="Land Limo">
+                <img src="/logo_neutral.4bcbd0d2.svg" alt="Land Limo" class="testimg">
             </a>
         </div>
         <nav>
@@ -47,6 +46,9 @@
 <div data-barba="container" data-barba-namespace="home">
 <!-- Landing Page -->
 <section data-scroll-section="" class="base-section landing-section-home">
+    <video playsinline="" autoplay="" muted="" loop="" class="bgvideo">
+        <source src="/video_background.bd078285.mp4" type="video/mp4">
+    </video>
     <div class="container flex-container">
         <div class="flex-item">
             <h1 class="landing-headline">
@@ -65,7 +67,7 @@
         </div>
         <div class="flex-item combi-item">
             <div class="text-box">
-                <h2 data-scroll="" data-scroll-class="in-view" data-scroll-offset="50%">
+                <h2 data-scroll="" data-scroll-class="in-view" data-scroll-offset="40%">
                     <span class="letters">Erdbeer</span>
                     <span class="letters">Rhabarber</span>
                 </h2>
@@ -82,7 +84,7 @@
         </div>
         <div class="flex-item combi-item">
             <div class="text-box">
-                <h2 data-scroll="" data-scroll-class="in-view" data-scroll-offset="50%">
+                <h2 data-scroll="" data-scroll-class="in-view" data-scroll-offset="40%">
                     <span class="letters">Apfel</span>
                     <span class="letters">Birne</span>
                     <span class="letters">Minze</span>
@@ -100,7 +102,7 @@
         </div>
         <div class="flex-item combi-item">
             <div class="text-box">
-                <h2 data-scroll="" data-scroll-class="in-view" data-scroll-offset="50%">
+                <h2 data-scroll="" data-scroll-class="in-view" data-scroll-offset="40%">
                     <span class="letters">Orange</span>
                     <span class="letters">Ingwer</span>
                 </h2>
@@ -121,7 +123,7 @@
                 <ul>
                     <li><a href="/impressum.html" class="link-underline hoverable">Impressum</a></li>
                     <li><a href="/datenschutz.html" class="link-underline hoverable">Datenschutz</a></li>
-                    <li><a class="link-underline hoverable">Menu#3</a></li>
+                    <li><a href="/index.html" class="link-underline hoverable">Start</a></li>
                 </ul>
                 <ul>
                     <li><a class="link-underline hoverable">Menu#4</a></li>

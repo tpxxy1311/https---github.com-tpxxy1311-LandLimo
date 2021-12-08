@@ -20000,6 +20000,7 @@ _core.default.init({
       fadeIn(next.container);
     },
     beforeEnter: function beforeEnter() {
+      //Set Page Scroll to the top
       scroll.setScroll(0, 0);
     }
   }]
@@ -20007,6 +20008,7 @@ _core.default.init({
 
 
 var fadeIn = function fadeIn(container) {
+  //Goes form opacity 0 to 1 in 1.5s
   return _gsap.default.from(container, {
     autoAlpha: 0,
     duration: 1.5
@@ -20014,6 +20016,7 @@ var fadeIn = function fadeIn(container) {
 };
 
 var fadeOut = function fadeOut(container) {
+  //Goes to opacity 0 from 1 in 1.5s
   return _gsap.default.to(container, {
     autoAlpha: 0,
     duration: 1.5
@@ -20026,11 +20029,13 @@ function initLoader() {
   (0, _jquery.default)(window).on("load", function () {
     setTimeout(function () {
       (0, _jquery.default)('.bt-loading').addClass('bt-ready');
+      (0, _jquery.default)('.text-loading').addClass('bt-ready');
     }, 5000);
   }); //Remove Loading Section on Button Click
 
   (0, _jquery.default)('.bt-loading').on("click", function () {
-    (0, _jquery.default)('.loading-screen').addClass('remove'); //Add Effect Class to the Headline on Landing Page
+    (0, _jquery.default)('.loading-screen').addClass('remove');
+    removeHoverClass(); //Add Effect Class to the Headline on Landing Page
 
     setTimeout(function () {
       (0, _jquery.default)('.landing-headline').addClass('in-view');
@@ -20070,6 +20075,7 @@ function initBackgroundChange() {
   scroll.on("scroll", function () {
     // Change 33% earlier than scroll position so colour is there when you arrive
     var scroll = (0, _jquery.default)(window).scrollTop() + (0, _jquery.default)(window).height() / 3;
+    console.log("scroll:" + scroll);
     (0, _jquery.default)('.base-section').each(function () {
       var $this = (0, _jquery.default)(this); // if position is within range of this panel.
       // So position of (position of top of div <= scroll position) && (position of bottom of div > scroll position).
@@ -20085,14 +20091,35 @@ function initBackgroundChange() {
       }
     });
   });
-} //Run all functions when Document is ready
+}
 
+function initVideoFade() {
+  scroll.on("scroll", function (position) {
+    var scroll = position.scroll.y;
+    var checkpoint = 300;
+    var op;
+
+    if (scroll <= checkpoint) {
+      op = 1 - scroll / checkpoint;
+    } else {
+      op = 0;
+    }
+
+    (0, _jquery.default)('.bgvideo').css({
+      opacity: op
+    });
+    console.log(scroll);
+  });
+}
+
+; //Run all functions when Document is ready
 
 (0, _jquery.default)(function () {
   initLoader();
-  initBackgroundChange();
   initCursor();
   initCursorHover();
+  initBackgroundChange();
+  initVideoFade();
 });
 },{"locomotive-scroll":"../node_modules/locomotive-scroll/dist/locomotive-scroll.esm.js","jquery":"../node_modules/jquery/dist/jquery.js","@barba/core":"../node_modules/@barba/core/dist/barba.umd.js","gsap":"../node_modules/gsap/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -20122,7 +20149,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65068" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59832" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

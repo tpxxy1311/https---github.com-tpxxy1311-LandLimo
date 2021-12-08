@@ -4,6 +4,10 @@ a{
     color: black;
 }
 
+a:hover{
+    cursor: none;
+}
+
 .link-underline{
     cursor: none;
     position: relative;
