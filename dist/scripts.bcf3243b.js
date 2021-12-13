@@ -19973,7 +19973,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var scroll = new _locomotiveScroll.default({
   el: document.querySelector('[data-scroll-container]'),
   smooth: true,
-  smoothMobile: true
+  smartphone: {
+    breakpoint: 0,
+    smooth: true,
+    getDirection: true
+  },
+  tablet: {
+    breakpoint: 0,
+    smooth: true,
+    getDirection: true
+  }
 }); //Barba Hook to update the Cursor and Scroll
 
 _core.default.hooks.after(function () {
@@ -20030,7 +20039,7 @@ function initLoader() {
     setTimeout(function () {
       (0, _jquery.default)('.bt-loading').addClass('bt-ready');
       (0, _jquery.default)('.text-loading').addClass('bt-ready');
-    }, 5000);
+    }, 6000);
   }); //Remove Loading Section on Button Click
 
   (0, _jquery.default)('.bt-loading').on("click", function () {
@@ -20074,7 +20083,7 @@ function removeHoverClass() {
 function initBackgroundChange() {
   scroll.on("scroll", function () {
     // Change 33% earlier than scroll position so colour is there when you arrive
-    var scroll = (0, _jquery.default)(window).scrollTop() + (0, _jquery.default)(window).height() / 3;
+    var scroll = (0, _jquery.default)(window).height() / 3;
     console.log("scroll:" + scroll);
     (0, _jquery.default)('.base-section').each(function () {
       var $this = (0, _jquery.default)(this); // if position is within range of this panel.
@@ -20091,7 +20100,8 @@ function initBackgroundChange() {
       }
     });
   });
-}
+} //Initialise Fade while scrolling down on Background Video
+
 
 function initVideoFade() {
   scroll.on("scroll", function (position) {
@@ -20149,7 +20159,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59832" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55131" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

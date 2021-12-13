@@ -1,0 +1,16 @@
+//SCSS-Mixins for Responsive Design
+
+//Breakpoint for Smartphone
+@mixin smartphone {
+    @media only screen and(max-width: $screen-small){
+        @content;
+    }
+}
+
+//Breakpoint for Tablet
+@mixin tablet {
+    @media only screen and(max-width: $screen-medium) and
+    (min-width: $screen-small){
+        @content;
+    }
+}

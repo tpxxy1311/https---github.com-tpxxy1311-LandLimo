@@ -8,7 +8,16 @@ import gsap from 'gsap';
 const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true,
-    smoothMobile: true
+    smartphone: {
+      breakpoint: 0,
+      smooth: true,
+      getDirection: true,
+    },
+    tablet: {
+      breakpoint: 0,
+      smooth: true,
+      getDirection: true,
+    }
 });
 
 //Barba Hook to update the Cursor and Scroll
@@ -34,6 +43,7 @@ barba.init({
 			beforeEnter() {
         //Set Page Scroll to the top
 				scroll.setScroll(0,0);
+        
 			}
 		}
 ]
@@ -57,7 +67,7 @@ function initLoader(){
     setTimeout(()=>{
       $('.bt-loading').addClass('bt-ready');
       $('.text-loading').addClass('bt-ready');
-    },5000);
+    },6000);
   });
   //Remove Loading Section on Button Click
   $('.bt-loading').on("click", ()=>{
@@ -103,7 +113,7 @@ function removeHoverClass(){
 function initBackgroundChange() {
   scroll.on("scroll",()=>{
     // Change 33% earlier than scroll position so colour is there when you arrive
-    var scroll = $(window).scrollTop() + ($(window).height()/3);
+    var scroll = ($(window).height()/3);
     console.log("scroll:"+scroll);
     $('.base-section').each(function () {
       var $this = $(this);
@@ -122,6 +132,8 @@ function initBackgroundChange() {
   });
 }
 
+
+//Initialise Fade while scrolling down on Background Video
 function initVideoFade(){
   scroll.on("scroll", (position)=>{
     var scroll = position.scroll.y;

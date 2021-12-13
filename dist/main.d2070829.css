@@ -124,7 +124,7 @@ html.has-scroll-dragging {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #C6C6C630;
+  background-color: #c6c6c659;
   width: 7px;
   border-radius: 10px;
   margin: 2px;
@@ -445,6 +445,18 @@ a:hover {
   transition: height 0.3s ease-in-out, width 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
+@media only screen and (max-width: 760px) {
+  .cursor {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 760px) {
+  .cursor {
+    display: none;
+  }
+}
+
 .hover {
   height: 20px !important;
   width: 20px !important;
@@ -465,7 +477,7 @@ header .flex-container {
   margin: auto;
   padding: 1% 4%;
   border-radius: 50px;
-  background-color: #C6C6C630;
+  background-color: #c6c6c659;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
 }
@@ -546,7 +558,7 @@ body {
   -moz-user-select: None;
   -webkit-user-select: None;
   user-select: None;
-  cursor: none;
+  cursor: none !important;
 }
 
 .base-section {
@@ -589,6 +601,12 @@ body {
           align-items: center;
 }
 
+@media only screen and (max-width: 760px) {
+  .flex-container .flex-item {
+    width: 100%;
+  }
+}
+
 .flex-container .combi-item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -608,7 +626,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #ffffff56;
+  background-color: #FFFFFF;
 }
 
 .loading-screen .flex-container {
@@ -623,8 +641,24 @@ body {
   padding-top: 10%;
 }
 
+@media only screen and (max-width: 760px) {
+  .loading-screen .flex-container {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding-top: 0%;
+    padding-bottom: 25%;
+  }
+}
+
 .loading-screen .flex-container img {
   width: 30%;
+}
+
+@media only screen and (max-width: 760px) {
+  .loading-screen .flex-container img {
+    width: 75%;
+  }
 }
 
 .loading-screen .flex-container .bt-loading {
@@ -640,6 +674,16 @@ body {
   transition: opacity 0.7s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: opacity 0.7s cubic-bezier(0.215, 0.61, 0.355, 1), transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: opacity 0.7s cubic-bezier(0.215, 0.61, 0.355, 1), transform 1s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+  background: #c6c6c659;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+@media only screen and (max-width: 760px) {
+  .loading-screen .flex-container .bt-loading {
+    margin-top: 12%;
+    margin-bottom: 25%;
+  }
 }
 
 .loading-screen .flex-container .bt-ready {
@@ -655,27 +699,34 @@ body {
   font-weight: 400;
   margin-top: 3%;
   opacity: 0;
-  -webkit-transition: opacity 0.7s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: opacity 0.7s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -webkit-transition-delay: 0.3s;
-          transition-delay: 0.3s;
+  -webkit-transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
+}
+
+@media only screen and (max-width: 760px) {
+  .loading-screen .flex-container p {
+    width: 90%;
+    margin-bottom: 3%;
+  }
 }
 
 .loading-screen .flex-container a {
   font-size: 0.9rem;
   margin-top: 1%;
   opacity: 0;
-  -webkit-transition: opacity 0.7s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: opacity 0.7s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -webkit-transition-delay: 0.3s;
-          transition-delay: 0.3s;
+  -webkit-transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition-delay: 1.2s;
+          transition-delay: 1.2s;
 }
 
 .remove {
   display: none;
 }
 
-.landing-section-home video {
+.landing-section-home .bgvideo {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100vw;
@@ -683,7 +734,9 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  opacity: 0.8;
+  opacity: 1;
+  -webkit-transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
 }
 
 .landing-section-home .flex-container {
@@ -698,9 +751,15 @@ body {
 }
 
 .landing-section-home .flex-container .flex-item h1 {
-  font-size: 5.5em;
+  font-size: 9vw;
   font-weight: 800;
   line-height: 1em;
+}
+
+@media only screen and (max-width: 760px) {
+  .landing-section-home .flex-container .flex-item h1 {
+    font-size: 14vw;
+  }
 }
 
 .landing-section-home .flex-container .flex-item h1 span {
@@ -749,6 +808,16 @@ body {
   transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
+.product-section-er .flex-container .flex-item .bt-er {
+  background: #c6c6c659;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.product-section-er .flex-container .flex-item .bt-er::before {
+  background: #EE97AA;
+}
+
 .product-section-abm .flex-container {
   height: 100%;
 }
@@ -779,6 +848,16 @@ body {
   transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
+.product-section-abm .flex-container .flex-item .bt-abm {
+  background: #c6c6c659;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.product-section-abm .flex-container .flex-item .bt-abm::before {
+  background: #BBD1B2;
+}
+
 .product-section-oi .flex-container {
   height: 100%;
 }
@@ -807,6 +886,16 @@ body {
   transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.product-section-oi .flex-container .flex-item .bt-oi {
+  background: #c6c6c659;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.product-section-oi .flex-container .flex-item .bt-oi::before {
+  background: #F9B473;
 }
 
 .color-red {

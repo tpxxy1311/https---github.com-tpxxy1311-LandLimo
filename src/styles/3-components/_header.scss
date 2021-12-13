@@ -1,10 +1,14 @@
 //Fully Responsive Page Header which is show on every page
+
 header{
     z-index: 99;
     position: fixed;
     width: 100vw;
     top: 4vh;
     margin: auto;
+    @include smartphone(){
+        
+    }
     .flex-container{
         width: 90%;
         margin: auto;

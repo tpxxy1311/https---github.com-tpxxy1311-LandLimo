@@ -9,8 +9,8 @@
         position: fixed;
         top: 0;
         left: 0;
-        opacity: 0.8;
-        transition: opacity 3s ease;
+        opacity: 1;
+        transition: opacity 0.1s ease;
     }
     .flex-container{
         justify-content: center;
@@ -18,9 +18,12 @@
         .flex-item{
             height: 100%;
             h1{
-                font-size: 5.5em;
+                font-size: 9vw;
                 font-weight: 800;
                 line-height: 1em;
+                @include smartphone(){
+                    font-size: 14vw;
+                }
                 span{
                     width: 100%;
                     display:block;
@@ -60,7 +63,11 @@
                 }
             }
             .bt-er{
-                
+                background: $transparent_grey;
+                backdrop-filter: blur(10px);
+            }
+            .bt-er::before{
+                background: $secondary_pink;
             }
         }
     }
@@ -91,7 +98,11 @@
                 }
             }
             .bt-abm{
-                
+                background: $transparent_grey;
+                backdrop-filter: blur(10px);
+            }
+            .bt-abm::before{
+                background: $secondary_green;
             }
         }
     }
@@ -122,7 +133,11 @@
                 }
             }
             .bt-oi{
-                
+                background: $transparent_grey;
+                backdrop-filter: blur(10px);
+            }
+            .bt-oi::before{
+                background: $primary_orange;
             }
         }
     }

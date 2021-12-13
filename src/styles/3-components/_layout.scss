@@ -5,7 +5,7 @@ body{
     -moz-user-select: None;
     -webkit-user-select: None;
     user-select: None;
-    cursor: none;
+    cursor: none!important;
 }
 
 .base-section{
@@ -30,6 +30,9 @@ body{
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        @include smartphone(){
+            width: 100%;
+        }
     }
     .combi-item{
         display: flex;
