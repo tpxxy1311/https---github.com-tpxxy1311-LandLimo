@@ -6,6 +6,7 @@
     top:0;
     left:0;
     background-color: $white;
+    background-image: $background-image-loading;
     .flex-container{
         justify-content:center;
         height: 100%;
@@ -20,6 +21,9 @@
             width: 30%;
             @include smartphone(){
                 width: 75%;
+            }
+            @include tablet(){
+                width: 50%;
             }
         }
         .bt-loading{
@@ -52,6 +56,11 @@
             @include smartphone(){
                 width: 90%;
                 margin-bottom: 3%;
+            }
+            @include tablet(){
+                width: 70%;
+                margin-top: 15%;
+                margin-bottom: 2%;
             }
         }
         a{

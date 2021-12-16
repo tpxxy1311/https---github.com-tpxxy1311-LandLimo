@@ -20,7 +20,11 @@ radial-gradient(at 100% 40%, rgba(255, 152, 143, 0.8) 500px,transparent 55%);
 $background-image-abm:   
 radial-gradient(at 100% 49%, #b4d156cb 500px, transparent 70%);
 $background-image-oi:  
-radial-gradient(at 100% 40%, hsla(30,92%,72%,1) 500px, transparent 55%);
+radial-gradient(at 100% 40%, rgba(249, 183, 118, 0.856) 500px, transparent 55%);
+$background-image-loading:  
+radial-gradient(at -10% 0%, hsla(5,100%,79%,0.8) 0, transparent 40%),  
+radial-gradient(at 110% 100%, hsla(75,58%,58%,0.8) 0, transparent 45%),
+radial-gradient(at 110% 40%, rgba(249, 183, 118, 0.856) 0px, transparent 55%);
 
 //Screen Sizes for Media Queries
 $screen-small: 760px;

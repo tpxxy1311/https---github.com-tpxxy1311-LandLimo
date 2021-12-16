@@ -20039,7 +20039,7 @@ function initLoader() {
     setTimeout(function () {
       (0, _jquery.default)('.bt-loading').addClass('bt-ready');
       (0, _jquery.default)('.text-loading').addClass('bt-ready');
-    }, 6000);
+    }, 6700);
   }); //Remove Loading Section on Button Click
 
   (0, _jquery.default)('.bt-loading').on("click", function () {
@@ -20159,7 +20159,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55131" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55065" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

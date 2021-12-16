@@ -627,6 +627,7 @@ body {
   top: 0;
   left: 0;
   background-color: #FFFFFF;
+  background-image: radial-gradient(at -10% 0%, rgba(255, 157, 148, 0.8) 0, transparent 40%), radial-gradient(at 110% 100%, rgba(179, 210, 86, 0.8) 0, transparent 45%), radial-gradient(at 110% 40%, rgba(249, 183, 118, 0.856) 0px, transparent 55%);
 }
 
 .loading-screen .flex-container {
@@ -658,6 +659,12 @@ body {
 @media only screen and (max-width: 760px) {
   .loading-screen .flex-container img {
     width: 75%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 760px) {
+  .loading-screen .flex-container img {
+    width: 50%;
   }
 }
 
@@ -709,6 +716,14 @@ body {
   .loading-screen .flex-container p {
     width: 90%;
     margin-bottom: 3%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 760px) {
+  .loading-screen .flex-container p {
+    width: 70%;
+    margin-top: 15%;
+    margin-bottom: 2%;
   }
 }
 
@@ -907,7 +922,7 @@ body {
 }
 
 .color-orange {
-  background-image: radial-gradient(at 100% 40%, #f9b876 500px, transparent 55%);
+  background-image: radial-gradient(at 100% 40%, rgba(249, 183, 118, 0.856) 500px, transparent 55%);
 }
 
 .in-view .letters {

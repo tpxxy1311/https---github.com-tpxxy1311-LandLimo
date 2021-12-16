@@ -67,7 +67,7 @@ function initLoader(){
     setTimeout(()=>{
       $('.bt-loading').addClass('bt-ready');
       $('.text-loading').addClass('bt-ready');
-    },6000);
+    },6700);
   });
   //Remove Loading Section on Button Click
   $('.bt-loading').on("click", ()=>{
