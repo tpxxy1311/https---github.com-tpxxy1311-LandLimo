@@ -6,19 +6,63 @@ footer{
         width: 90%;
         margin:auto;
         padding: 5% 4%;
+        @include smartphone(){
+            flex-direction: column-reverse;
+            padding: 8% 4%;
+        }
+        @include tablet(){
+            flex-direction: row;
+            padding: 0% 4% 10% 4%;
+            flex-wrap: wrap-reverse;
+        }
         .logo{
             width: 12%;
+            @include smartphone(){
+                width: 100%;
+                display:flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            @include tablet(){
+                width: 100%;
+                display:flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 10%;
+            }
             img{
                 width: 100%;
+                @include smartphone(){
+                    width: 40%;
+                }
+                @include tablet(){
+                    width: 30%;
+                }
             }
             span{
                 font-size: 0.8rem;
+                @include smartphone(){
+                    font-size: 1.3rem;
+                }
+                @include tablet(){
+                    font-size: 1.5rem;
+                }
             }
         }
         .links{
             flex-grow: 0.2;
             display: flex;
             justify-content: space-between;
+            @include smartphone(){
+                width: 100%;
+                flex-grow: 0;
+                font-size: 1.2rem;
+                margin-bottom: 15%;
+            }
+            @include tablet(){
+                flex-grow: 0.3;
+                font-size: 1rem;
+            }
             ul{
                 li:not(:last-child){
                     margin-bottom: 10px;
@@ -26,11 +70,29 @@ footer{
             }
         }
         .contact{
+            @include smartphone(){
+                width: 100%;
+                margin-bottom: 15%;
+            }
+            #text{
+                @include smartphone(){
+                    font-size: 7vw;
+                }
+                @include tablet(){
+                    font-size: 2.5vw;
+                }
+            }
             #mail{
                 margin-top: 10px;
                 a{
                     font-weight: 700;
                     font-size: 1.2rem;
+                    @include smartphone(){
+                        font-size: 8vw;
+                    }
+                    @include tablet(){
+                        font-size: 3vw;
+                    }
                 }
             }
         }

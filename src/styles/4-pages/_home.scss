@@ -42,15 +42,25 @@
 .product-section-er{
     .flex-container{
         height: 100%;
+        @include smartphone(){
+            flex-direction: column-reverse;
+            width: 80%;
+        }
         .flex-item{
-            img{
-                width: 75% ;
+            canvas{
+                position: relative;
+                top: 0;
+                left: 0;
+                display: block;
             }
             .text-box{
                 h2{
                 font-size: 4.5em;
                 font-weight: 800;
                 line-height: 1em;
+                @include smartphone(){
+                    font-size: 14vw;
+                }
                     span{
                         width: 100%;
                         display:block;
@@ -77,15 +87,26 @@
 .product-section-abm{
     .flex-container{
         height: 100%;
+        @include smartphone(){
+            flex-direction: column-reverse;
+            width: 80%;
+        }
         .flex-item{
-            img{
-                width: 75% ;
+            canvas{
+                position: relative;
+                top: 0;
+                left: 0;
+                display: block;
+                
             }
             .text-box{
                 h2{
                     font-size: 4.5em;
                     font-weight: 800;
                     line-height: 1em;
+                    @include smartphone(){
+                        font-size: 14vw;
+                    }
                         span{
                             width: 100%;
                             display:block;
@@ -112,15 +133,25 @@
 .product-section-oi{
     .flex-container{
         height: 100%;
+        @include smartphone(){
+            flex-direction: column-reverse;
+            width: 80%;
+        }
         .flex-item{
-            img{
-                width: 75% ;
+            canvas{
+                position: relative;
+                top: 0;
+                left: 0;
+                display: block;
             }
             .text-box{
                 h2{
                     font-size: 4.5em;
                     font-weight: 800;
                     line-height: 1em;
+                    @include smartphone(){
+                        font-size: 14vw;
+                    }
                         span{
                             width: 100%;
                             display:block;

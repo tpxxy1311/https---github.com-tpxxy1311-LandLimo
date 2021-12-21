@@ -515,16 +515,93 @@ footer .flex-container {
   padding: 5% 4%;
 }
 
+@media only screen and (max-width: 760px) {
+  footer .flex-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    padding: 8% 4%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 760px) {
+  footer .flex-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 0% 4% 10% 4%;
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+  }
+}
+
 footer .flex-container .logo {
   width: 12%;
+}
+
+@media only screen and (max-width: 760px) {
+  footer .flex-container .logo {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 760px) {
+  footer .flex-container .logo {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 10%;
+  }
 }
 
 footer .flex-container .logo img {
   width: 100%;
 }
 
+@media only screen and (max-width: 760px) {
+  footer .flex-container .logo img {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 760px) {
+  footer .flex-container .logo img {
+    width: 30%;
+  }
+}
+
 footer .flex-container .logo span {
   font-size: 0.8rem;
+}
+
+@media only screen and (max-width: 760px) {
+  footer .flex-container .logo span {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 760px) {
+  footer .flex-container .logo span {
+    font-size: 1.5rem;
+  }
 }
 
 footer .flex-container .links {
@@ -539,8 +616,47 @@ footer .flex-container .links {
           justify-content: space-between;
 }
 
+@media only screen and (max-width: 760px) {
+  footer .flex-container .links {
+    width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    font-size: 1.2rem;
+    margin-bottom: 15%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 760px) {
+  footer .flex-container .links {
+    -webkit-box-flex: 0.3;
+        -ms-flex-positive: 0.3;
+            flex-grow: 0.3;
+    font-size: 1rem;
+  }
+}
+
 footer .flex-container .links ul li:not(:last-child) {
   margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 760px) {
+  footer .flex-container .contact {
+    width: 100%;
+    margin-bottom: 15%;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  footer .flex-container .contact #text {
+    font-size: 7vw;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 760px) {
+  footer .flex-container .contact #text {
+    font-size: 2.5vw;
+  }
 }
 
 footer .flex-container .contact #mail {
@@ -550,6 +666,18 @@ footer .flex-container .contact #mail {
 footer .flex-container .contact #mail a {
   font-weight: 700;
   font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 760px) {
+  footer .flex-container .contact #mail a {
+    font-size: 8vw;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 760px) {
+  footer .flex-container .contact #mail a {
+    font-size: 3vw;
+  }
 }
 
 body {
@@ -797,14 +925,33 @@ body {
   height: 100%;
 }
 
-.product-section-er .flex-container .flex-item img {
-  width: 75%;
+@media only screen and (max-width: 760px) {
+  .product-section-er .flex-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    width: 80%;
+  }
+}
+
+.product-section-er .flex-container .flex-item canvas {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
 }
 
 .product-section-er .flex-container .flex-item .text-box h2 {
   font-size: 4.5em;
   font-weight: 800;
   line-height: 1em;
+}
+
+@media only screen and (max-width: 760px) {
+  .product-section-er .flex-container .flex-item .text-box h2 {
+    font-size: 14vw;
+  }
 }
 
 .product-section-er .flex-container .flex-item .text-box h2 span {
@@ -837,14 +984,33 @@ body {
   height: 100%;
 }
 
-.product-section-abm .flex-container .flex-item img {
-  width: 75%;
+@media only screen and (max-width: 760px) {
+  .product-section-abm .flex-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    width: 80%;
+  }
+}
+
+.product-section-abm .flex-container .flex-item canvas {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
 }
 
 .product-section-abm .flex-container .flex-item .text-box h2 {
   font-size: 4.5em;
   font-weight: 800;
   line-height: 1em;
+}
+
+@media only screen and (max-width: 760px) {
+  .product-section-abm .flex-container .flex-item .text-box h2 {
+    font-size: 14vw;
+  }
 }
 
 .product-section-abm .flex-container .flex-item .text-box h2 span {
@@ -877,14 +1043,33 @@ body {
   height: 100%;
 }
 
-.product-section-oi .flex-container .flex-item img {
-  width: 75%;
+@media only screen and (max-width: 760px) {
+  .product-section-oi .flex-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    width: 80%;
+  }
+}
+
+.product-section-oi .flex-container .flex-item canvas {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
 }
 
 .product-section-oi .flex-container .flex-item .text-box h2 {
   font-size: 4.5em;
   font-weight: 800;
   line-height: 1em;
+}
+
+@media only screen and (max-width: 760px) {
+  .product-section-oi .flex-container .flex-item .text-box h2 {
+    font-size: 14vw;
+  }
 }
 
 .product-section-oi .flex-container .flex-item .text-box h2 span {
