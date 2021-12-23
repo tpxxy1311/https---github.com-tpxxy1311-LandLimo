@@ -41248,21 +41248,28 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+/* Bilschirmdimensionen -----------------------------------------------------------------------------------*/
+var sizes = {
+  width: window.innerWidth,
+  height: window.innerHeight
+}; //Red Can for Landing Page
+
 /* Definiert die Zeichenfläche im HTML-File ------------------------------------------------------------------*/
-var canvas = document.querySelector('.webgl-abm');
+
+var canvas_er = document.querySelector('.webgl-er');
 /* Erzeugt die Scene - 3D-Space ------------------------------------------------------------------------------*/
 
-var scene = new THREE.Scene();
+var scene_er = new THREE.Scene();
 /* Lädt die Dose -> GLTF-File --------------------------------------------------------------------------------*/
 
-var canObj;
-var loader = new _GLTFLoader.GLTFLoader();
-loader.load('./scene.gltf', function (gltf) {
+var canObj_er;
+var loader_er = new _GLTFLoader.GLTFLoader();
+loader_er.load('./scene_home_red.gltf', function (gltf) {
   console.log(gltf);
-  canObj = gltf.scene;
-  canObj.scale.set(5, 5, 5);
-  canObj.rotation.y += 1.9;
-  scene.add(canObj);
+  canObj_er = gltf.scene;
+  canObj_er.scale.set(5, 5, 5);
+  canObj_er.rotation.y += 1.9;
+  scene_er.add(canObj_er);
 }, function (xhr) {
   console.log(xhr.loaded / xhr.total * 100 + "% loaded");
 }, function (error) {
@@ -41274,73 +41281,56 @@ loader.load('./scene.gltf', function (gltf) {
 var light = new THREE.DirectionalLight(0xffffff, 2);
 light.position.set(20,20,50); */
 
-var ambientLight = new THREE.AmbientLight(0xffffff);
-var pointLight = new THREE.PointLight(0xffffff);
-pointLight.position.set(20, 50, 50);
-scene.add(pointLight, ambientLight); // /* Erzeugt Weiße Kugeln an zufälliger Position in der Scene ------------------------------------------------*/
-// function addStar(){
-//     const geometry = new THREE.SphereGeometry(0.25, 24, 24);
-//     const material = new THREE.MeshStandardMaterial( { color: 0x000000 } );
-//     const star = new THREE.Mesh( geometry, material );
-//     const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread( 70 ) );
-//     star.position.set(x, y, z);
-//     scene.add(star);
-// }
-// //Erzeugen von 200 Sternen in einem Array
-// Array(200).fill().forEach(addStar);
-
-/* Bilschirmdimensionen -----------------------------------------------------------------------------------*/
-
-var sizes = {
-  width: window.innerWidth,
-  height: window.innerHeight
-};
+var ambientLight_er = new THREE.AmbientLight(0xffffff);
+var pointLight_er = new THREE.PointLight(0xffffff);
+pointLight_er.position.set(20, 50, 50);
+scene_er.add(pointLight_er, ambientLight_er);
 /* Kamera ------------------------------------------------------------------------------------------------*/
 
-var camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000);
-camera.position.set(0, 0, 1);
-scene.add(camera);
+var camera_er = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000);
+camera_er.position.set(0, 0, 1);
+scene_er.add(camera_er);
 /* Renderer ----------------------------------------------------------------------------------------------*/
 
-var renderer = new THREE.WebGLRenderer({
-  canvas: canvas,
+var renderer_er = new THREE.WebGLRenderer({
+  canvas: canvas_er,
   alpha: true
 });
-renderer.setClearColor(0x000000, 0); //Transparenter Hintergrund
+renderer_er.setClearColor(0x000000, 0); //Transparenter Hintergrund
 
-renderer.setSize(sizes.width, sizes.height);
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-renderer.shadowMap.enabled = true;
-renderer.outputEncoding = true;
+renderer_er.setSize(sizes.width, sizes.height);
+renderer_er.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer_er.shadowMap.enabled = true;
+renderer_er.outputEncoding = true;
 /* Controls -> Ermöglichen das Bewegen der Szene ----------------------------------------------------------*/
 
-var controls = new _OrbitControls.OrbitControls(camera, renderer.domElement);
+var controls = new _OrbitControls.OrbitControls(camera_er, renderer_er.domElement);
 controls.enableZoon = false;
 /* Sichert korrekte Darstellung bei rezize ----------------------------------------------------------------*/
 
 window.addEventListener('resize', function () {
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
+  renderer_er.setSize(window.innerWidth, window.innerHeight);
+  camera_er.aspect = window.innerWidth / window.innerHeight;
+  camera_er.updateProjectionMatrix();
 });
 /* Lässt Objekt Rotieren -----------------------------------------------------------------------------------*/
 
-function animate() {
-  return _animate.apply(this, arguments);
+function animate_er() {
+  return _animate_er.apply(this, arguments);
 }
 
-function _animate() {
-  _animate = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+function _animate_er() {
+  _animate_er = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return requestAnimationFrame(animate);
+            return requestAnimationFrame(animate_er);
 
           case 2:
             /* canObj.rotation.y += 0.01; */
-            renderer.render(scene, camera);
+            renderer_er.render(scene_er, camera_er);
 
           case 3:
           case "end":
@@ -41349,10 +41339,190 @@ function _animate() {
       }
     }, _callee);
   }));
-  return _animate.apply(this, arguments);
+  return _animate_er.apply(this, arguments);
 }
 
-animate();
+animate_er(); //Green Can for Landing Page
+
+/* Definiert die Zeichenfläche im HTML-File ------------------------------------------------------------------*/
+
+var canvas_abm = document.querySelector('.webgl-abm');
+/* Erzeugt die Scene - 3D-Space ------------------------------------------------------------------------------*/
+
+var scene_abm = new THREE.Scene();
+/* Lädt die Dose -> GLTF-File --------------------------------------------------------------------------------*/
+
+var canObj_abm;
+var loader_abm = new _GLTFLoader.GLTFLoader();
+loader_er.load('./scene_home_green.gltf', function (gltf) {
+  console.log(gltf);
+  canObj_abm = gltf.scene;
+  canObj_abm.scale.set(5, 5, 5);
+  canObj_abm.rotation.y += 1.9;
+  scene_abm.add(canObj_abm);
+}, function (xhr) {
+  console.log(xhr.loaded / xhr.total * 100 + "% loaded");
+}, function (error) {
+  console.log(error);
+});
+/* Lichter -------------------------------------------------------------------------------------*/
+
+/* 
+var light = new THREE.DirectionalLight(0xffffff, 2);
+light.position.set(20,20,50); */
+
+var ambientLight_abm = new THREE.AmbientLight(0xffffff);
+var pointLight_abm = new THREE.PointLight(0xffffff);
+pointLight_abm.position.set(20, 50, 50);
+scene_abm.add(pointLight_abm, ambientLight_abm);
+/* Kamera ------------------------------------------------------------------------------------------------*/
+
+var camera_abm = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000);
+camera_abm.position.set(0, 0, 1);
+scene_abm.add(camera_abm);
+/* Renderer ----------------------------------------------------------------------------------------------*/
+
+var renderer_abm = new THREE.WebGLRenderer({
+  canvas: canvas_abm,
+  alpha: true
+});
+renderer_abm.setClearColor(0x000000, 0); //Transparenter Hintergrund
+
+renderer_abm.setSize(sizes.width, sizes.height);
+renderer_abm.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer_abm.shadowMap.enabled = true;
+renderer_abm.outputEncoding = true;
+/* Controls -> Ermöglichen das Bewegen der Szene ----------------------------------------------------------*/
+
+var controls_abm = new _OrbitControls.OrbitControls(camera_abm, renderer_abm.domElement);
+controls_abm.enableZoon = false;
+/* Sichert korrekte Darstellung bei rezize ----------------------------------------------------------------*/
+
+window.addEventListener('resize', function () {
+  renderer_abm.setSize(window.innerWidth, window.innerHeight);
+  camera_abm.aspect = window.innerWidth / window.innerHeight;
+  camera_abm.updateProjectionMatrix();
+});
+/* Lässt Objekt Rotieren -----------------------------------------------------------------------------------*/
+
+function animate_abm() {
+  return _animate_abm.apply(this, arguments);
+}
+
+function _animate_abm() {
+  _animate_abm = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return requestAnimationFrame(animate_abm);
+
+          case 2:
+            /* canObj.rotation.y += 0.01; */
+            renderer_abm.render(scene_abm, camera_abm);
+
+          case 3:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+  return _animate_abm.apply(this, arguments);
+}
+
+animate_abm(); //Orange Can for Landing Page
+
+/* Definiert die Zeichenfläche im HTML-File ------------------------------------------------------------------*/
+
+var canvas_oi = document.querySelector('.webgl-oi');
+/* Erzeugt die Scene - 3D-Space ------------------------------------------------------------------------------*/
+
+var scene_oi = new THREE.Scene();
+/* Lädt die Dose -> GLTF-File --------------------------------------------------------------------------------*/
+
+var canObj_oi;
+var loader_er = new _GLTFLoader.GLTFLoader();
+loader_er.load('./scene_home_orange.gltf', function (gltf) {
+  console.log(gltf);
+  canObj_oi = gltf.scene;
+  canObj_oi.scale.set(5, 5, 5);
+  canObj_oi.rotation.y += 1.9;
+  scene_oi.add(canObj_oi);
+}, function (xhr) {
+  console.log(xhr.loaded / xhr.total * 100 + "% loaded");
+}, function (error) {
+  console.log(error);
+});
+/* Lichter -------------------------------------------------------------------------------------*/
+
+/* 
+var light = new THREE.DirectionalLight(0xffffff, 2);
+light.position.set(20,20,50); */
+
+var ambientLight_oi = new THREE.AmbientLight(0xffffff);
+var pointLight_oi = new THREE.PointLight(0xffffff);
+pointLight_oi.position.set(20, 50, 50);
+scene_oi.add(pointLight_oi, ambientLight_oi);
+/* Kamera ------------------------------------------------------------------------------------------------*/
+
+var camera_oi = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000);
+camera_oi.position.set(0, 0, 1);
+scene_oi.add(camera_oi);
+/* Renderer ----------------------------------------------------------------------------------------------*/
+
+var renderer_oi = new THREE.WebGLRenderer({
+  canvas: canvas_oi,
+  alpha: true
+});
+renderer_oi.setClearColor(0x000000, 0); //Transparenter Hintergrund
+
+renderer_oi.setSize(sizes.width, sizes.height);
+renderer_oi.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer_oi.shadowMap.enabled = true;
+renderer_oi.outputEncoding = true;
+/* Controls -> Ermöglichen das Bewegen der Szene ----------------------------------------------------------*/
+
+var controls_oi = new _OrbitControls.OrbitControls(camera_oi, renderer_oi.domElement);
+controls_oi.enableZoon = false;
+/* Sichert korrekte Darstellung bei rezize ----------------------------------------------------------------*/
+
+window.addEventListener('resize', function () {
+  renderer_oi.setSize(window.innerWidth, window.innerHeight);
+  camera_oi.aspect = window.innerWidth / window.innerHeight;
+  camera_oi.updateProjectionMatrix();
+});
+/* Lässt Objekt Rotieren -----------------------------------------------------------------------------------*/
+
+function animate_oi() {
+  return _animate_oi.apply(this, arguments);
+}
+
+function _animate_oi() {
+  _animate_oi = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.next = 2;
+            return requestAnimationFrame(animate_oi);
+
+          case 2:
+            /* canObj.rotation.y += 0.01; */
+            renderer_oi.render(scene_oi, camera_oi);
+
+          case 3:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+  return _animate_oi.apply(this, arguments);
+}
+
+animate_oi();
 /* Positioniert das pointLight bei Cursor-Position -------------------------------------------------------------*/
 
 var pointerX = 0;
@@ -41365,7 +41535,9 @@ document.onmousemove = function (event) {
   pointerY = event.pageY;
   pointerY -= window.innerHeight / 2; //console.log("Y: " + pointerY);
 
-  pointLight.position.set(pointerX, -pointerY, 50);
+  pointLight_er.position.set(pointerX, -pointerY, 50);
+  pointLight_abm.position.set(pointerX, -pointerY, 50);
+  pointLight_oi.position.set(pointerX, -pointerY, 50);
 };
 },{"three":"../node_modules/three/build/three.module.js","three/examples/jsm/loaders/GLTFLoader.js":"../node_modules/three/examples/jsm/loaders/GLTFLoader.js","three/examples/jsm/controls/OrbitControls.js":"../node_modules/three/examples/jsm/controls/OrbitControls.js","regenerator-runtime/runtime":"../node_modules/regenerator-runtime/runtime.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -41395,7 +41567,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50681" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59051" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

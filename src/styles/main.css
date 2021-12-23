@@ -482,27 +482,156 @@ header .flex-container {
           backdrop-filter: blur(10px);
 }
 
+@media only screen and (max-width: 760px) {
+  header .flex-container {
+    background: none;
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+  }
+}
+
 header .flex-container .logo {
   width: 12%;
+}
+
+@media only screen and (max-width: 760px) {
+  header .flex-container .logo {
+    width: 130px;
+  }
 }
 
 header .flex-container .logo img {
   width: 100%;
 }
 
-header .flex-container nav ul {
+@media only screen and (max-width: 760px) {
+  header .flex-container .logo img {
+    width: 130px;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  header .flex-container nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
+header .flex-container nav .menu {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header .flex-container nav ul li:not(:last-child) {
+@media only screen and (max-width: 760px) {
+  header .flex-container nav .menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 100px;
+    font-weight: 500;
+    font-size: 1.8rem;
+    background-color: #c6c6c659;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    position: fixed;
+    right: 8%;
+    top: 3%;
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+  }
+}
+
+header .flex-container nav .menu li:not(:last-child) {
   margin-right: 2.5em;
 }
 
-header .flex-container nav ul li a {
+@media only screen and (max-width: 760px) {
+  header .flex-container nav .menu li:not(:last-child) {
+    margin-bottom: 2.5em;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  header .flex-container nav .menu li {
+    visibility: hidden;
+  }
+}
+
+header .flex-container nav .menu li a {
   font-size: 1em;
+}
+
+@media only screen and (max-width: 760px) {
+  header .flex-container nav .menu li a {
+    width: 100%;
+    display: block;
+    opacity: 0;
+    -webkit-transform: translateY(50%) rotateX(-80deg);
+            transform: translateY(50%) rotateX(-80deg);
+    -webkit-transform-origin: center top;
+            transform-origin: center top;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .menu-open {
+    width: 100vw !important;
+    height: 100vh !important;
+    border-radius: 0px !important;
+    top: 0 !important;
+    right: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .show-list-items {
+    visibility: visible !important;
+  }
+}
+
+.show-links {
+  opacity: 1 !important;
+  -webkit-transform: none !important;
+          transform: none !important;
+}
+
+.menu-item:nth-child(1) .menu-link {
+  -webkit-transition-delay: 1s !important;
+          transition-delay: 1s !important;
+}
+
+.menu-item:nth-child(2) {
+  -webkit-transition-delay: 1.1s !important;
+          transition-delay: 1.1s !important;
+}
+
+.menu-item:nth-child(3) {
+  -webkit-transition-delay: 1.2s !important;
+          transition-delay: 1.2s !important;
+}
+
+.menu-item:nth-child(4) {
+  -webkit-transition-delay: 1.3s !important;
+          transition-delay: 1.3s !important;
 }
 
 footer {
@@ -1140,6 +1269,18 @@ body {
   width: 100%;
 }
 
+@media only screen and (max-width: 760px) {
+  .impress-section .flex-container h1 {
+    font-size: 12vw;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 760px) {
+  .impress-section .flex-container h1 {
+    font-size: 4.5em;
+  }
+}
+
 .impress-section .flex-container .flex-item {
   width: 100%;
   -webkit-box-pack: end;
@@ -1148,8 +1289,36 @@ body {
   margin-top: 7%;
 }
 
+@media only screen and (max-width: 760px) {
+  .impress-section .flex-container .flex-item {
+    margin-top: 15%;
+    margin-bottom: 15%;
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 760px) {
+  .impress-section .flex-container .flex-item {
+    margin-top: 10%;
+    margin-bottom: 15%;
+    font-size: 1.1rem;
+  }
+}
+
 .impress-section .flex-container .flex-item div {
   width: 60%;
+}
+
+@media only screen and (max-width: 760px) {
+  .impress-section .flex-container .flex-item div {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 760px) {
+  .impress-section .flex-container .flex-item div {
+    width: 70%;
+  }
 }
 
 .impress-section .flex-container .flex-item div p {
@@ -1162,46 +1331,6 @@ body {
 }
 
 .impress-section .flex-container .flex-item div:not(:last-child) {
-  margin-bottom: 3%;
-}
-
-.privacy-section .flex-container {
-  padding-top: 15%;
-  padding-left: 4%;
-  padding-right: 4%;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.privacy-section .flex-container h1 {
-  font-weight: 800;
-  font-size: 5.5em;
-  width: 100%;
-  text-align: right;
-}
-
-.privacy-section .flex-container .flex-item {
-  width: 100%;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  margin-top: 7%;
-}
-
-.privacy-section .flex-container .flex-item div {
-  width: 60%;
-}
-
-.privacy-section .flex-container .flex-item div p {
-  line-height: 1.5;
-}
-
-.privacy-section .flex-container .flex-item div h3 {
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-.privacy-section .flex-container .flex-item div:not(:last-child) {
   margin-bottom: 3%;
 }
 /*# sourceMappingURL=main.css.map */

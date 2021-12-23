@@ -1,4 +1,5 @@
-//Impress Page
+//Impress and Privacy Page
+
 .impress-section{
     .flex-container{
         padding-top: 15%;
@@ -9,13 +10,35 @@
             font-weight: 800;
             font-size: 5.5em;
             width: 100%;
+            @include smartphone(){
+                font-size: 12vw;
+            }
+            @include tablet(){
+                font-size: 4.5em;
+            }
         }
         .flex-item{
             width: 100%;
             justify-content: flex-end;
             margin-top: 7%;
+            @include smartphone(){
+                margin-top: 15%;
+                margin-bottom: 15%;
+                font-size: 1.1rem;
+            }
+            @include tablet(){
+                margin-top: 10%;
+                margin-bottom: 15%;
+                font-size: 1.1rem;
+            }
             div{
                 width: 60%;
+                @include smartphone(){
+                    width: 100%;
+                }
+                @include tablet(){
+                    width: 70%;
+                }
                 p{
                     line-height: 1.5;
                 }
@@ -31,36 +54,3 @@
     }
 }
 
-//Privacy Page
-.privacy-section{
-    .flex-container{
-        padding-top: 15%;
-        padding-left: 4%;
-        padding-right: 4%;
-        flex-wrap: wrap;
-        h1{
-            font-weight: 800;
-            font-size: 5.5em;
-            width: 100%;
-            text-align: right;
-        }
-        .flex-item{
-            width: 100%;
-            justify-content: flex-start;
-            margin-top: 7%;
-            div{
-                width: 60%;
-                p{
-                    line-height: 1.5;
-                }
-                h3{
-                    font-weight: 600;
-                    margin-bottom: 5px;
-                }
-            }
-            div:not(:last-child){
-                margin-bottom: 3%;
-            }
-        }
-    }
-}
