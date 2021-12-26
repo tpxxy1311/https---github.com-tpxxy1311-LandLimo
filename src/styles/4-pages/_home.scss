@@ -15,6 +15,7 @@
     .flex-container{
         justify-content: center;
         height: 100%;
+        @include smartphone(){}
         .flex-item{
             height: 100%;
             h1{
@@ -45,6 +46,7 @@
         @include smartphone(){
             flex-direction: column-reverse;
             width: 80%;
+            justify-content: center;
         }
         .flex-item{
             canvas{
@@ -52,6 +54,9 @@
                 top: 0;
                 left: 0;
                 display: block;
+                @include smartphone(){
+                    position: absolute;
+                }
             }
             .text-box{
                 h2{
@@ -90,14 +95,17 @@
         @include smartphone(){
             flex-direction: column-reverse;
             width: 80%;
+            justify-content: center;
         }
         .flex-item{
             canvas{
                 position: relative;
                 top: 0;
                 left: 0;
-                display: block;
-                
+                display: block;  
+                @include smartphone(){
+                    position: absolute;
+                }
             }
             .text-box{
                 h2{
@@ -136,6 +144,7 @@
         @include smartphone(){
             flex-direction: column-reverse;
             width: 80%;
+            justify-content: center;
         }
         .flex-item{
             canvas{
@@ -143,6 +152,9 @@
                 top: 0;
                 left: 0;
                 display: block;
+                @include smartphone(){
+                    position: absolute;
+                }
             }
             .text-box{
                 h2{
@@ -174,15 +186,24 @@
     }
 }
 
-//Background Classes
+//Background Gradient Classes
 .color-red{
     background-image: $background-image-er;
+    @include smartphone(){
+        background-image: $background-image-er-phone; 
+    }
 }
 .color-green{
     background-image: $background-image-abm;
+    @include smartphone(){
+        background-image: $background-image-abm-phone; 
+    }
 }
 .color-orange{
     background-image: $background-image-oi;
+    @include smartphone(){
+        background-image: $background-image-oi-phone; 
+    }
 }
  
 //Text Effect Class

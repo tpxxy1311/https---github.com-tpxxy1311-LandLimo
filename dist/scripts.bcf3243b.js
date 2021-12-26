@@ -20123,8 +20123,9 @@ function initVideoFade() {
 ; //Initialise Mobile Menu
 
 function initMobileMenu() {
-  (0, _jquery.default)('.menu').on("click", function () {
+  (0, _jquery.default)('.hamburger').on("click", function () {
     (0, _jquery.default)('.menu').toggleClass('menu-open');
+    (0, _jquery.default)('.hamburger').toggleClass('open');
     (0, _jquery.default)('.menu-items').toggleClass('show-list-items');
     (0, _jquery.default)('.menu-link').toggleClass('show-links');
   });
@@ -20167,7 +20168,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59016" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61261" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -147,8 +147,9 @@ function initVideoFade(){
 
 //Initialise Mobile Menu
 function initMobileMenu(){
-  $('.menu').on("click", ()=>{
+  $('.hamburger').on("click", ()=>{
     $('.menu').toggleClass('menu-open');
+    $('.hamburger').toggleClass('open');
     $('.menu-items').toggleClass('show-list-items');
     $('.menu-link').toggleClass('show-links');
   });

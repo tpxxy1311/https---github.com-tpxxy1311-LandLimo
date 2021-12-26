@@ -6,6 +6,9 @@
         padding-left: 4%;
         padding-right: 4%;
         flex-wrap: wrap;
+        @include smartphone(){
+            margin-top: 15%;
+        }
         h1{
             font-weight: 800;
             font-size: 5.5em;
