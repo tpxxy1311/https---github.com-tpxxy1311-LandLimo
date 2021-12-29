@@ -3,6 +3,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 import $ from 'jquery';
 import barba from '@barba/core';
 import gsap from 'gsap';
+import {load3d} from './3d';
 
 //Smooth Scrolling
 const scroll = new LocomotiveScroll({
@@ -20,11 +21,15 @@ const scroll = new LocomotiveScroll({
     }
 });
 
-//Barba Hook to update the Cursor and Scroll
+//Barba Hook to update the Cursor and Scroll and load 3d Objects
 barba.hooks.after(() => {
 	scroll.update();
   initCursorHover();
   removeHoverClass();
+  $('.landing-headline').addClass('in-view');
+  load3d();
+  initBackgroundChange();
+  $('.bgvideo').trigger('play');
 });
 
 //Barba Page Transitions
@@ -162,6 +167,7 @@ $(function() {
   initCursor();
   initCursorHover();
   initMobileMenu();
+  load3d();
   initBackgroundChange();
   initVideoFade();
 });

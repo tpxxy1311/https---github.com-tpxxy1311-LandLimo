@@ -1,0 +1,1 @@
+{"version":3,"sources":["scripts/test.js"],"names":["test","alert"],"mappings":";;;;;;;AAAA,IAAMA,IAAI,GAAG,SAAPA,IAAO,GAAK;AACdC,EAAAA,KAAK,CAAC,MAAD,CAAL;AACH,CAFD","file":"test.c9078b0e.js","sourceRoot":"..\\src","sourcesContent":["const test = () =>{\r\n    alert(\"test\");\r\n}\r\n\r\nexport {test}"]}

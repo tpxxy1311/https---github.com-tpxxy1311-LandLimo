@@ -45,7 +45,6 @@
         height: 100%;
         @include smartphone(){
             flex-direction: column-reverse;
-            width: 80%;
             justify-content: center;
         }
         .flex-item{
@@ -94,7 +93,6 @@
         height: 100%;
         @include smartphone(){
             flex-direction: column-reverse;
-            width: 80%;
             justify-content: center;
         }
         .flex-item{
@@ -143,7 +141,6 @@
         height: 100%;
         @include smartphone(){
             flex-direction: column-reverse;
-            width: 80%;
             justify-content: center;
         }
         .flex-item{

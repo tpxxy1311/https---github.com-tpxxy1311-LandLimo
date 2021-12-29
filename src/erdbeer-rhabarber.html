@@ -6,33 +6,89 @@
     <meta name="description" content="Lorem ipsum">
     <meta name="author" content="Tim Peters, Nils Mattmüller, Hochschule Offenburg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="">
-    <title>LandLimo - Erdbeer-Rhabarber</title>
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="./assets/favicons/favicon_er.svg">
+    <title>LandLimo > Erdbeer-Rhabarber</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
-<body>
+<body data-barba="wrapper">
 <!-- Custom Cursor -->
 <div class="cursor"></div>
 <!-- Header -->
 <header>
     <div class="flex-container">
         <div class="logo hoverable">
-           <img src="../src/assets/logos/logo_neutral.svg" alt="Land Limo"/>
+            <a href="index.html">
+                <img src="../src/assets/logos/logo_neutral.svg" alt="Land Limo" class="testimg"/>
+            </a>
         </div>
         <nav>
-            <ul>
-                <li><a class="hoverable">Menu#1</a></li>
-                <li><a class="hoverable">Menu#2</a></li>
-                <li><a class="hoverable">Menu#3</a></li>
-                <li><a class="hoverable">Menu#4</a></li>
+            <ul class="menu">
+                <li class="menu-items"><a class="hoverable menu-link" id="link1">Menu#1</a></li>
+                <li class="menu-items"><a class="hoverable menu-link" id="link2">Menu#2</a></li>
+                <li class="menu-items"><a class="hoverable menu-link" id="link3">Menu#3</a></li>
+                <li class="menu-items"><a class="hoverable menu-link" id="link4">Menu#4</a></li>
             </ul>
         </nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
 </header>
 <!-- LocomotiveScroll Container for Smooth Scrolling -->
 <div data-scroll-container class="scroll-container">
 <!-- Content -->
-
+<div data-barba="container" data-barba-namespace="erdbeer-rhabarber">
+<!-- 3D Can -->
+<canvas class="webgl-er"></canvas>    
+<!-- Landing Section -->
+<section data-scroll-section class="base-section landing-section-er" data-color="red0">
+    <div class="container flex-container">
+        <div class="flex-item">
+            <h1 class="landing-headline">
+                <span class="letters">Erdbeer</span>
+                <span class="letters">Rhabarber</span>
+            </h1>
+        </div>
+    </div>
+</section>
+<!-- Erdbeer Section -->
+<section data-scroll-section class="base-section ingredient-section-erdbeer" data-color="red1">
+    <div class="container flex-container">
+        <div class="flex-item">
+            <h2 data-scroll data-scroll-class="in-view" data-scroll-offset="40%">
+                <span class="letters">Fruchtige</span>
+                <span class="letters">Erdbeeren</span>
+            </h2>
+        </div>
+    </div>
+</section>
+<!-- Rhabarber Section -->
+<section data-scroll-section class="base-section ingredient-section-rhabarber" data-color="red2">
+    <div class="container flex-container">
+        <div class="flex-item">
+            <h2 data-scroll data-scroll-class="in-view" data-scroll-offset="40%">
+                <span class="letters">Frischer</span>
+                <span class="letters">Rhabarber</span>
+            </h2>
+        </div>
+    </div>
+</section>
+<!-- Info Section -->
+<section data-scroll-section class="base-section info-section-er" data-color="red3">
+    <div class="container flex-container">
+        <div class="flex-item">
+            <p>
+            Ein fruchtig prickelndes Geschmackserlebnis bietet
+            die Kombination aus dem Geschmack süßer Erdbeeren und säuerlich frischem Rhabarber. 
+            Die perfekte perlende Mischung aus herber Säure und feiner Süße.
+            </p>
+        </div>
+    </div>
+</section>
 <!-- Footer -->
 <section data-scroll-section>
     <footer>
@@ -60,11 +116,12 @@
             </div>
             <div class="contact">
                 <p id="text">Bei weiteren Fragen <ion-icon name="chevron-down-outline" style="vertical-align: middle;"></ion-icon></p>
-                <p id="mail"><a class="hoverable">loremipsum@mail.com</a></p>
+                <p id="mail"><a class="hoverable">info@landlimo.com</a></p>
             </div>
         </div>
     </footer>
 </section>
+</div>
 </div>
 <!-- Scripts -->   
 <script src='.././src/scripts/index.js'></script>

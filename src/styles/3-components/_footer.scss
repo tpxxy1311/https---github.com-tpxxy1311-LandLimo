@@ -58,6 +58,9 @@ footer{
                 flex-grow: 0;
                 font-size: 1.2rem;
                 margin-bottom: 15%;
+                ul:last-child{
+                    display: none;
+                }
             }
             @include tablet(){
                 flex-grow: 0.3;

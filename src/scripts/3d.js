@@ -4,6 +4,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import 'regenerator-runtime/runtime';
 
+const load3d = ()=>{
 /* Bilschirmdimensionen -----------------------------------------------------------------------------------*/
 var sizes = {
     width: window.innerWidth,
@@ -236,3 +237,7 @@ document.onmousemove = function(event) {
     pointLight_abm.position.set(pointerX,-pointerY,50);
     pointLight_oi.position.set(pointerX,-pointerY,50);
 }
+
+}
+
+export {load3d};
