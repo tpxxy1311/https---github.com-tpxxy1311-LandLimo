@@ -5,6 +5,8 @@ import barba from '@barba/core';
 import gsap from 'gsap';
 import {load3d} from './3d';
 
+
+
 //Smooth Scrolling
 const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
@@ -64,25 +66,42 @@ const fadeOut = (container) => {
 	return gsap.to(container, {autoAlpha: 0, duration:1.5});
 }
 
+const hideLoadingElements = () =>{
+  gsap.to('.text-loading', {opacity: 0, duration: 0.7});
+  gsap.to('.sound-link', {opacity: 0, duration: 0.3, delay:0.9});
+  gsap.to('.bt-loading', {opacity: 0, duration: 0.2, delay:0.3});
+  gsap.to('.loading-screen', {opacity: 0, duration:0.2, delay:1.3});
+  removeHoverClass();
+}
+const showLoadingElements = () =>{
+  gsap.to('.text-loading', {opacity: 1, duration: 0.3, delay:0.8});
+  gsap.to('.sound-link', {opacity: 1, duration: 0.3, delay:1.2});
+  gsap.to('.bt-loading', {opacity: 1, translateY:0, rotateX:0, duration: 0.3});
+}
+const fadeInVideo = () =>{
+  gsap.from('.bgvideo', { filter:"blur(5px)", duartion:0.3, delay:2});
+}
+
 //Initialise Loading Screen
-function initLoader(){
   //Show Button if all Assests are loaded
   $(window).on("load",()=>{
     setTimeout(()=>{
-      $('.bt-loading').addClass('bt-ready');
-      $('.text-loading').addClass('bt-ready');
+      showLoadingElements();
     },6700);
   });
   //Remove Loading Section on Button Click
   $('.bt-loading').on("click", ()=>{
-    $('.loading-screen').addClass('remove');
-    removeHoverClass();
+    hideLoadingElements();
+    setTimeout(()=>{
+      $('.loading-screen').addClass('remove');
+    },3000);
+    fadeInVideo();
     //Add Effect Class to the Headline on Landing Page
     setTimeout(()=>{
       $('.landing-headline').addClass('in-view');
-    },1000);
+    },3000);
   })
-}
+
 
 //Initialise Custom Cursor
 function initCursor(){
@@ -163,7 +182,6 @@ function initMobileMenu(){
 
 //Run all functions when Document is ready
 $(function() {
-  initLoader();
   initCursor();
   initCursorHover();
   initMobileMenu();

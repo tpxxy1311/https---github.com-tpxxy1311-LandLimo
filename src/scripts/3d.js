@@ -59,8 +59,8 @@ renderer_er.shadowMap.enabled = true;
 renderer_er.outputEncoding = true;
 
 /* Controls -> Ermöglichen das Bewegen der Szene ----------------------------------------------------------*/
-const controls = new OrbitControls(camera_er, renderer_er.domElement);
-controls.enableZoon = false;
+// const controls = new OrbitControls(camera_er, renderer_er.domElement);
+// controls.enableZoon = false;
 
 /* Sichert korrekte Darstellung bei rezize ----------------------------------------------------------------*/
 window.addEventListener('resize', () => {
@@ -130,8 +130,8 @@ renderer_abm.outputEncoding = true;
 
 
 /* Controls -> Ermöglichen das Bewegen der Szene ----------------------------------------------------------*/
-const controls_abm = new OrbitControls(camera_abm, renderer_abm.domElement);
-controls_abm.enableZoon = false;
+// const controls_abm = new OrbitControls(camera_abm, renderer_abm.domElement);
+// controls_abm.enableZoon = false;
 
 
 /* Sichert korrekte Darstellung bei rezize ----------------------------------------------------------------*/
@@ -203,8 +203,8 @@ renderer_oi.outputEncoding = true;
 
 
 /* Controls -> Ermöglichen das Bewegen der Szene ----------------------------------------------------------*/
-const controls_oi = new OrbitControls(camera_oi, renderer_oi.domElement);
-controls_oi.enableZoon = false;
+// const controls_oi = new OrbitControls(camera_oi, renderer_oi.domElement);
+// controls_oi.enableZoon = false;
 
 
 /* Sichert korrekte Darstellung bei rezize ----------------------------------------------------------------*/

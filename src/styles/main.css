@@ -1031,8 +1031,6 @@ body {
   opacity: 0;
   -webkit-transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -webkit-transition-delay: 0.8s;
-          transition-delay: 0.8s;
 }
 
 @media only screen and (max-width: 760px) {
@@ -1056,8 +1054,6 @@ body {
   opacity: 0;
   -webkit-transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -webkit-transition-delay: 1.2s;
-          transition-delay: 1.2s;
 }
 
 .remove {
@@ -1524,11 +1520,11 @@ body {
 }
 
 .color-red1 {
-  background-image: radial-gradient(at 110% 0%, rgba(255, 152, 143, 0.8) 500px, transparent 55%);
+  background-image: radial-gradient(at 0% 40%, #ee97aab7 500px, transparent 55%);
 }
 
 .color-red2 {
-  background-image: radial-gradient(at 0% 40%, #ee97aab7 500px, transparent 55%);
+  background-image: radial-gradient(at 100% 0%, rgba(255, 157, 148, 0.8) 0, transparent 40%);
 }
 
 .color-red3 {

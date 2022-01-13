@@ -61147,9 +61147,9 @@ var load3d = function load3d() {
   renderer_er.shadowMap.enabled = true;
   renderer_er.outputEncoding = true;
   /* Controls -> Ermöglichen das Bewegen der Szene ----------------------------------------------------------*/
+  // const controls = new OrbitControls(camera_er, renderer_er.domElement);
+  // controls.enableZoon = false;
 
-  var controls = new _OrbitControls.OrbitControls(camera_er, renderer_er.domElement);
-  controls.enableZoon = false;
   /* Sichert korrekte Darstellung bei rezize ----------------------------------------------------------------*/
 
   window.addEventListener('resize', function () {
@@ -61237,9 +61237,9 @@ var load3d = function load3d() {
   renderer_abm.shadowMap.enabled = true;
   renderer_abm.outputEncoding = true;
   /* Controls -> Ermöglichen das Bewegen der Szene ----------------------------------------------------------*/
+  // const controls_abm = new OrbitControls(camera_abm, renderer_abm.domElement);
+  // controls_abm.enableZoon = false;
 
-  var controls_abm = new _OrbitControls.OrbitControls(camera_abm, renderer_abm.domElement);
-  controls_abm.enableZoon = false;
   /* Sichert korrekte Darstellung bei rezize ----------------------------------------------------------------*/
 
   window.addEventListener('resize', function () {
@@ -61327,9 +61327,9 @@ var load3d = function load3d() {
   renderer_oi.shadowMap.enabled = true;
   renderer_oi.outputEncoding = true;
   /* Controls -> Ermöglichen das Bewegen der Szene ----------------------------------------------------------*/
+  // const controls_oi = new OrbitControls(camera_oi, renderer_oi.domElement);
+  // controls_oi.enableZoon = false;
 
-  var controls_oi = new _OrbitControls.OrbitControls(camera_oi, renderer_oi.domElement);
-  controls_oi.enableZoon = false;
   /* Sichert korrekte Darstellung bei rezize ----------------------------------------------------------------*/
 
   window.addEventListener('resize', function () {
@@ -61467,28 +61467,83 @@ var fadeOut = function fadeOut(container) {
     autoAlpha: 0,
     duration: 1.5
   });
-}; //Initialise Loading Screen
+};
 
-
-function initLoader() {
-  //Show Button if all Assests are loaded
-  (0, _jquery.default)(window).on("load", function () {
-    setTimeout(function () {
-      (0, _jquery.default)('.bt-loading').addClass('bt-ready');
-      (0, _jquery.default)('.text-loading').addClass('bt-ready');
-    }, 6700);
-  }); //Remove Loading Section on Button Click
-
-  (0, _jquery.default)('.bt-loading').on("click", function () {
-    (0, _jquery.default)('.loading-screen').addClass('remove');
-    removeHoverClass(); //Add Effect Class to the Headline on Landing Page
-
-    setTimeout(function () {
-      (0, _jquery.default)('.landing-headline').addClass('in-view');
-    }, 1000);
+var hideLoadingElements = function hideLoadingElements() {
+  _gsap.default.to('.text-loading', {
+    opacity: 0,
+    duration: 0.7
   });
-} //Initialise Custom Cursor
 
+  _gsap.default.to('.sound-link', {
+    opacity: 0,
+    duration: 0.3,
+    delay: 0.9
+  });
+
+  _gsap.default.to('.bt-loading', {
+    opacity: 0,
+    duration: 0.2,
+    delay: 0.3
+  });
+
+  _gsap.default.to('.loading-screen', {
+    opacity: 0,
+    duration: 0.2,
+    delay: 1.3
+  });
+
+  removeHoverClass();
+};
+
+var showLoadingElements = function showLoadingElements() {
+  _gsap.default.to('.text-loading', {
+    opacity: 1,
+    duration: 0.3,
+    delay: 0.8
+  });
+
+  _gsap.default.to('.sound-link', {
+    opacity: 1,
+    duration: 0.3,
+    delay: 1.2
+  });
+
+  _gsap.default.to('.bt-loading', {
+    opacity: 1,
+    translateY: 0,
+    rotateX: 0,
+    duration: 0.3
+  });
+};
+
+var fadeInVideo = function fadeInVideo() {
+  _gsap.default.from('.bgvideo', {
+    filter: "blur(5px)",
+    duartion: 0.3,
+    delay: 2
+  });
+}; //Initialise Loading Screen
+//Show Button if all Assests are loaded
+
+
+(0, _jquery.default)(window).on("load", function () {
+  setTimeout(function () {
+    showLoadingElements();
+  }, 6700);
+}); //Remove Loading Section on Button Click
+
+(0, _jquery.default)('.bt-loading').on("click", function () {
+  hideLoadingElements();
+  setTimeout(function () {
+    (0, _jquery.default)('.loading-screen').addClass('remove');
+  }, 3000);
+  fadeInVideo(); //Add Effect Class to the Headline on Landing Page
+
+  setTimeout(function () {
+    (0, _jquery.default)('.landing-headline').addClass('in-view');
+  }, 3000);
+}); //Initialise Custom Cursor
 
 function initCursor() {
   (0, _jquery.default)(document).on("mousemove", function (e) {
@@ -61570,7 +61625,6 @@ function initMobileMenu() {
 
 
 (0, _jquery.default)(function () {
-  initLoader();
   initCursor();
   initCursorHover();
   initMobileMenu();
@@ -61606,7 +61660,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53756" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62535" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

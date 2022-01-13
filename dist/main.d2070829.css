@@ -144,70 +144,70 @@ html.has-scroll-dragging {
 
 @font-face {
   font-family: "Poppins";
-  src: url("/17164702736484823c89a4b24d136a6f.ttf") format("truetype");
+  src: url("/Poppins-Thin.4d136a6f.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Poppins";
-  src: url("/e41d5491fce63550aa19baa73f546472.ttf") format("truetype");
+  src: url("/Poppins-ExtraLight.3f546472.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Poppins";
-  src: url("/2ca9b7233ed7c806d8a5423dcc447e90.ttf") format("truetype");
+  src: url("/Poppins-Light.cc447e90.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Poppins";
-  src: url("/87f08773b58e2156c36a1a0e3d15a542.ttf") format("truetype");
+  src: url("/Poppins-Regular.3d15a542.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Poppins";
-  src: url("/564bd704da53d02775b266ad46ec8fc9.ttf") format("truetype");
+  src: url("/Poppins-Medium.46ec8fc9.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Poppins";
-  src: url("/3237d5c55f24797d3bc1f035264af2ff.ttf") format("truetype");
+  src: url("/Poppins-SemiBold.264af2ff.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Poppins";
-  src: url("/e1e4e0d3653ac3b58220ef1a452c766e.ttf") format("truetype");
+  src: url("/Poppins-Bold.452c766e.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Poppins";
-  src: url("/0a9dfd514bbd405bca0cfb41a3747d9c.ttf") format("truetype");
+  src: url("/Poppins-ExtraBold.a3747d9c.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Poppins";
-  src: url("/80f36003a799caab9b7d14bf5a9feb65.ttf") format("truetype");
+  src: url("/Poppins-Black.5a9feb65.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Typographica";
-  src: url("/6fb25837037a588b171a0bd02a0aabb0.ttf") format("truetype");
+  src: url("/Typographica.2a0aabb0.ttf") format("truetype");
   font-style: normal;
 }
 
@@ -1031,8 +1031,6 @@ body {
   opacity: 0;
   -webkit-transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -webkit-transition-delay: 0.8s;
-          transition-delay: 0.8s;
 }
 
 @media only screen and (max-width: 760px) {
@@ -1056,8 +1054,6 @@ body {
   opacity: 0;
   -webkit-transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -webkit-transition-delay: 1.2s;
-          transition-delay: 1.2s;
 }
 
 .remove {
@@ -1524,11 +1520,11 @@ body {
 }
 
 .color-red1 {
-  background-image: radial-gradient(at 110% 0%, rgba(255, 152, 143, 0.8) 500px, transparent 55%);
+  background-image: radial-gradient(at 0% 40%, #ee97aab7 500px, transparent 55%);
 }
 
 .color-red2 {
-  background-image: radial-gradient(at 0% 40%, #ee97aab7 500px, transparent 55%);
+  background-image: radial-gradient(at 100% 0%, rgba(255, 157, 148, 0.8) 0, transparent 40%);
 }
 
 .color-red3 {
