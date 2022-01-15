@@ -8,7 +8,7 @@ header{
     .flex-container{
         width: 90%;
         margin: auto;
-        padding: 1% 4%;
+        padding: 1.5% 4%;
         border-radius: 50px;
         background-color: $transparent_grey;
         backdrop-filter: blur(10px);
@@ -22,7 +22,9 @@ header{
                 width: 130px
             }
             img{
-                width: 100%;
+                width: 13%;
+                position: absolute;
+                top:15%;
                 @include smartphone(){
                     width: 130px
                 }

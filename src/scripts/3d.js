@@ -1,7 +1,6 @@
 //Import Modules
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import 'regenerator-runtime/runtime';
 
 const load3d = ()=>{
@@ -37,10 +36,12 @@ loader_er.load('./scene_home_red.gltf', function(gltf){
 /* 
 var light = new THREE.DirectionalLight(0xffffff, 2);
 light.position.set(20,20,50); */
-const ambientLight_er = new THREE.AmbientLight(0xffffff);
-var pointLight_er = new THREE.PointLight(0xffffff);
+var ambientLight_er = new THREE.AmbientLight(0xffffff);
+var pointLight_er = new THREE.SpotLight(0xffffff);
 pointLight_er.position.set(20,50,50);
+ambientLight_er.position.set(20,50,50);
 scene_er.add(pointLight_er, ambientLight_er);
+
 
 /* Kamera ------------------------------------------------------------------------------------------------*/
 var camera_er = new THREE.PerspectiveCamera(75, sizes.width/sizes.height, 0.1, 1000);
@@ -72,7 +73,7 @@ window.addEventListener('resize', () => {
 /* Lässt Objekt Rotieren -----------------------------------------------------------------------------------*/
 async function animate_er() {
     await requestAnimationFrame( animate_er );
-    /* canObj.rotation.y += 0.01; */
+    //canObj_er.rotation.y += 0.01; 
     renderer_er.render( scene_er, camera_er);
 }
 animate_er();
@@ -107,7 +108,7 @@ var light = new THREE.DirectionalLight(0xffffff, 2);
 light.position.set(20,20,50); */
 const ambientLight_abm = new THREE.AmbientLight(0xffffff);
 var pointLight_abm = new THREE.PointLight(0xffffff);
-pointLight_abm.position.set(20,50,50);
+pointLight_abm.position.set(50,50,50);
 scene_abm.add(pointLight_abm, ambientLight_abm);
 
 
@@ -237,6 +238,51 @@ document.onmousemove = function(event) {
     pointLight_abm.position.set(pointerX,-pointerY,50);
     pointLight_oi.position.set(pointerX,-pointerY,50);
 }
+
+/**
+ * Animate
+ */
+ document.getElementById('product-section-er').addEventListener('mousemove', onDocumentMouseMove);
+
+ let mouseX = 0;
+ let mouseY = 0;
+ 
+ let targetX = 0;
+ let targetY = 0;
+ 
+ const windowX = window.innerWidth / 2;
+ const windowY = window.innerHeight / 2;
+
+function onDocumentMouseMove (event){
+    mouseX = (event.clientX - windowX);
+    mouseY = (event.clientY - windowY);
+
+
+
+
+const clock = new THREE.Clock()
+
+
+
+    targetX= mouseX * .001
+    targetY= mouseY * .001
+    const elapsedTime = clock.getElapsedTime()
+
+    // Update objects
+    canObj_er.rotation.y = 0.5 * elapsedTime
+    canObj_er.rotation.y += 6 * (targetX-canObj_er.rotation.y)
+    canObj_er.rotation.x += .5 * (targetY-canObj_er.rotation.x)
+    canObj_er.position.z += -.25 * (targetY-canObj_er.rotation.x)
+    // Update Orbital Controls
+    // controls.update()
+
+    // Render
+    renderer_er.render(scene_er, camera_er)
+
+    // Call tick again on the next frame
+    window.requestAnimationFrame(tick)
+}
+
 
 }
 
