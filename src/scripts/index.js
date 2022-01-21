@@ -7,16 +7,16 @@ import {load3d} from './3d';
 
 //Sound on or off
 var sound=true;
-//Define Sounds
+//Define Click Sounds 
 const clicksound1 = document.createElement("audio");
 clicksound1.src = "can_opening.ogg";
 clicksound1.crossOrigin='anonymous';
 const clicksound2 = document.createElement("audio");
 clicksound2.src = "bubble_sound.mp3";
 clicksound2.crossOrigin='anonymous';
-const backgroundsound_er = document.createElement("audio");
-backgroundsound_er.src = "er_ambient.mp3";
-backgroundsound_er.crossOrigin='anonymous'; 
+// const $backgroundsound_er = document.createElement("audio");
+// $backgroundsound_er.src = "er_ambient.mp3";
+// $backgroundsound_er.crossOrigin='anonymous'; 
 
 
 //Smooth Scrolling
@@ -41,9 +41,9 @@ barba.hooks.after(() => {
   initCursorHover();
   removeHoverClass();
   $('.landing-headline').addClass('in-view');
-  load3d();
   initBackgroundChange();
   $('.bgvideo').trigger('play');
+  load3d();
 });
 
 //Barba Page Transitions
@@ -57,7 +57,7 @@ barba.init({
 			},
 			leave: ({ current }) => fadeOut(current.container),
 			enter: ({ next }) => {
-				fadeIn(next.container)
+				fadeIn(next.container);
 			},
 			beforeEnter() {
         //Set Page Scroll to the top
@@ -68,11 +68,46 @@ barba.init({
   //Play Background Audio Depending on Namespace
   views: [{
     namespace: 'erdbeer-rhabarber',
+    beforeEnter() {
+      $('body').addClass("er");
+    },
     afterEnter() {
-      backgroundsound_er.play();
+      if(sound==true){
+        //Play Sound with delay and Click Animation first
+        setTimeout(()=>{
+         $('.bg-sound-er').get(0).play();
+        },2000); 
+      }
     },
     beforeLeave() {
-      backgroundsound_er.pause(); 
+      if(sound==true){
+        //Fade out sound and then pause it
+        $('.bg-sound-er').animate({volume: 0}, 1000, ()=>{
+          $('.bg-sound-er').pause();
+        });
+      } 
+    }
+  },
+  {
+    namespace: 'apfel-birne-minze',
+    beforeEnter() {
+      $('body').addClass("er");
+    },
+    afterEnter() {
+      if(sound==true){
+        //Play Sound with delay and Click Animation first
+        setTimeout(()=>{
+         $('.bg-sound-er').get(0).play();
+        },2000); 
+      }
+    },
+    beforeLeave() {
+      if(sound==true){
+        //Fade out sound and then pause it
+        $('.bg-sound-er').animate({volume: 0}, 1000, ()=>{
+          $('.bg-sound-er').pause();
+        });
+      } 
     }
   }]
 });
@@ -145,8 +180,6 @@ const fadeInVideo = () =>{
     },3000);
   });
 
-
-
 //Initialise Custom Cursor
 function initCursor(){
   $(document).on("mousemove", (e) => {
@@ -206,6 +239,7 @@ function initVideoFade(){
     var op;
     if (scroll <= checkpoint) {
       op = 1 - scroll/checkpoint;
+      
     } else {
       op = 0;
     }
@@ -226,13 +260,29 @@ function initMobileMenu(){
 //Initialise Sound
 function initClickSounds(){
   $('.bt-sound').on("click", () => {
-    clicksound1.play();
+    if(sound==true){
+      clicksound1.play();
+    }
+    
   });
   $('.logo').on("click", () => {
-    clicksound2.play();
+    if(sound==true){
+      clicksound2.play();
+    }
+  });
+  $('.klick-sound').on("click", () => {
+    if(sound==true){
+      clicksound2.play();
+    }
   });
 }
 
+// //Test
+// function test(){
+//   if($('body').hasClass("er")==true){
+//     alert("Erdbeer");
+//   }
+// }
 
 //Run all functions when Document is ready
 $(function() {
@@ -242,7 +292,7 @@ $(function() {
   load3d();
   initBackgroundChange();
   initVideoFade();
-  if(sound==true){
+  if(sound===true){
     initClickSounds();
   }
 });

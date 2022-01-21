@@ -1,9 +1,5 @@
-//Sorte Erdbeer Rhabarber Sortenseite
+//Sorte Erdbeer Rhabarber 
 
-//3d Can
-.webgl-er{
-    position: fixed;
-}
 //Landing Section
 .landing-section-er{
     .flex-container{
@@ -112,6 +108,23 @@
                     font-size: 5vw;
                     line-height: 1.4em;
                 }
+            }
+        }
+        .can-box{
+            width: 40%;
+            canvas{
+                position: absolute;
+                top: 0;
+                left: 25%;
+                display: block;
+                transform: rotateX(7deg);
+                @include smartphone(){
+                    position: absolute;
+                    left: 0;
+                }
+            }
+            .webgl-abm, .webgl-oi{
+                display: none!important;
             }
         }
     }

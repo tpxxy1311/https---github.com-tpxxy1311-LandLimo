@@ -1,0 +1,160 @@
+//Sorte Apfel Birne Minze
+
+//Landing Section
+.landing-section-abm{
+    .flex-container{
+        justify-content: center;
+        height: 100%;
+        .flex-item{
+            height: 100%;
+            h1{
+                font-size: 9vw;
+                font-weight: 800;
+                line-height: 1em;
+                @include smartphone(){
+                    font-size: 14vw;
+                }
+                span{
+                    width: 100%;
+                    display:block;
+                    opacity:0;
+                    transform: translateY(50%) rotateX(-80deg);
+                    transform-origin: center top;
+                    transform-style: preserve-3d;
+                    transition: opacity 0.8s cubic-bezier(.215,.61,.355,1),transform 1.2s cubic-bezier(.215,.61,.355,1);
+                }
+            }
+        }
+    }
+}
+
+//Erdbeer Section
+.ingredient-section-apfel{
+    .flex-container{
+        justify-content: center;
+        height: 100%;
+        .flex-item{
+            h2{
+                font-size: 4.5em;
+                font-weight: 800;
+                line-height: 1em;
+                text-align: center;
+                @include smartphone(){
+                    font-size: 14vw;
+                }
+                span{
+                    width: 100%;
+                        display:block;
+                        opacity:0;
+                        transform: translateY(50%) rotateX(-80deg);
+                        transform-origin: center top;
+                        transform-style: preserve-3d;
+                        transition: opacity 0.8s cubic-bezier(.215,.61,.355,1),transform 1.2s cubic-bezier(.215,.61,.355,1);
+                }
+            }
+        }
+    }
+}
+
+//Rhabarber Section
+.ingredient-section-birne{
+    .flex-container{
+        justify-content: center;
+        height: 100%;
+        .flex-item{
+            h2{
+                font-size: 4.5em;
+                font-weight: 800;
+                line-height: 1em;
+                text-align: center;
+                @include smartphone(){
+                    font-size: 14vw;
+                }
+                span{
+                    width: 100%;
+                        display:block;
+                        opacity:0;
+                        transform: translateY(50%) rotateX(-80deg);
+                        transform-origin: center top;
+                        transform-style: preserve-3d;
+                        transition: opacity 0.8s cubic-bezier(.215,.61,.355,1),transform 1.2s cubic-bezier(.215,.61,.355,1);
+                }
+            }
+        }
+    }
+}
+
+//Info Section
+.info-section-abm{
+    .flex-container{
+        justify-content: flex-start;
+        height: 100%;
+        @include smartphone(){
+            justify-content: center;
+        }
+        .flex-item{
+            width: 60%;
+            margin-left: 4%;
+            @include smartphone(){
+                width: 90%;
+                margin-left: 0;
+            }
+            p{
+                font-size: 1.5rem;
+                font-weight: 500;
+                line-height: 1.6em;
+                @include smartphone(){
+                    text-align: left;
+                    font-size: 5vw;
+                    line-height: 1.4em;
+                }
+            }
+        }
+        .can-box{
+            width: 40%;
+            canvas{
+                position: absolute;
+                top: 0;
+                left: 25%;
+                display: block;
+                transform: rotateX(7deg);
+                @include smartphone(){
+                    position: absolute;
+                    left: 0;
+                }
+            }
+            .webgl-er, .webgl-oi{
+                display: none!important;
+            }
+        }
+    }
+}
+
+//Background Gradient Classes
+.color-green0{
+    background-image: $background-image-prod-er-0;
+    @include smartphone(){
+         
+    }
+}
+
+.color-green1{
+    background-image: $background-image-prod-er-1;
+    @include smartphone(){
+        
+    }
+}
+
+.color-green2{
+    background-image: $background-image-prod-er-2;
+    @include smartphone(){
+        
+    }
+}
+
+.color-green3{
+    background-image: $background-image-prod-er-0;
+    @include smartphone(){
+        
+    }
+}

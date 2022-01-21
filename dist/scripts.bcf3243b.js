@@ -60239,100 +60239,104 @@ var load3d = function load3d() {
   var sizes = {
     width: window.innerWidth,
     height: window.innerHeight
-  }; //Red Can for Landing Page
+  }; //Red Can for Landing and Product Page
 
-  /* Definiert die Zeichenfläche im HTML-File ------------------------------------------------------------------*/
+  if (document.body.classList.contains("er") == true) {
+    /* Definiert die Zeichenfläche im HTML-File ------------------------------------------------------------------*/
+    var canvas_er = document.querySelector('.webgl-er');
+    /* Erzeugt die Scene - 3D-Space ------------------------------------------------------------------------------*/
 
-  var canvas_er = document.querySelector('.webgl-er');
-  /* Erzeugt die Scene - 3D-Space ------------------------------------------------------------------------------*/
+    var scene_er = new THREE.Scene();
+    /* Lädt die Dose -> GLTF-File --------------------------------------------------------------------------------*/
 
-  var scene_er = new THREE.Scene();
-  /* Lädt die Dose -> GLTF-File --------------------------------------------------------------------------------*/
+    var canObj_er;
+    var loader_er = new _GLTFLoader.GLTFLoader();
+    loader_er.load('./scene_home_red.gltf', function (gltf) {
+      console.log(gltf);
+      canObj_er = gltf.scene;
+      canObj_er.scale.set(5, 5, 5);
+      canObj_er.rotation.y += 1.9;
+      scene_er.add(canObj_er);
+    }, function (xhr) {
+      console.log(xhr.loaded / xhr.total * 100 + "% loaded");
+    }, function (error) {
+      console.log(error);
+    });
+    /* Lichter -------------------------------------------------------------------------------------*/
 
-  var canObj_er;
-  var loader_er = new _GLTFLoader.GLTFLoader();
-  loader_er.load('./scene_home_red.gltf', function (gltf) {
-    console.log(gltf);
-    canObj_er = gltf.scene;
-    canObj_er.scale.set(5, 5, 5);
-    canObj_er.rotation.y += 1.9;
-    scene_er.add(canObj_er);
-  }, function (xhr) {
-    console.log(xhr.loaded / xhr.total * 100 + "% loaded");
-  }, function (error) {
-    console.log(error);
-  });
-  /* Lichter -------------------------------------------------------------------------------------*/
+    /* 
+    var light = new THREE.DirectionalLight(0xffffff, 2);
+    light.position.set(20,20,50); */
 
-  /* 
-  var light = new THREE.DirectionalLight(0xffffff, 2);
-  light.position.set(20,20,50); */
+    var ambientLight_er = new THREE.AmbientLight(0xffffff);
+    var pointLight_er = new THREE.SpotLight(0xffffff);
+    pointLight_er.position.set(40, 50, 50);
+    pointLight_er.intensity = 0.3;
+    ambientLight_er.position.set(20, 20, 20);
+    ambientLight_er.intensity = 2.5;
+    scene_er.add(pointLight_er, ambientLight_er);
+    /* Kamera ------------------------------------------------------------------------------------------------*/
 
-  var ambientLight_er = new THREE.AmbientLight(0xffffff);
-  var pointLight_er = new THREE.SpotLight(0xffffff);
-  pointLight_er.position.set(20, 50, 50);
-  ambientLight_er.position.set(20, 50, 50);
-  scene_er.add(pointLight_er, ambientLight_er);
-  /* Kamera ------------------------------------------------------------------------------------------------*/
+    var camera_er = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000);
+    camera_er.position.set(0, 0, 1);
+    scene_er.add(camera_er);
+    /* Renderer ----------------------------------------------------------------------------------------------*/
 
-  var camera_er = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000);
-  camera_er.position.set(0, 0, 1);
-  scene_er.add(camera_er);
-  /* Renderer ----------------------------------------------------------------------------------------------*/
+    var renderer_er = new THREE.WebGLRenderer({
+      canvas: canvas_er,
+      alpha: true
+    });
+    renderer_er.setClearColor(0x000000, 0); //Transparenter Hintergrund
 
-  var renderer_er = new THREE.WebGLRenderer({
-    canvas: canvas_er,
-    alpha: true
-  });
-  renderer_er.setClearColor(0x000000, 0); //Transparenter Hintergrund
+    renderer_er.setSize(sizes.width, sizes.height);
+    renderer_er.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer_er.shadowMap.enabled = true;
+    renderer_er.outputEncoding = true;
+    /* Controls -> Ermöglichen das Bewegen der Szene ----------------------------------------------------------*/
+    // const controls = new OrbitControls(camera_er, renderer_er.domElement);
+    // controls.enableZoon = false;
 
-  renderer_er.setSize(sizes.width, sizes.height);
-  renderer_er.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer_er.shadowMap.enabled = true;
-  renderer_er.outputEncoding = true;
-  /* Controls -> Ermöglichen das Bewegen der Szene ----------------------------------------------------------*/
-  // const controls = new OrbitControls(camera_er, renderer_er.domElement);
-  // controls.enableZoon = false;
+    /* Sichert korrekte Darstellung bei rezize ----------------------------------------------------------------*/
 
-  /* Sichert korrekte Darstellung bei rezize ----------------------------------------------------------------*/
+    window.addEventListener('resize', function () {
+      renderer_er.setSize(window.innerWidth, window.innerHeight);
+      camera_er.aspect = window.innerWidth / window.innerHeight;
+      camera_er.updateProjectionMatrix();
+    });
+    /* Lässt Objekt Rotieren -----------------------------------------------------------------------------------*/
 
-  window.addEventListener('resize', function () {
-    renderer_er.setSize(window.innerWidth, window.innerHeight);
-    camera_er.aspect = window.innerWidth / window.innerHeight;
-    camera_er.updateProjectionMatrix();
-  });
-  /* Lässt Objekt Rotieren -----------------------------------------------------------------------------------*/
+    function animate_er() {
+      return _animate_er.apply(this, arguments);
+    }
 
-  function animate_er() {
-    return _animate_er.apply(this, arguments);
-  }
+    function _animate_er() {
+      _animate_er = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return requestAnimationFrame(animate_er);
 
-  function _animate_er() {
-    _animate_er = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-      return regeneratorRuntime.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              _context.next = 2;
-              return requestAnimationFrame(animate_er);
+              case 2:
+                //canObj_er.rotation.y += 0.01; 
+                renderer_er.render(scene_er, camera_er);
 
-            case 2:
-              //canObj_er.rotation.y += 0.01; 
-              renderer_er.render(scene_er, camera_er);
-
-            case 3:
-            case "end":
-              return _context.stop();
+              case 3:
+              case "end":
+                return _context.stop();
+            }
           }
-        }
-      }, _callee);
-    }));
-    return _animate_er.apply(this, arguments);
-  }
+        }, _callee);
+      }));
+      return _animate_er.apply(this, arguments);
+    }
 
-  animate_er(); //Green Can for Landing Page
+    animate_er();
+  } //Green Can for Landing Page
 
   /* Definiert die Zeichenfläche im HTML-File ------------------------------------------------------------------*/
+
 
   var canvas_abm = document.querySelector('.webgl-abm');
   /* Erzeugt die Scene - 3D-Space ------------------------------------------------------------------------------*/
@@ -60362,6 +60366,9 @@ var load3d = function load3d() {
   var ambientLight_abm = new THREE.AmbientLight(0xffffff);
   var pointLight_abm = new THREE.PointLight(0xffffff);
   pointLight_abm.position.set(50, 50, 50);
+  pointLight_abm.intensity = 0.3;
+  ambientLight_abm.position.set(20, 20, 20);
+  ambientLight_abm.intensity = 2.5;
   scene_abm.add(pointLight_abm, ambientLight_abm);
   /* Kamera ------------------------------------------------------------------------------------------------*/
 
@@ -60452,6 +60459,9 @@ var load3d = function load3d() {
   var ambientLight_oi = new THREE.AmbientLight(0xffffff);
   var pointLight_oi = new THREE.PointLight(0xffffff);
   pointLight_oi.position.set(20, 50, 50);
+  pointLight_oi.intensity = 0.3;
+  ambientLight_oi.position.set(20, 20, 20);
+  ambientLight_oi.intensity = 2.5;
   scene_oi.add(pointLight_oi, ambientLight_oi);
   /* Kamera ------------------------------------------------------------------------------------------------*/
 
@@ -60532,7 +60542,7 @@ var load3d = function load3d() {
    */
 
 
-  document.getElementById('product-section-er').addEventListener('mousemove', onDocumentMouseMove);
+  document.addEventListener('mousemove', onDocumentMouseMove);
   var mouseX = 0;
   var mouseY = 0;
   var targetX = 0;
@@ -60546,18 +60556,29 @@ var load3d = function load3d() {
     var clock = new THREE.Clock();
     targetX = mouseX * .001;
     targetY = mouseY * .001;
-    var elapsedTime = clock.getElapsedTime(); // Update objects
+    var elapsedTime = clock.getElapsedTime(); // Update Red Can
 
     canObj_er.rotation.y = 0.5 * elapsedTime;
     canObj_er.rotation.y += 6 * (targetX - canObj_er.rotation.y);
     canObj_er.rotation.x += .5 * (targetY - canObj_er.rotation.x);
-    canObj_er.position.z += -.25 * (targetY - canObj_er.rotation.x); // Update Orbital Controls
+    canObj_er.position.z += -.25 * (targetY - canObj_er.rotation.x); // Update Green Can
+
+    canObj_abm.rotation.y = 0.5 * elapsedTime;
+    canObj_abm.rotation.y += 6 * (targetX - canObj_abm.rotation.y);
+    canObj_abm.rotation.x += .5 * (targetY - canObj_abm.rotation.x);
+    canObj_abm.position.z += -.25 * (targetY - canObj_abm.rotation.x); // Update Orange Can
+
+    canObj_oi.rotation.y = 0.5 * elapsedTime;
+    canObj_oi.rotation.y += 6 * (targetX - canObj_oi.rotation.y);
+    canObj_oi.rotation.x += .5 * (targetY - canObj_oi.rotation.x);
+    canObj_oi.position.z += -.25 * (targetY - canObj_oi.rotation.x); // Update Orbital Controls
     // controls.update()
     // Render
 
-    renderer_er.render(scene_er, camera_er); // Call tick again on the next frame
-
-    window.requestAnimationFrame(tick);
+    renderer_er.render(scene_er, camera_er);
+    renderer_abm.render(scene_abm, camera_abm);
+    renderer_oi.render(scene_oi, camera_oi); // Call tick again on the next frame
+    //window.requestAnimationFrame(tick)
   }
 };
 
@@ -60579,17 +60600,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 //Import Modules
 //Sound on or off
-var sound = true; //Define Sounds
+var sound = true; //Define Click Sounds 
 
 var clicksound1 = document.createElement("audio");
 clicksound1.src = "can_opening.ogg";
 clicksound1.crossOrigin = 'anonymous';
 var clicksound2 = document.createElement("audio");
 clicksound2.src = "bubble_sound.mp3";
-clicksound2.crossOrigin = 'anonymous';
-var backgroundsound_er = document.createElement("audio");
-backgroundsound_er.src = "er_ambient.mp3";
-backgroundsound_er.crossOrigin = 'anonymous'; //Smooth Scrolling
+clicksound2.crossOrigin = 'anonymous'; // const $backgroundsound_er = document.createElement("audio");
+// $backgroundsound_er.src = "er_ambient.mp3";
+// $backgroundsound_er.crossOrigin='anonymous'; 
+//Smooth Scrolling
 
 var scroll = new _locomotiveScroll.default({
   el: document.querySelector('[data-scroll-container]'),
@@ -60611,9 +60632,9 @@ _core.default.hooks.after(function () {
   initCursorHover();
   removeHoverClass();
   (0, _jquery.default)('.landing-headline').addClass('in-view');
-  (0, _d.load3d)();
   initBackgroundChange();
   (0, _jquery.default)('.bgvideo').trigger('play');
+  (0, _d.load3d)();
 }); //Barba Page Transitions
 
 
@@ -60641,11 +60662,49 @@ _core.default.init({
   //Play Background Audio Depending on Namespace
   views: [{
     namespace: 'erdbeer-rhabarber',
+    beforeEnter: function beforeEnter() {
+      (0, _jquery.default)('body').addClass("er");
+    },
     afterEnter: function afterEnter() {
-      backgroundsound_er.play();
+      if (sound == true) {
+        //Play Sound with delay and Click Animation first
+        setTimeout(function () {
+          (0, _jquery.default)('.bg-sound-er').get(0).play();
+        }, 2000);
+      }
     },
     beforeLeave: function beforeLeave() {
-      backgroundsound_er.pause();
+      if (sound == true) {
+        //Fade out sound and then pause it
+        (0, _jquery.default)('.bg-sound-er').animate({
+          volume: 0
+        }, 1000, function () {
+          (0, _jquery.default)('.bg-sound-er').pause();
+        });
+      }
+    }
+  }, {
+    namespace: 'apfel-birne-minze',
+    beforeEnter: function beforeEnter() {
+      (0, _jquery.default)('body').addClass("er");
+    },
+    afterEnter: function afterEnter() {
+      if (sound == true) {
+        //Play Sound with delay and Click Animation first
+        setTimeout(function () {
+          (0, _jquery.default)('.bg-sound-er').get(0).play();
+        }, 2000);
+      }
+    },
+    beforeLeave: function beforeLeave() {
+      if (sound == true) {
+        //Fade out sound and then pause it
+        (0, _jquery.default)('.bg-sound-er').animate({
+          volume: 0
+        }, 1000, function () {
+          (0, _jquery.default)('.bg-sound-er').pause();
+        });
+      }
     }
   }]
 }); //GSAP Animations
@@ -60848,12 +60907,27 @@ function initMobileMenu() {
 
 function initClickSounds() {
   (0, _jquery.default)('.bt-sound').on("click", function () {
-    clicksound1.play();
+    if (sound == true) {
+      clicksound1.play();
+    }
   });
   (0, _jquery.default)('.logo').on("click", function () {
-    clicksound2.play();
+    if (sound == true) {
+      clicksound2.play();
+    }
   });
-} //Run all functions when Document is ready
+  (0, _jquery.default)('.klick-sound').on("click", function () {
+    if (sound == true) {
+      clicksound2.play();
+    }
+  });
+} // //Test
+// function test(){
+//   if($('body').hasClass("er")==true){
+//     alert("Erdbeer");
+//   }
+// }
+//Run all functions when Document is ready
 
 
 (0, _jquery.default)(function () {
@@ -60864,7 +60938,7 @@ function initClickSounds() {
   initBackgroundChange();
   initVideoFade();
 
-  if (sound == true) {
+  if (sound === true) {
     initClickSounds();
   }
 });
@@ -60896,7 +60970,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53748" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62414" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

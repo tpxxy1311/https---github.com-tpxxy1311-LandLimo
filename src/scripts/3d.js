@@ -10,7 +10,9 @@ var sizes = {
     height: window.innerHeight
 }
 
-//Red Can for Landing Page
+//Red Can for Landing and Product Page
+if(document.body.classList.contains("er")==true){
+
 /* Definiert die Zeichenfläche im HTML-File ------------------------------------------------------------------*/
 var canvas_er = document.querySelector('.webgl-er');
 
@@ -38,8 +40,11 @@ var light = new THREE.DirectionalLight(0xffffff, 2);
 light.position.set(20,20,50); */
 var ambientLight_er = new THREE.AmbientLight(0xffffff);
 var pointLight_er = new THREE.SpotLight(0xffffff);
-pointLight_er.position.set(20,50,50);
-ambientLight_er.position.set(20,50,50);
+pointLight_er.position.set(40,50,50);
+pointLight_er.intensity=0.3;
+
+ambientLight_er.position.set(20,20,20);
+ambientLight_er.intensity=2.5;
 scene_er.add(pointLight_er, ambientLight_er);
 
 
@@ -76,7 +81,9 @@ async function animate_er() {
     //canObj_er.rotation.y += 0.01; 
     renderer_er.render( scene_er, camera_er);
 }
-animate_er();
+animate_er(); 
+}
+
 
 
 //Green Can for Landing Page
@@ -109,6 +116,10 @@ light.position.set(20,20,50); */
 const ambientLight_abm = new THREE.AmbientLight(0xffffff);
 var pointLight_abm = new THREE.PointLight(0xffffff);
 pointLight_abm.position.set(50,50,50);
+pointLight_abm.intensity=0.3;
+
+ambientLight_abm.position.set(20,20,20);
+ambientLight_abm.intensity=2.5;
 scene_abm.add(pointLight_abm, ambientLight_abm);
 
 
@@ -182,6 +193,10 @@ light.position.set(20,20,50); */
 const ambientLight_oi = new THREE.AmbientLight(0xffffff);
 var pointLight_oi = new THREE.PointLight(0xffffff);
 pointLight_oi.position.set(20,50,50);
+pointLight_oi.intensity=0.3;
+
+ambientLight_oi.position.set(20,20,20);
+ambientLight_oi.intensity=2.5;
 scene_oi.add(pointLight_oi, ambientLight_oi);
 
 
@@ -242,45 +257,53 @@ document.onmousemove = function(event) {
 /**
  * Animate
  */
- document.getElementById('product-section-er').addEventListener('mousemove', onDocumentMouseMove);
+ document.addEventListener('mousemove', onDocumentMouseMove);
 
- let mouseX = 0;
- let mouseY = 0;
+let mouseX = 0;
+let mouseY = 0;
  
- let targetX = 0;
- let targetY = 0;
+let targetX = 0;
+let targetY = 0;
  
- const windowX = window.innerWidth / 2;
- const windowY = window.innerHeight / 2;
+const windowX = window.innerWidth / 2;
+const windowY = window.innerHeight / 2;
 
 function onDocumentMouseMove (event){
     mouseX = (event.clientX - windowX);
     mouseY = (event.clientY - windowY);
 
-
-
-
-const clock = new THREE.Clock()
-
-
+    const clock = new THREE.Clock()
 
     targetX= mouseX * .001
     targetY= mouseY * .001
     const elapsedTime = clock.getElapsedTime()
 
-    // Update objects
+    // Update Red Can
     canObj_er.rotation.y = 0.5 * elapsedTime
     canObj_er.rotation.y += 6 * (targetX-canObj_er.rotation.y)
     canObj_er.rotation.x += .5 * (targetY-canObj_er.rotation.x)
     canObj_er.position.z += -.25 * (targetY-canObj_er.rotation.x)
+    // Update Green Can
+    canObj_abm.rotation.y = 0.5 * elapsedTime
+    canObj_abm.rotation.y += 6 * (targetX-canObj_abm.rotation.y)
+    canObj_abm.rotation.x += .5 * (targetY-canObj_abm.rotation.x)
+    canObj_abm.position.z += -.25 * (targetY-canObj_abm.rotation.x)
+    // Update Orange Can
+    canObj_oi.rotation.y = 0.5 * elapsedTime
+    canObj_oi.rotation.y += 6 * (targetX-canObj_oi.rotation.y)
+    canObj_oi.rotation.x += .5 * (targetY-canObj_oi.rotation.x)
+    canObj_oi.position.z += -.25 * (targetY-canObj_oi.rotation.x)
+    
     // Update Orbital Controls
     // controls.update()
 
     // Render
     renderer_er.render(scene_er, camera_er)
+    renderer_abm.render(scene_abm, camera_abm)
+    renderer_oi.render(scene_oi, camera_oi)
 
     // Call tick again on the next frame
-    window.requestAnimationFrame(tick)
+    //window.requestAnimationFrame(tick)
 }
 
 

@@ -19,7 +19,7 @@
     <div class="flex-container">
         <div class="logo hoverable">
             <a href="index.html">
-                <img src="../src/assets/logos/logo_neutral.svg" alt="Land Limo" class="testimg"/>
+                <img src="../src/assets/logos/logo_neutral_animated.svg" alt="Land Limo"/>
             </a>
         </div>
         <nav>
@@ -41,9 +41,7 @@
 <!-- LocomotiveScroll Container for Smooth Scrolling -->
 <div data-scroll-container class="scroll-container">
 <!-- Content -->
-<div data-barba="container" data-barba-namespace="erdbeer-rhabarber">
-<!-- 3D Can -->
-<canvas class="webgl-er"></canvas>    
+<div data-barba="container" data-barba-namespace="erdbeer-rhabarber">    
 <!-- Landing Section -->
 <section data-scroll-section class="base-section landing-section-er" data-color="red0">
     <div class="container flex-container">
@@ -79,7 +77,7 @@
     </div>
 </section>
 <!-- Info Section -->
-<section data-scroll-section class="base-section info-section-er" data-color="red3">
+<section data-scroll-section class="base-section info-section-er" id="product-section-er" data-color="red3">
     <div class="container flex-container">
         <div class="flex-item">
             <p>
@@ -87,6 +85,11 @@
             die Kombination aus dem Geschmack süßer Erdbeeren und säuerlich frischem Rhabarber. 
             Die perfekte perlende Mischung aus herber Säure und feiner Süße.
             </p>
+        </div>
+        <div class="can-box">
+            <canvas class="webgl-er"></canvas>
+            <canvas class="webgl-oi"></canvas>
+            <canvas class="webgl-abm"></canvas>
         </div>
     </div>
 </section>
@@ -122,6 +125,9 @@
         </div>
     </footer>
 </section>
+<audio style="display:none" class="bg-sound-er">
+    <source src="./assets/audio/er_ambient.mp3"/>
+</audio>
 </div>
 </div>
 <!-- Scripts -->   
