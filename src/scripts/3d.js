@@ -11,7 +11,7 @@ var sizes = {
 }
 
 //Red Can for Landing and Product Page
-if(document.body.classList.contains("er")==true){
+
 
 /* Definiert die Zeichenfläche im HTML-File ------------------------------------------------------------------*/
 var canvas_er = document.querySelector('.webgl-er');
@@ -82,11 +82,13 @@ async function animate_er() {
     renderer_er.render( scene_er, camera_er);
 }
 animate_er(); 
-}
+
 
 
 
 //Green Can for Landing Page
+
+
 /* Definiert die Zeichenfläche im HTML-File ------------------------------------------------------------------*/
 var canvas_abm = document.querySelector('.webgl-abm');
 
@@ -161,6 +163,9 @@ async function animate_abm() {
     renderer_abm.render( scene_abm, camera_abm);
 }
 animate_abm();
+
+
+
 
 
 //Orange Can for Landing Page

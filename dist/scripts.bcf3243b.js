@@ -60212,13 +60212,13 @@ try {
   }
 }
 
-},{}],"scripts/3d.js":[function(require,module,exports) {
+},{}],"scripts/3d-can_er.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.load3d = void 0;
+exports.load3d_er = void 0;
 
 var THREE = _interopRequireWildcard(require("three"));
 
@@ -60234,109 +60234,183 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-var load3d = function load3d() {
+var load3d_er = function load3d_er() {
   /* Bilschirmdimensionen -----------------------------------------------------------------------------------*/
   var sizes = {
     width: window.innerWidth,
     height: window.innerHeight
   }; //Red Can for Landing and Product Page
 
-  if (document.body.classList.contains("er") == true) {
-    /* Definiert die Zeichenfläche im HTML-File ------------------------------------------------------------------*/
-    var canvas_er = document.querySelector('.webgl-er');
-    /* Erzeugt die Scene - 3D-Space ------------------------------------------------------------------------------*/
-
-    var scene_er = new THREE.Scene();
-    /* Lädt die Dose -> GLTF-File --------------------------------------------------------------------------------*/
-
-    var canObj_er;
-    var loader_er = new _GLTFLoader.GLTFLoader();
-    loader_er.load('./scene_home_red.gltf', function (gltf) {
-      console.log(gltf);
-      canObj_er = gltf.scene;
-      canObj_er.scale.set(5, 5, 5);
-      canObj_er.rotation.y += 1.9;
-      scene_er.add(canObj_er);
-    }, function (xhr) {
-      console.log(xhr.loaded / xhr.total * 100 + "% loaded");
-    }, function (error) {
-      console.log(error);
-    });
-    /* Lichter -------------------------------------------------------------------------------------*/
-
-    /* 
-    var light = new THREE.DirectionalLight(0xffffff, 2);
-    light.position.set(20,20,50); */
-
-    var ambientLight_er = new THREE.AmbientLight(0xffffff);
-    var pointLight_er = new THREE.SpotLight(0xffffff);
-    pointLight_er.position.set(40, 50, 50);
-    pointLight_er.intensity = 0.3;
-    ambientLight_er.position.set(20, 20, 20);
-    ambientLight_er.intensity = 2.5;
-    scene_er.add(pointLight_er, ambientLight_er);
-    /* Kamera ------------------------------------------------------------------------------------------------*/
-
-    var camera_er = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000);
-    camera_er.position.set(0, 0, 1);
-    scene_er.add(camera_er);
-    /* Renderer ----------------------------------------------------------------------------------------------*/
-
-    var renderer_er = new THREE.WebGLRenderer({
-      canvas: canvas_er,
-      alpha: true
-    });
-    renderer_er.setClearColor(0x000000, 0); //Transparenter Hintergrund
-
-    renderer_er.setSize(sizes.width, sizes.height);
-    renderer_er.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer_er.shadowMap.enabled = true;
-    renderer_er.outputEncoding = true;
-    /* Controls -> Ermöglichen das Bewegen der Szene ----------------------------------------------------------*/
-    // const controls = new OrbitControls(camera_er, renderer_er.domElement);
-    // controls.enableZoon = false;
-
-    /* Sichert korrekte Darstellung bei rezize ----------------------------------------------------------------*/
-
-    window.addEventListener('resize', function () {
-      renderer_er.setSize(window.innerWidth, window.innerHeight);
-      camera_er.aspect = window.innerWidth / window.innerHeight;
-      camera_er.updateProjectionMatrix();
-    });
-    /* Lässt Objekt Rotieren -----------------------------------------------------------------------------------*/
-
-    function animate_er() {
-      return _animate_er.apply(this, arguments);
-    }
-
-    function _animate_er() {
-      _animate_er = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-        return regeneratorRuntime.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return requestAnimationFrame(animate_er);
-
-              case 2:
-                //canObj_er.rotation.y += 0.01; 
-                renderer_er.render(scene_er, camera_er);
-
-              case 3:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee);
-      }));
-      return _animate_er.apply(this, arguments);
-    }
-
-    animate_er();
-  } //Green Can for Landing Page
-
   /* Definiert die Zeichenfläche im HTML-File ------------------------------------------------------------------*/
 
+  var canvas_er = document.querySelector('.webgl-er');
+  /* Erzeugt die Scene - 3D-Space ------------------------------------------------------------------------------*/
+
+  var scene_er = new THREE.Scene();
+  /* Lädt die Dose -> GLTF-File --------------------------------------------------------------------------------*/
+
+  var canObj_er;
+  var loader_er = new _GLTFLoader.GLTFLoader();
+  loader_er.load('./scene_home_red.gltf', function (gltf) {
+    console.log(gltf);
+    canObj_er = gltf.scene;
+    canObj_er.scale.set(5, 5, 5);
+    canObj_er.rotation.y += 1.9;
+    scene_er.add(canObj_er);
+  }, function (xhr) {
+    console.log(xhr.loaded / xhr.total * 100 + "% loaded");
+  }, function (error) {
+    console.log(error);
+  });
+  /* Lichter -------------------------------------------------------------------------------------*/
+
+  /* 
+  var light = new THREE.DirectionalLight(0xffffff, 2);
+  light.position.set(20,20,50); */
+
+  var ambientLight_er = new THREE.AmbientLight(0xffffff);
+  var pointLight_er = new THREE.SpotLight(0xffffff);
+  pointLight_er.position.set(40, 50, 50);
+  pointLight_er.intensity = 0.3;
+  ambientLight_er.position.set(20, 20, 20);
+  ambientLight_er.intensity = 2.5;
+  scene_er.add(pointLight_er, ambientLight_er);
+  /* Kamera ------------------------------------------------------------------------------------------------*/
+
+  var camera_er = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000);
+  camera_er.position.set(0, 0, 1);
+  scene_er.add(camera_er);
+  /* Renderer ----------------------------------------------------------------------------------------------*/
+
+  var renderer_er = new THREE.WebGLRenderer({
+    canvas: canvas_er,
+    alpha: true
+  });
+  renderer_er.setClearColor(0x000000, 0); //Transparenter Hintergrund
+
+  renderer_er.setSize(sizes.width, sizes.height);
+  renderer_er.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer_er.shadowMap.enabled = true;
+  renderer_er.outputEncoding = true;
+  /* Controls -> Ermöglichen das Bewegen der Szene ----------------------------------------------------------*/
+  // const controls = new OrbitControls(camera_er, renderer_er.domElement);
+  // controls.enableZoon = false;
+
+  /* Sichert korrekte Darstellung bei rezize ----------------------------------------------------------------*/
+
+  window.addEventListener('resize', function () {
+    renderer_er.setSize(window.innerWidth, window.innerHeight);
+    camera_er.aspect = window.innerWidth / window.innerHeight;
+    camera_er.updateProjectionMatrix();
+  });
+  /* Lässt Objekt Rotieren -----------------------------------------------------------------------------------*/
+
+  function animate_er() {
+    return _animate_er.apply(this, arguments);
+  }
+
+  function _animate_er() {
+    _animate_er = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return requestAnimationFrame(animate_er);
+
+            case 2:
+              //canObj_er.rotation.y += 0.01; 
+              renderer_er.render(scene_er, camera_er);
+
+            case 3:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+    return _animate_er.apply(this, arguments);
+  }
+
+  animate_er();
+  /* Positioniert das pointLight bei Cursor-Position -------------------------------------------------------------*/
+
+  var pointerX = 0;
+  var pointerY = 0;
+
+  document.onmousemove = function (event) {
+    pointerX = event.pageX;
+    pointerX -= window.innerWidth / 2; //console.log("X: " + pointerX);
+
+    pointerY = event.pageY;
+    pointerY -= window.innerHeight / 2; //console.log("Y: " + pointerY);
+
+    pointLight_er.position.set(pointerX, -pointerY, 50);
+  };
+  /**
+   * Animate
+   */
+
+
+  document.addEventListener('mousemove', onDocumentMouseMove);
+  var mouseX = 0;
+  var mouseY = 0;
+  var targetX = 0;
+  var targetY = 0;
+  var windowX = window.innerWidth / 2;
+  var windowY = window.innerHeight / 2;
+
+  function onDocumentMouseMove(event) {
+    mouseX = event.clientX - windowX;
+    mouseY = event.clientY - windowY;
+    var clock = new THREE.Clock();
+    targetX = mouseX * .001;
+    targetY = mouseY * .001;
+    var elapsedTime = clock.getElapsedTime(); // Update Red Can
+
+    canObj_er.rotation.y = 0.5 * elapsedTime;
+    canObj_er.rotation.y += 6 * (targetX - canObj_er.rotation.y);
+    canObj_er.rotation.x += .5 * (targetY - canObj_er.rotation.x);
+    canObj_er.position.z += -.25 * (targetY - canObj_er.rotation.x); // Update Orbital Controls
+    // controls.update()
+    // Render
+
+    renderer_er.render(scene_er, camera_er); // Call tick again on the next frame
+    //window.requestAnimationFrame(tick)
+  }
+};
+
+exports.load3d_er = load3d_er;
+},{"three":"../node_modules/three/build/three.module.js","three/examples/jsm/loaders/GLTFLoader.js":"../node_modules/three/examples/jsm/loaders/GLTFLoader.js","regenerator-runtime/runtime":"../node_modules/regenerator-runtime/runtime.js"}],"scripts/3d-can_abm.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.load3d_abm = void 0;
+
+var THREE = _interopRequireWildcard(require("three"));
+
+var _GLTFLoader = require("three/examples/jsm/loaders/GLTFLoader.js");
+
+require("regenerator-runtime/runtime");
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var load3d_abm = function load3d_abm() {
+  /* Bilschirmdimensionen -----------------------------------------------------------------------------------*/
+  var sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight
+  }; //Green Can for Landing Page
+
+  /* Definiert die Zeichenfläche im HTML-File ------------------------------------------------------------------*/
 
   var canvas_abm = document.querySelector('.webgl-abm');
   /* Erzeugt die Scene - 3D-Space ------------------------------------------------------------------------------*/
@@ -60346,7 +60420,7 @@ var load3d = function load3d() {
 
   var canObj_abm;
   var loader_abm = new _GLTFLoader.GLTFLoader();
-  loader_er.load('./scene_home_green.gltf', function (gltf) {
+  loader_abm.load('./scene_home_green.gltf', function (gltf) {
     console.log(gltf);
     canObj_abm = gltf.scene;
     canObj_abm.scale.set(5, 5, 5);
@@ -60405,12 +60479,12 @@ var load3d = function load3d() {
   }
 
   function _animate_abm() {
-    _animate_abm = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+    _animate_abm = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
-          switch (_context2.prev = _context2.next) {
+          switch (_context.prev = _context.next) {
             case 0:
-              _context2.next = 2;
+              _context.next = 2;
               return requestAnimationFrame(animate_abm);
 
             case 2:
@@ -60419,15 +60493,91 @@ var load3d = function load3d() {
 
             case 3:
             case "end":
-              return _context2.stop();
+              return _context.stop();
           }
         }
-      }, _callee2);
+      }, _callee);
     }));
     return _animate_abm.apply(this, arguments);
   }
 
-  animate_abm(); //Orange Can for Landing Page
+  animate_abm();
+  /* Positioniert das pointLight bei Cursor-Position -------------------------------------------------------------*/
+
+  var pointerX = 0;
+  var pointerY = 0;
+
+  document.onmousemove = function (event) {
+    pointerX = event.pageX;
+    pointerX -= window.innerWidth / 2; //console.log("X: " + pointerX);
+
+    pointerY = event.pageY;
+    pointerY -= window.innerHeight / 2; //console.log("Y: " + pointerY);
+
+    pointLight_abm.position.set(pointerX, -pointerY, 50);
+  };
+  /**
+   * Animate
+   */
+
+
+  document.addEventListener('mousemove', onDocumentMouseMove);
+  var mouseX = 0;
+  var mouseY = 0;
+  var targetX = 0;
+  var targetY = 0;
+  var windowX = window.innerWidth / 2;
+  var windowY = window.innerHeight / 2;
+
+  function onDocumentMouseMove(event) {
+    mouseX = event.clientX - windowX;
+    mouseY = event.clientY - windowY;
+    var clock = new THREE.Clock();
+    targetX = mouseX * .001;
+    targetY = mouseY * .001;
+    var elapsedTime = clock.getElapsedTime(); // Update Green Can
+
+    canObj_abm.rotation.y = 0.5 * elapsedTime;
+    canObj_abm.rotation.y += 6 * (targetX - canObj_abm.rotation.y);
+    canObj_abm.rotation.x += .5 * (targetY - canObj_abm.rotation.x);
+    canObj_abm.position.z += -.25 * (targetY - canObj_abm.rotation.x); // Update Orbital Controls
+    // controls.update()
+    // Render
+
+    renderer_abm.render(scene_abm, camera_abm); // Call tick again on the next frame
+    //window.requestAnimationFrame(tick)
+  }
+};
+
+exports.load3d_abm = load3d_abm;
+},{"three":"../node_modules/three/build/three.module.js","three/examples/jsm/loaders/GLTFLoader.js":"../node_modules/three/examples/jsm/loaders/GLTFLoader.js","regenerator-runtime/runtime":"../node_modules/regenerator-runtime/runtime.js"}],"scripts/3d-can_oi.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.load3d_oi = void 0;
+
+var THREE = _interopRequireWildcard(require("three"));
+
+var _GLTFLoader = require("three/examples/jsm/loaders/GLTFLoader.js");
+
+require("regenerator-runtime/runtime");
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var load3d_oi = function load3d_oi() {
+  /* Bilschirmdimensionen -----------------------------------------------------------------------------------*/
+  var sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight
+  }; //Orange Can for Landing Page
 
   /* Definiert die Zeichenfläche im HTML-File ------------------------------------------------------------------*/
 
@@ -60438,8 +60588,8 @@ var load3d = function load3d() {
   /* Lädt die Dose -> GLTF-File --------------------------------------------------------------------------------*/
 
   var canObj_oi;
-  var loader_er = new _GLTFLoader.GLTFLoader();
-  loader_er.load('./scene_home_orange.gltf', function (gltf) {
+  var loader_oi = new _GLTFLoader.GLTFLoader();
+  loader_oi.load('./scene_home_orange.gltf', function (gltf) {
     console.log(gltf);
     canObj_oi = gltf.scene;
     canObj_oi.scale.set(5, 5, 5);
@@ -60498,12 +60648,12 @@ var load3d = function load3d() {
   }
 
   function _animate_oi() {
-    _animate_oi = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-      return regeneratorRuntime.wrap(function _callee3$(_context3) {
+    _animate_oi = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
-          switch (_context3.prev = _context3.next) {
+          switch (_context.prev = _context.next) {
             case 0:
-              _context3.next = 2;
+              _context.next = 2;
               return requestAnimationFrame(animate_oi);
 
             case 2:
@@ -60512,10 +60662,10 @@ var load3d = function load3d() {
 
             case 3:
             case "end":
-              return _context3.stop();
+              return _context.stop();
           }
         }
-      }, _callee3);
+      }, _callee);
     }));
     return _animate_oi.apply(this, arguments);
   }
@@ -60533,8 +60683,6 @@ var load3d = function load3d() {
     pointerY = event.pageY;
     pointerY -= window.innerHeight / 2; //console.log("Y: " + pointerY);
 
-    pointLight_er.position.set(pointerX, -pointerY, 50);
-    pointLight_abm.position.set(pointerX, -pointerY, 50);
     pointLight_oi.position.set(pointerX, -pointerY, 50);
   };
   /**
@@ -60556,17 +60704,7 @@ var load3d = function load3d() {
     var clock = new THREE.Clock();
     targetX = mouseX * .001;
     targetY = mouseY * .001;
-    var elapsedTime = clock.getElapsedTime(); // Update Red Can
-
-    canObj_er.rotation.y = 0.5 * elapsedTime;
-    canObj_er.rotation.y += 6 * (targetX - canObj_er.rotation.y);
-    canObj_er.rotation.x += .5 * (targetY - canObj_er.rotation.x);
-    canObj_er.position.z += -.25 * (targetY - canObj_er.rotation.x); // Update Green Can
-
-    canObj_abm.rotation.y = 0.5 * elapsedTime;
-    canObj_abm.rotation.y += 6 * (targetX - canObj_abm.rotation.y);
-    canObj_abm.rotation.x += .5 * (targetY - canObj_abm.rotation.x);
-    canObj_abm.position.z += -.25 * (targetY - canObj_abm.rotation.x); // Update Orange Can
+    var elapsedTime = clock.getElapsedTime(); // Update Green Can
 
     canObj_oi.rotation.y = 0.5 * elapsedTime;
     canObj_oi.rotation.y += 6 * (targetX - canObj_oi.rotation.y);
@@ -60575,14 +60713,12 @@ var load3d = function load3d() {
     // controls.update()
     // Render
 
-    renderer_er.render(scene_er, camera_er);
-    renderer_abm.render(scene_abm, camera_abm);
     renderer_oi.render(scene_oi, camera_oi); // Call tick again on the next frame
     //window.requestAnimationFrame(tick)
   }
 };
 
-exports.load3d = load3d;
+exports.load3d_oi = load3d_oi;
 },{"three":"../node_modules/three/build/three.module.js","three/examples/jsm/loaders/GLTFLoader.js":"../node_modules/three/examples/jsm/loaders/GLTFLoader.js","regenerator-runtime/runtime":"../node_modules/regenerator-runtime/runtime.js"}],"scripts/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -60594,7 +60730,11 @@ var _core = _interopRequireDefault(require("@barba/core"));
 
 var _gsap = _interopRequireDefault(require("gsap"));
 
-var _d = require("./3d");
+var _dCan_er = require("./3d-can_er");
+
+var _dCan_abm = require("./3d-can_abm");
+
+var _dCan_oi = require("./3d-can_oi");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60607,10 +60747,7 @@ clicksound1.src = "can_opening.ogg";
 clicksound1.crossOrigin = 'anonymous';
 var clicksound2 = document.createElement("audio");
 clicksound2.src = "bubble_sound.mp3";
-clicksound2.crossOrigin = 'anonymous'; // const $backgroundsound_er = document.createElement("audio");
-// $backgroundsound_er.src = "er_ambient.mp3";
-// $backgroundsound_er.crossOrigin='anonymous'; 
-//Smooth Scrolling
+clicksound2.crossOrigin = 'anonymous'; //Smooth Scrolling
 
 var scroll = new _locomotiveScroll.default({
   el: document.querySelector('[data-scroll-container]'),
@@ -60630,11 +60767,30 @@ var scroll = new _locomotiveScroll.default({
 _core.default.hooks.after(function () {
   scroll.update();
   initCursorHover();
+  initVideoFade();
   removeHoverClass();
   (0, _jquery.default)('.landing-headline').addClass('in-view');
   initBackgroundChange();
   (0, _jquery.default)('.bgvideo').trigger('play');
-  (0, _d.load3d)();
+
+  if ((0, _jquery.default)('.pagecheck').hasClass("er") == true) {
+    (0, _dCan_er.load3d_er)(); //Only load the Red Can if the Barba Container has the specific Class
+  }
+
+  if ((0, _jquery.default)('.pagecheck').hasClass("abm") == true) {
+    (0, _dCan_abm.load3d_abm)(); //Only load the Green Can if the Barba Container has the specific Class
+  }
+
+  if ((0, _jquery.default)('.pagecheck').hasClass("oi") == true) {
+    (0, _dCan_oi.load3d_oi)(); //Only load the Orange Can if the Barba Container has the specific Class
+  }
+
+  if ((0, _jquery.default)('.pagecheck').hasClass("home") == true) {
+    //Load all cans if the User is going back to the home page
+    (0, _dCan_er.load3d_er)();
+    (0, _dCan_abm.load3d_abm)();
+    (0, _dCan_oi.load3d_oi)();
+  }
 }); //Barba Page Transitions
 
 
@@ -60662,9 +60818,6 @@ _core.default.init({
   //Play Background Audio Depending on Namespace
   views: [{
     namespace: 'erdbeer-rhabarber',
-    beforeEnter: function beforeEnter() {
-      (0, _jquery.default)('body').addClass("er");
-    },
     afterEnter: function afterEnter() {
       if (sound == true) {
         //Play Sound with delay and Click Animation first
@@ -60685,24 +60838,41 @@ _core.default.init({
     }
   }, {
     namespace: 'apfel-birne-minze',
-    beforeEnter: function beforeEnter() {
-      (0, _jquery.default)('body').addClass("er");
-    },
     afterEnter: function afterEnter() {
       if (sound == true) {
         //Play Sound with delay and Click Animation first
         setTimeout(function () {
-          (0, _jquery.default)('.bg-sound-er').get(0).play();
+          (0, _jquery.default)('.bg-sound-abm').get(0).play();
         }, 2000);
       }
     },
     beforeLeave: function beforeLeave() {
       if (sound == true) {
         //Fade out sound and then pause it
-        (0, _jquery.default)('.bg-sound-er').animate({
+        (0, _jquery.default)('.bg-sound-abm').animate({
           volume: 0
         }, 1000, function () {
-          (0, _jquery.default)('.bg-sound-er').pause();
+          (0, _jquery.default)('.bg-sound-abm').pause();
+        });
+      }
+    }
+  }, {
+    namespace: 'orange-ingwer',
+    afterEnter: function afterEnter() {
+      if (sound == true) {
+        //Play Sound with delay and Click Animation first
+        setTimeout(function () {
+          (0, _jquery.default)('.bg-sound-oi').get(0).play();
+        }, 2000);
+      }
+    },
+    beforeLeave: function beforeLeave() {
+      if (sound == true) {
+        //Fade out sound and then pause it
+        (0, _jquery.default)('.bg-sound-oi').animate({
+          volume: 0
+        }, 1000, function () {
+          (0, _jquery.default)('.bg-sound-oi').pause();
         });
       }
     }
@@ -60921,20 +61091,16 @@ function initClickSounds() {
       clicksound2.play();
     }
   });
-} // //Test
-// function test(){
-//   if($('body').hasClass("er")==true){
-//     alert("Erdbeer");
-//   }
-// }
-//Run all functions when Document is ready
+} //Run all functions when Document is ready
 
 
 (0, _jquery.default)(function () {
   initCursor();
   initCursorHover();
   initMobileMenu();
-  (0, _d.load3d)();
+  (0, _dCan_er.load3d_er)();
+  (0, _dCan_abm.load3d_abm)();
+  (0, _dCan_oi.load3d_oi)();
   initBackgroundChange();
   initVideoFade();
 
@@ -60942,7 +61108,7 @@ function initClickSounds() {
     initClickSounds();
   }
 });
-},{"locomotive-scroll":"../node_modules/locomotive-scroll/dist/locomotive-scroll.esm.js","jquery":"../node_modules/jquery/dist/jquery.js","@barba/core":"../node_modules/@barba/core/dist/barba.umd.js","gsap":"../node_modules/gsap/index.js","./3d":"scripts/3d.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"locomotive-scroll":"../node_modules/locomotive-scroll/dist/locomotive-scroll.esm.js","jquery":"../node_modules/jquery/dist/jquery.js","@barba/core":"../node_modules/@barba/core/dist/barba.umd.js","gsap":"../node_modules/gsap/index.js","./3d-can_er":"scripts/3d-can_er.js","./3d-can_abm":"scripts/3d-can_abm.js","./3d-can_oi":"scripts/3d-can_oi.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -60970,7 +61136,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62414" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52716" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

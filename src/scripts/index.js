@@ -3,7 +3,9 @@ import LocomotiveScroll from 'locomotive-scroll';
 import $ from 'jquery';
 import barba from '@barba/core';
 import gsap from 'gsap';
-import {load3d} from './3d';
+import { load3d_er } from './3d-can_er';
+import { load3d_abm } from './3d-can_abm';
+import { load3d_oi } from './3d-can_oi';
 
 //Sound on or off
 var sound=true;
@@ -14,10 +16,6 @@ clicksound1.crossOrigin='anonymous';
 const clicksound2 = document.createElement("audio");
 clicksound2.src = "bubble_sound.mp3";
 clicksound2.crossOrigin='anonymous';
-// const $backgroundsound_er = document.createElement("audio");
-// $backgroundsound_er.src = "er_ambient.mp3";
-// $backgroundsound_er.crossOrigin='anonymous'; 
-
 
 //Smooth Scrolling
 const scroll = new LocomotiveScroll({
@@ -39,11 +37,26 @@ const scroll = new LocomotiveScroll({
 barba.hooks.after(() => {
 	scroll.update();
   initCursorHover();
+  initVideoFade();
   removeHoverClass();
   $('.landing-headline').addClass('in-view');
   initBackgroundChange();
   $('.bgvideo').trigger('play');
-  load3d();
+  if($('.pagecheck').hasClass("er")==true){
+    load3d_er(); //Only load the Red Can if the Barba Container has the specific Class
+  }
+  if($('.pagecheck').hasClass("abm")==true){
+    load3d_abm(); //Only load the Green Can if the Barba Container has the specific Class
+  }
+  if($('.pagecheck').hasClass("oi")==true){
+    load3d_oi(); //Only load the Orange Can if the Barba Container has the specific Class
+  }
+  if($('.pagecheck').hasClass("home")==true){
+    //Load all cans if the User is going back to the home page
+    load3d_er();
+    load3d_abm();
+    load3d_oi();
+  }
 });
 
 //Barba Page Transitions
@@ -68,9 +81,6 @@ barba.init({
   //Play Background Audio Depending on Namespace
   views: [{
     namespace: 'erdbeer-rhabarber',
-    beforeEnter() {
-      $('body').addClass("er");
-    },
     afterEnter() {
       if(sound==true){
         //Play Sound with delay and Click Animation first
@@ -90,26 +100,42 @@ barba.init({
   },
   {
     namespace: 'apfel-birne-minze',
-    beforeEnter() {
-      $('body').addClass("er");
-    },
     afterEnter() {
       if(sound==true){
         //Play Sound with delay and Click Animation first
         setTimeout(()=>{
-         $('.bg-sound-er').get(0).play();
+         $('.bg-sound-abm').get(0).play();
         },2000); 
       }
     },
     beforeLeave() {
       if(sound==true){
         //Fade out sound and then pause it
-        $('.bg-sound-er').animate({volume: 0}, 1000, ()=>{
-          $('.bg-sound-er').pause();
+        $('.bg-sound-abm').animate({volume: 0}, 1000, ()=>{
+          $('.bg-sound-abm').pause();
         });
       } 
     }
-  }]
+  },
+  {
+  namespace: 'orange-ingwer',
+  afterEnter() {
+    if(sound==true){
+      //Play Sound with delay and Click Animation first
+      setTimeout(()=>{
+       $('.bg-sound-oi').get(0).play();
+      },2000); 
+    }
+  },
+  beforeLeave() {
+    if(sound==true){
+      //Fade out sound and then pause it
+      $('.bg-sound-oi').animate({volume: 0}, 1000, ()=>{
+        $('.bg-sound-oi').pause();
+      });
+    } 
+  }
+}]
 });
 
 //GSAP Animations
@@ -277,19 +303,15 @@ function initClickSounds(){
   });
 }
 
-// //Test
-// function test(){
-//   if($('body').hasClass("er")==true){
-//     alert("Erdbeer");
-//   }
-// }
 
 //Run all functions when Document is ready
 $(function() {
   initCursor();
   initCursorHover();
   initMobileMenu();
-  load3d();
+  load3d_er();
+  load3d_abm();
+  load3d_oi();
   initBackgroundChange();
   initVideoFade();
   if(sound===true){

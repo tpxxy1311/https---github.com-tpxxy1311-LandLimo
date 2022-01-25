@@ -123,37 +123,41 @@
                     left: 0;
                 }
             }
-            .webgl-er, .webgl-oi{
-                display: none!important;
-            }
         }
     }
 }
 
 //Background Gradient Classes
 .color-green0{
-    background-image: $background-image-prod-er-0;
+    background-image: $background-image-prod-abm-0;
     @include smartphone(){
          
     }
 }
 
 .color-green1{
-    background-image: $background-image-prod-er-1;
+    background-image: $background-image-prod-abm-1;
     @include smartphone(){
         
     }
 }
 
 .color-green2{
-    background-image: $background-image-prod-er-2;
+    background-image: $background-image-prod-abm-2;
     @include smartphone(){
         
     }
 }
 
 .color-green3{
-    background-image: $background-image-prod-er-0;
+    background-image: $background-image-prod-abm-3;
+    @include smartphone(){
+        
+    }
+}
+
+.color-green4{
+    background-image: $background-image-prod-abm-4;
     @include smartphone(){
         
     }

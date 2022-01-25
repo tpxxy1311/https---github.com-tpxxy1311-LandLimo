@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="prerender" href="erdbeer-rhabarber.html">
 </head>
-<body data-barba="wrapper" class="er">
+<body data-barba="wrapper">
 <!-- Custom Cursor -->
 <div class="cursor"></div>
 <!-- Loading Screen -->
@@ -52,7 +52,7 @@
 <!-- LocomotiveScroll Container for Smooth Scrolling -->
 <div data-scroll-container class="scroll-container">
 <!-- Content -->
-<div data-barba="container" data-barba-namespace="home">
+<div data-barba="container" class="pagecheck home" data-barba-namespace="home">
 <!-- Landing Page -->
 <section data-scroll-section class="base-section landing-section-home">
     <video playsinline autoplay muted loop class="bgvideo">
@@ -116,7 +116,7 @@
                     <span class="letters">Ingwer</span>
                 </h2>
             </div>
-            <button class="bt-base bt-oi hoverable bt-sound"><span>Jetzt Entdecken <ion-icon name="chevron-forward-outline" style="vertical-align: middle;"></ion-icon></span></button>
+            <a href="orange-ingwer.html"><button class="bt-base bt-oi hoverable bt-sound"><span>Jetzt Entdecken <ion-icon name="chevron-forward-outline" style="vertical-align: middle;"></ion-icon></span></button></a>
         </div>
     </div>
 </section>
@@ -156,6 +156,6 @@
 </div>
 <!-- Scripts -->   
 <script src='.././src/scripts/index.js' type="module" crossorigin="true"></script>
-<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js" type="module"></script>
+<script  type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 </body>
 </html>
