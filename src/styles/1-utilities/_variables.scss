@@ -4,6 +4,7 @@
 $black: #000000;
 $white: #FFFFFF;
 $dark_grey:#929292;
+$font_grey:#494949;
 $light_grey: #C6C6C6;
 $transparent_grey: #c6c6c659;
 $transparent_white: #ffffff56;
@@ -21,17 +22,17 @@ $background-image-er:
 radial-gradient(at 100% 40%, rgba(255, 152, 143, 0.8) 500px,transparent 55%);
 $background-image-er-phone:  
 radial-gradient(at 100% 40%, rgba(255, 152, 143, 0.8) 100px,transparent 75%);
-
 $background-image-abm:   
-radial-gradient(at 100% 49%, #b4d156cb 500px, transparent 70%);
+radial-gradient(at -20% -70%, #b4d156cb 500px, transparent 70%);
 $background-image-abm-phone:   
 radial-gradient(at 10% 40%, #b4d1569c 100px, transparent 75%);
-
 $background-image-oi:  
 radial-gradient(at 100% 40%, rgba(249, 183, 118, 0.856) 500px, transparent 55%);
 $background-image-oi-phone:  
 radial-gradient(at 100% 40%, rgba(249, 183, 118, 0.856) 100px, transparent 75%);
-
+$background-image-multi0:  
+radial-gradient(at -10% 0%, hsla(5,100%,79%,0.8) 0, transparent 40%),  
+radial-gradient(at 100% 40%, rgba(249, 183, 118, 0.856) 500px, transparent 55%);
 $background-image-loading:  
 radial-gradient(at -10% 0%, hsla(5,100%,79%,0.8) 0, transparent 40%),  
 radial-gradient(at 110% 100%, hsla(75,58%,58%,0.8) 0, transparent 45%),
@@ -41,39 +42,76 @@ radial-gradient(at 110% 40%, rgba(249, 183, 118, 0.856) 0px, transparent 55%);
 $background-image-prod-er-0:  
 radial-gradient(at 0% 40%, #ee97aab7 500px,transparent 55%),
 radial-gradient(at 100% 0%, hsla(5,100%,79%,0.8) 0, transparent 40%); 
+$background-image-prod-er-0-phone:  
+radial-gradient(at 0% 40%, #ee97aab7 100px,transparent 55%),
+radial-gradient(at 100% 0%, hsla(5,100%,79%,0.8) 0, transparent 40%); 
 $background-image-prod-er-1:  
 radial-gradient(at 0% 40%, #ee97aab7 500px,transparent 55%);
+$background-image-prod-er-1-phone:  
+radial-gradient(at 0% 40%, #ee97aab7 100px,transparent 55%);
 $background-image-prod-er-2:  
 radial-gradient(at 100% 0%, hsla(5,100%,79%,0.8) 0, transparent 40%); 
 $background-image-prod-er-3:  
 radial-gradient(at 0% 40%, #ee97aab7 500px,transparent 55%),
+radial-gradient(at -10% 0%, hsla(5,100%,79%,0.8) 0, transparent 40%);
+$background-image-prod-er-3-phone:  
+radial-gradient(at 0% 40%, #ee97aab7 100px,transparent 55%),
 radial-gradient(at -10% 0%, hsla(5,100%,79%,0.8) 0, transparent 40%);
 
 //Apfel Birne Minze
 $background-image-prod-abm-0:  
 radial-gradient(at 0% 40%, #BBD1B2 500px,transparent 55%),
 radial-gradient(at 100% 0%, #b4d156cb 0, transparent 40%); 
+$background-image-prod-abm-0-phone:  
+radial-gradient(at 0% 40%, #BBD1B2 150px,transparent 55%),
+radial-gradient(at 100% 0%, #b4d156cb 0, transparent 40%); 
 $background-image-prod-abm-1:  
 radial-gradient(at 0% 40%, #BBD1B2 500px,transparent 55%);
+$background-image-prod-abm-1-phone:  
+radial-gradient(at 0% 40%, #BBD1B2 150px,transparent 55%);
 $background-image-prod-abm-2:  
 radial-gradient(at 100% 0%, #b4d156cb 0, transparent 40%);
 $background-image-prod-abm-3:  
-radial-gradient(at 0% 40%, #BBD1B2 500px,transparent 55%); 
+radial-gradient(at 0% 40%, #BBD1B2 500px,transparent 55%);
+$background-image-prod-abm-3-phone:  
+radial-gradient(at 0% 40%, #BBD1B2 150px,transparent 55%); 
 $background-image-prod-abm-4:  
 radial-gradient(at 0% 40%, #BBD1B2 500px,transparent 55%),
 radial-gradient(at 100% 0%, #b4d156cb 0, transparent 40%);
 
-//Orangw-Ingwer
+//Orange-Ingwer
 $background-image-prod-oi-0:  
 radial-gradient(at 0% 40%, #e5ad5ad5 500px,transparent 55%),
 radial-gradient(at 100% 0%, rgba(249, 183, 118, 0.856) 0, transparent 40%); 
+$background-image-prod-oi-0-phone:  
+radial-gradient(at 0% 40%, #e5ad5ad5 150px,transparent 55%),
+radial-gradient(at 100% 0%, rgba(249, 183, 118, 0.856) 0, transparent 40%); 
 $background-image-prod-oi-1:  
-radial-gradient(at 0% 40%, #E5AD5A 500px,transparent 55%);
+radial-gradient(at 0% 40%, #e5ad5ad5 500px,transparent 55%);
+$background-image-prod-oi-1-phone:  
+radial-gradient(at 0% 40%, #e5ad5ad5 150px,transparent 55%);
 $background-image-prod-oi-2:  
 radial-gradient(at 100% 0%, rgba(249, 183, 118, 0.856) 0, transparent 40%); 
 $background-image-prod-oi-3:  
 radial-gradient(at 0% 40%, #e5ad5ad5 500px,transparent 55%),
 radial-gradient(at 100% 0%, rgba(249, 183, 118, 0.856) 0, transparent 40%); 
+
+//Gallery
+$background-image-prod-gl-0:  
+radial-gradient(at 0% 40%, hsla(5,100%,79%,0.8)  500px,transparent 55%),
+radial-gradient(at 100% 0%, rgba(249, 183, 118, 0.856) 0, transparent 40%);
+$background-image-prod-gl-0-phone:  
+radial-gradient(at -20% 40%, hsla(5,100%,79%,0.6) 250px,transparent 75%),
+radial-gradient(at 100% -20%, rgba(249, 183, 118, 0.856) 0, transparent 45%),
+radial-gradient(at 50% -85%, #b4d156cb 0, transparent 10%);
+$background-image-prod-gl-1:  
+radial-gradient(at 0% 40%, hsla(5,100%,79%,0.8)  500px,transparent 55%);
+$background-image-prod-gl-1-phone:  
+radial-gradient(at -20% 40%, hsla(5,100%,79%,0.6) 250px,transparent 55%);
+$background-image-prod-gl-2:  
+radial-gradient(at 100% -10%, #b4d156cb 0, transparent 40%);
+$background-image-prod-gl-3:  
+radial-gradient(at 0% 40%, rgba(249, 183, 118, 0.856) 0, transparent 60%); 
 
 
 //Screen Sizes for Media Queries

@@ -1,0 +1,184 @@
+//Galerie Nachhaltigkeit
+
+.landing-section-gallery{
+    .flex-container{
+        justify-content: center;
+        height: 100%;
+        @include smartphone(){
+            height: 100%;
+        }
+        .flex-item{
+            height: 35%;
+            justify-content: flex-end;
+            @include smartphone(){
+                justify-content: center;
+                height: 22%;
+            }
+            .landing-headline{
+                color:$font_grey;
+                font-size: 7vw;
+                font-weight: 800;
+                line-height: 1em;
+                @include smartphone(){
+                    font-size: 10vw;
+                }
+                .letters{
+                display:block;
+                opacity:0;
+                transform: translateY(50%) rotateX(-80deg);
+                transform-origin: center top;
+                transform-style: preserve-3d;
+                transition: opacity 0.8s cubic-bezier(.215,.61,.355,1),transform 1.2s cubic-bezier(.215,.61,.355,1);
+                }
+            }
+            .landing-text{
+                color:$font_grey;
+                font-size: 2.2vw;
+                font-weight: 400;
+                line-height: 1.3;
+                opacity: 0;
+                @include smartphone(){
+                    font-size: 6vw;
+                    line-height: 1.3;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+.foto-section-gallery{
+    @include smartphone(){
+        height: auto;
+        margin-bottom: 15%;
+    }
+    .flex-container{
+        justify-content: space-around;
+        height: 100%;
+        width: 90%;
+        margin: auto;
+        @include smartphone(){
+            flex-direction: column;
+            height: auto;
+        }
+        .flex-item{
+            width: 30%;
+            @include smartphone(){
+                width: 100%;
+            }
+            img{
+                opacity: 0;
+                width: 80%;
+                border-radius: 15px;
+            }
+        }
+        .combi-item{
+            width: 40%;
+            @include smartphone(){
+                width: 100%;
+                margin-bottom: 10%;
+            }
+            h3{
+                color:$font_grey;
+                font-weight: 800;
+                font-size:1.5rem;
+                margin-bottom: 8%;
+                line-height: 1.2;
+                @include smartphone(){
+                    font-size: 12vw;
+                }
+            }
+            p{
+                color:$font_grey;
+                line-height: 1.3;
+                @include smartphone(){
+                    font-size: 5vw;
+                    line-height: 1.4em;
+                }
+            }
+        }
+    }
+}
+
+.foto-section-gallery-reverse{
+    @include smartphone(){
+        height: auto;
+        margin-bottom: 15%;
+    }
+    .flex-container{
+        justify-content: space-around;
+        height: 100%;
+        width: 90%;
+        margin: auto;
+        flex-direction: row-reverse;
+        @include smartphone(){
+            flex-direction: column;
+            height: auto;
+        }
+        .flex-item{
+            width: 30%;
+            @include smartphone(){
+                width: 100%;
+            }
+            img{
+                opacity: 0;
+                position: relative;
+                width: 80%;
+                border-radius: 15px;
+            }
+        }
+        .combi-item{
+            width: 40%;
+            @include smartphone(){
+                width: 100%;
+                margin-bottom: 10%;
+            }
+            h3{
+                color:$font_grey;
+                font-weight: 800;
+                font-size:1.5rem;
+                margin-bottom: 8%;
+                line-height: 1.2;
+                @include smartphone(){
+                    font-size: 12vw;
+                }
+            }
+            p{
+                color:$font_grey;
+                line-height: 1.3;
+                @include smartphone(){
+                    font-size: 5vw;
+                    line-height: 1.4em;
+                }
+            }
+        }
+    }
+}
+
+.color-multi0{
+    background-image: $background-image-prod-gl-0;
+    @include smartphone(){
+        background-image: $background-image-prod-gl-0-phone;
+    }
+}
+
+.color-multi1{
+    background-image: $background-image-prod-gl-1;
+    @include smartphone(){
+        background-image: $background-image-prod-gl-1-phone
+    }
+}
+
+.color-multi2{
+    background-image: $background-image-prod-gl-2;
+    @include smartphone(){
+        background-image: $background-image-prod-gl-2;
+    }
+}
+
+.color-multi3{
+    background-image: $background-image-prod-gl-3;
+    @include smartphone(){
+        background-image: $background-image-prod-gl-3;
+    }
+}

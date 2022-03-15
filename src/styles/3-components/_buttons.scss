@@ -5,7 +5,7 @@
 	overflow: hidden;
 	font-size: 1.15rem;
 	border-radius: 50px;
-	color: $white;
+	color: $dark_grey;
     pointer-events:auto;
 	cursor: none;
 	background: $light_grey;
@@ -13,11 +13,17 @@
 	padding: 1.3rem 2.8rem;
 	font-family: "Poppins";
 	margin: 0;
-	margin-top: 7%;
+	margin-top: 15%;
 	font-size: 1.1rem;
 	font-weight: 600;
 	position: relative;
 	display: inline-block;
+	transition: color 0.2s ease;
+	transition-delay: 0.2s;
+}
+
+.bt-base:hover{
+	color: $white;
 }
 
 .bt-base span {
@@ -72,7 +78,7 @@
 	overflow: hidden;
 	font-size: 1.15rem;
 	border-radius: 50px;
-	color: $white;
+	color: $dark_grey;
     pointer-events: auto;
 	cursor: pointer;
 	background: $light_grey;
@@ -82,12 +88,17 @@
 	font-size: inherit;
 	position: relative;
 	display: inline-block;
+	transition: color 0.2s ease;
+	transition-delay: 0.2s;
+}
+
+.bt-social:hover{
+	color: $white;
 }
 
 .bt-social span {
 	display: block;
 	position: relative;
-	mix-blend-mode: difference;
 	z-index: 10;
     font-size: 1.5rem;
 }
@@ -124,7 +135,7 @@
 	left: -10%;
 	border-radius: 50%;
 	transform: translate3d(0,68%,0) scale3d(0,0,0);
-    transition: transform 1.2s cubic-bezier(0.1, 0, 0.3, 1);
+    transition: transform 0.7s cubic-bezier(0.1, 0, 0.3, 1);
     position: absolute;
 }
 

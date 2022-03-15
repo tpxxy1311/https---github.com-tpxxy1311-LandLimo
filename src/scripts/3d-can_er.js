@@ -23,15 +23,14 @@ var scene_er = new THREE.Scene();
 var canObj_er;
 var loader_er = new GLTFLoader();
 loader_er.load('./scene_home_red.gltf', function(gltf){
-    console.log(gltf);
     canObj_er = gltf.scene;
     canObj_er.scale.set(5,5,5);
     canObj_er.rotation.y += 1.9;
     scene_er.add(canObj_er);
 }, function(xhr){
-    console.log((xhr.loaded/xhr.total*100) + "% loaded");
+    // console.log((xhr.loaded/xhr.total*100) + "% loaded");
 }, function(error){
-    console.log(error);
+    // console.log(error);
 });
 
 /* Lichter -------------------------------------------------------------------------------------*/
@@ -41,7 +40,7 @@ light.position.set(20,20,50); */
 var ambientLight_er = new THREE.AmbientLight(0xffffff);
 var pointLight_er = new THREE.SpotLight(0xffffff);
 pointLight_er.position.set(40,50,50);
-pointLight_er.intensity=0.3;
+pointLight_er.intensity=1.3;
 
 ambientLight_er.position.set(20,20,20);
 ambientLight_er.intensity=2.5;
@@ -85,23 +84,33 @@ animate_er();
 
 
 /* Positioniert das pointLight bei Cursor-Position -------------------------------------------------------------*/
-var pointerX = 0;
-var pointerY = 0;
-document.onmousemove = function(event) {
-	pointerX = event.pageX;
-    pointerX -= (window.innerWidth/2);
-    //console.log("X: " + pointerX);
-	pointerY = event.pageY;
-    pointerY -= (window.innerHeight/2);
-    //console.log("Y: " + pointerY);
-    pointLight_er.position.set(pointerX,-pointerY,50);
+// var pointerX = 0;
+// var pointerY = 0;
+// document.onmousemove = function(event) {
+// 	pointerX = event.pageX;
+//     pointerX -= (window.innerWidth/2);
+//     //console.log("X: " + pointerX);
+// 	pointerY = event.pageY;
+//     pointerY -= (window.innerHeight/2);
+//     //console.log("Y: " + pointerY);
     
-}
+//     pointLight_er.position.set(pointerX,-pointerY,50);
+    
+// }
 
 /**
  * Animate
  */
+
+var mobile=false;
+//Mobile Device Check
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+  // true for mobile device
+  mobile=true;
+};
+if(mobile==false){
  document.addEventListener('mousemove', onDocumentMouseMove);
+}
 
 let mouseX = 0;
 let mouseY = 0;
@@ -139,6 +148,10 @@ function onDocumentMouseMove (event){
     // Call tick again on the next frame
     //window.requestAnimationFrame(tick)
 }
+
+
+
+
 
 
 }

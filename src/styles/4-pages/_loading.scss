@@ -2,6 +2,7 @@
 .loading-screen{
     width: 100vw;
     z-index: 999;
+    display: none;
     position: fixed;
     top:0;
     left:0;
@@ -45,6 +46,7 @@
             transform: none !important;
         }
         p{
+            color:$font_grey;
             font-size: 0.9rem;
             text-align: center;
             width: 40%;
@@ -52,6 +54,7 @@
             margin-top: 3%;
             opacity: 0;
             transition: opacity 1.2s cubic-bezier(.215,.61,.355,1);
+            line-height: 1.2;
             @include smartphone(){
                 width: 90%;
                 margin-bottom: 3%;
@@ -67,6 +70,7 @@
             opacity: 1;
         }
         a{
+            color:$font_grey;
             font-size:0.9rem;
             margin-top: 1%;
             opacity: 0;

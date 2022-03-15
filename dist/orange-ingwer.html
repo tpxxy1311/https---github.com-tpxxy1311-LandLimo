@@ -7,27 +7,27 @@
     <meta name="author" content="Tim Peters, Nils Mattmüller, Hochschule Offenburg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#929292">
-    <link rel="icon" href="/favicon_oi.47c2eec6.svg">
+    <link class="favicon" rel="icon" href="/favicon_oi.47c2eec6.svg">
     <title>LandLimo > Orange-Ingwer</title>
     <link rel="stylesheet" href="/main.d2070829.css">
-</head>
-<body data-barba="wrapper">
+<script src="/nachhaltigkeit.js"></script></head>
+<body>
 <!-- Custom Cursor -->
 <div class="cursor"></div>
 <!-- Header -->
-<header>
+<header class="header">
     <div class="flex-container">
         <div class="logo hoverable">
             <a href="/index.html">
-                <img src="/logo_neutral_animated.9fab0eb9.svg" alt="Land Limo">
+                <img src="/logo_neutral_header.b5b1fb10.svg" alt="Land Limo">
             </a>
         </div>
         <nav>
             <ul class="menu">
-                <li class="menu-items"><a class="hoverable menu-link" id="link1">Menu#1</a></li>
-                <li class="menu-items"><a class="hoverable menu-link" id="link2">Menu#2</a></li>
-                <li class="menu-items"><a class="hoverable menu-link" id="link3">Menu#3</a></li>
-                <li class="menu-items"><a class="hoverable menu-link" id="link4">Menu#4</a></li>
+                <li class="menu-items"><a href="/erdbeer-rhabarber.html" class="hoverable menu-link" id="link1">Erdbeer-Rhabarber</a></li>
+                <li class="menu-items"><a href="/apfel-birne-minze.html" class="hoverable menu-link" id="link2">Apfel-Birne</a></li>
+                <li class="menu-items"><a href="/orange-ingwer.html" class="hoverable menu-link" id="link3">Orange-Ingwer</a></li>
+                <li class="menu-items"><a href="/nachhaltigkeit.html" class="hoverable menu-link" id="link4">Nachhaltigkeit</a></li>
             </ul>
         </nav>
         <div class="hamburger">
@@ -40,8 +40,7 @@
 </header>
 <!-- LocomotiveScroll Container for Smooth Scrolling -->
 <div data-scroll-container="" class="scroll-container">
-<!-- Content -->
-<div data-barba="container" class="pagecheck oi" data-barba-namespace="orange-ingwer">    
+<!-- Content -->   
 <!-- Landing Section -->
 <section data-scroll-section="" class="base-section landing-section-oi" data-color="orange0">
     <div class="container flex-container">
@@ -51,27 +50,80 @@
                 <span class="letters">Ingwer</span>
             </h1>
         </div>
+        <div class="can-box">
+            <canvas class="webgl-oi" style="transform: rotate(14deg);" data-scroll-speed="1" data-scroll-direction="vertical"></canvas>
+        </div>
     </div>
 </section>
 <!-- Orange Section -->
-<section data-scroll-section="" class="base-section ingredient-section-ingwer" data-color="orange1">
+<section data-scroll-section="" class="base-section ingredient-section-orange" data-color="orange1">
     <div class="container flex-container">
-        <div class="flex-item">
+        <div class="flex-item combi-item">
             <h2 data-scroll="" data-scroll-class="in-view" data-scroll-offset="40%">
-                <span class="letters">Saftige</span>
+                <span class="letters">Fruchtige</span>
                 <span class="letters">Orange</span>
             </h2>
+            <p>Erlebe mit dieser Sorte den Geschmack aus sonnengreiften Orangen.
+                Das sowohl süße als auch saure Aroma der Zitrusfrucht kommt besonders
+                zur Geltung.
+            </p>
+        </div>
+        <div class="flex-item" data-scroll="" data-scroll-speed="3" data-scroll-direction="vertical" data-scroll-delay="1">
+            <canvas class="webgl-orange" data-scroll="" data-scroll-class="show" data-scroll-speed="7" data-scroll-direction="horizontal"></canvas>
         </div>
     </div>
 </section>
 <!-- Ingwer Section -->
 <section data-scroll-section="" class="base-section ingredient-section-ingwer" data-color="orange2">
     <div class="container flex-container">
-        <div class="flex-item">
+        <div class="flex-item combi-item">
             <h2 data-scroll="" data-scroll-class="in-view" data-scroll-offset="40%">
                 <span class="letters">Würziger</span>
                 <span class="letters">Ingwer</span>
             </h2>
+            <p>Für den besonderen Kick sorgt der unverkennbare, belebende Geschmack von Ingwer.
+               Während die würzige Note perfekt mit der Orange harmoniert, liefter die gesunde Ingwerwurzel 
+               zudem wichtige Vitamine. 
+            </p>
+        </div>
+        <div class="flex-item" data-scroll="" data-scroll-speed="3" data-scroll-direction="vertical">
+            <canvas class="webgl-ingwer" data-scroll="" data-scroll-class="show" data-scroll-speed="-7" data-scroll-direction="horizontal"></canvas>
+        </div>
+    </div>
+</section>
+<!-- "Siegel" Section -->
+<section data-scroll-section="" class="base-section siegel-section" data-color="orange3">
+    <div class="container flex-container">
+        <div class="flex-item">
+            <h4 data-scroll-direction="horizontal">Das ist drin</h4>
+            <div class="icon-container">
+                <div class="icon-box">
+                    <img src="/orange_gentechnikfrei.095c84ef.png" class="hoverable" alt="Frei von Gentechnik">
+                    <p>Frei von Gentechnik</p>
+                </div>
+                <div class="icon-box">
+                    <img src="/orange_bio.520bfd32.png" class="hoverable" alt="Biologischer Anbau">
+                    <p>Biologischer Anbau</p>
+                </div>
+                <div class="icon-box">
+                    <img src="/orange_glutenfrei.f5efa2d9.png" class="hoverable" alt="Glutenfrei">
+                    <p>Glutenfrei</p>
+                </div>
+                <div class="icon-box">
+                    <img src="/orange_laktosefrei.e70b658d.png" class="hoverable" alt="Laktosefrei">
+                    <p>Laktosefrei</p>
+                </div>
+                <div class="icon-box">
+                    <img src="/orange_vegan.8fa64808.png" class="hoverable" alt="Vegan">
+                    <p>Vegan</p>
+                </div>
+            </div>
+            <p> 
+                Unsere Limonade zu trinken bedeutet nicht nur
+                unvergleichlichen Genuss, sondern jeder Schluck
+                bedeutet auch, etwas Gutes zu tun. <br>
+                Daher sind alle unsere Produkt frei von Gentechnik, Glutenfrei,
+                Vegan und aus biologischer Herstellung</p>
         </div>
     </div>
 </section>
@@ -79,14 +131,9 @@
 <section data-scroll-section="" class="base-section info-section-oi" id="product-section-oi" data-color="orange3">
     <div class="container flex-container">
         <div class="flex-item">
-            <p>
-            Ein fruchtig prickelndes Geschmackserlebnis bietet
-            die Kombination aus dem Geschmack süßer Erdbeeren und säuerlich frischem Rhabarber. 
-            Die perfekte perlende Mischung aus herber Säure und feiner Süße.
-            </p>
-        </div>
-        <div class="can-box">
-            <canvas class="webgl-oi"></canvas>
+            <h4>Unsere Quellen</h4>
+            <img src="/oi_map.21302aba.jpg" alt="Regionale Bezugsquellen LandLimo Orange-Ingwer" data-scroll="" data-scroll-speed="1" data-scroll-direction="horizontal">
+            <p>LandLimo bezieht die Früchte für dieses Getränk aus nächster Umgebung.</p>
         </div>
     </div>
 </section>
@@ -100,35 +147,34 @@
             </div>
             <div class="links">
                 <ul>
-                    <li><a class="link-underline hoverable">Menu#1</a></li>
-                    <li><a class="link-underline hoverable">Menu#2</a></li>
-                    <li><a class="link-underline hoverable">Menu#3</a></li>
+                    <li><a href="/impressum.html" class="klick-sound link-underline hoverable">Impressum</a></li>
+                    <li><a href="/datenschutz.html" class="klick-sound link-underline hoverable">Datenschutz</a></li>
+                    <li><a href="/index.html" class="klick-sound link-underline hoverable">Start</a></li>
                 </ul>
                 <ul>
-                    <li><a class="link-underline hoverable">Menu#4</a></li>
-                    <li><a class="link-underline hoverable">Menu#5</a></li>
-                    <li><a class="link-underline hoverable">Menu#6</a></li>
+                    <li><a href="/erdbeer-rhabarber.html" class="klick-sound link-underline hoverable">Erdbeer-Rhabarber</a></li>
+                    <li><a href="/apfel-birne-minze.html" class="klick-sound link-underline hoverable">Apfel-Birne</a></li>
+                    <li><a href="/orange-ingwer.html" class="klick-sound link-underline hoverable">Orange-Ingwer</a></li>
                 </ul>
                 <ul>
-                    <li><a class="link-underline hoverable">Menu#4</a></li>
-                    <li><a class="link-underline hoverable">Menu#5</a></li>
-                    <li><a class="link-underline hoverable">Menu#6</a></li>
+                    <li><a href="/nachhaltigkeit.html" class="klick-sound link-underline hoverable">Nachhaltigkeit</a></li>
+                    <li><a href="/#aboutus" class="klick-sound link-underline hoverable">Über Uns</a></li>
+                    <li><a href="/#ingredients" class="klick-sound link-underline hoverable">Das ist drin</a></li>
                 </ul>
             </div>
             <div class="contact">
                 <p id="text">Bei weiteren Fragen <ion-icon name="chevron-down-outline" style="vertical-align: middle;"></ion-icon></p>
-                <p id="mail"><a class="hoverable">info@landlimo.com</a></p>
+                <p id="mail"><a href="mailto:info@landlino.com" class="hoverable">info@landlimo.com</a></p>
             </div>
         </div>
     </footer>
 </section>
-<audio style="display:none" class="bg-sound-er">
+<audio style="display:none" class="bg-sound-oi">
     <source src="/oi_ambient.d72f1477.mp3">
 </audio>
 </div>
-</div>
 <!-- Scripts -->   
-<script src="/scripts.bcf3243b.js"></script>
+<script src="/oi.3ad33fa9.js"></script>
 <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 </body>
 </html>

@@ -7,12 +7,15 @@
     <meta name="author" content="Tim Peters, Nils Mattmüller, Hochschule Offenburg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#929292">
-    <link rel="icon" href="./assets/favicons/favicon_neutral.svg">
+    <link class="favicon" rel="icon" href="./assets/favicons/favicon_neutral.svg">
     <title>LandLimo</title>
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="prerender" href="erdbeer-rhabarber.html">
+    <link rel="prerender" href="erdbeer-rhabarber.html"/>
+    <link rel="prerender" href="apfel-birne-minze.html"/>
+    <link rel="prerender" href="orange-ingwer.html"/>
+    <link rel="prerender" href="index.html"/>
 </head>
-<body data-barba="wrapper">
+<body>
 <!-- Custom Cursor -->
 <div class="cursor"></div>
 <!-- Loading Screen -->
@@ -30,15 +33,15 @@
     <div class="flex-container">
         <div class="logo hoverable">
             <a href="index.html">
-                <img src="../src/assets/logos/logo_neutral_animated.svg" alt="Land Limo"/>
+                <img src="../src/assets/logos/logo_neutral_header.svg" alt="Land Limo"/>
             </a>
         </div>
         <nav>
             <ul class="menu">
-                <li class="menu-items"><a class="hoverable menu-link" id="link1">Menu#1</a></li>
-                <li class="menu-items"><a class="hoverable menu-link" id="link2">Menu#2</a></li>
-                <li class="menu-items"><a class="hoverable menu-link" id="link3">Menu#3</a></li>
-                <li class="menu-items"><a class="hoverable menu-link" id="link4">Menu#4</a></li>
+                <li class="menu-items hover-sound"><a href="erdbeer-rhabarber.html" class="hoverable menu-link" id="link1">Erdbeer-Rhabarber</a></li>
+                <li class="menu-items hover-sound"><a href="apfel-birne-minze.html" class="hoverable menu-link" id="link2">Apfel-Birne</a></li>
+                <li class="menu-items hover-sound"><a href="orange-ingwer.html" class="hoverable menu-link" id="link3">Orange-Ingwer</a></li>
+                <li class="menu-items hover-sound"><a href="nachhaltigkeit.html" class="hoverable menu-link" id="link4">Nachhaltigkeit</a></li>
             </ul>
         </nav>
         <div class="hamburger">
@@ -55,9 +58,9 @@
 <div data-barba="container" class="pagecheck home" data-barba-namespace="home">
 <!-- Landing Page -->
 <section data-scroll-section class="base-section landing-section-home">
-    <video playsinline autoplay muted loop class="bgvideo">
-        <source src="./assets/video/video_background.mp4" type="video/mp4">
-    </video>
+     <video playsinline autoplay muted loop class="bgvideo bg">
+        <source src="./assets/video/background_video.mp4" type="video/mp4">
+    </video> 
     <div class="container flex-container">
         <div class="flex-item">
             <h1 class="landing-headline">
@@ -71,8 +74,8 @@
 <!-- Product Section "Erdbeer-Rhabarber" -->
 <section data-scroll-section class="base-section product-section-er" id="product-section-er" data-color="red">
     <div class="container flex-container">
-        <div class="flex-item" id="can-er">
-            <canvas  class="webgl-er" data-scroll data-scroll-speed="5" data-scroll-offset="20%" data-scroll-delay="0.3" ></canvas>
+        <div class="flex-item canvas-box" id="can-er" data-scroll-class="visible" data-scroll data-scroll-speed="-2"  data-scroll-direction="horizontal">
+            <canvas  class="webgl-er" data-scroll data-scroll-speed="-2"  data-scroll-direction="horizontal" ></canvas>
         </div>
         <div class="flex-item combi-item">
             <div class="text-box">
@@ -88,8 +91,8 @@
 <!-- Product Section "Limette-Minze" -->
 <section data-scroll-section class="base-section product-section-abm" data-color="green">
     <div class="container flex-container">
-        <div class="flex-item">
-            <canvas class="webgl-abm" data-scroll data-scroll-speed="5" data-scroll-offset="20%" data-scroll-delay="0.3" ></canvas>
+        <div class="flex-item canvas-box" data-scroll data-scroll-speed="2" data-scroll-class="visible"  data-scroll-direction="horizontal" >
+            <canvas class="webgl-abm" data-scroll data-scroll-speed="2"  data-scroll-direction="horizontal" ></canvas>
         </div>
         <div class="flex-item combi-item">
             <div class="text-box">
@@ -99,15 +102,15 @@
                     <span class="letters">Apfel</span>
                 </h2>
             </div>
-            <a href="apfel-birne-minze.html"><button class="bt-base bt-abm hoverable bt-sound"><span>Jetzt Entdecken <ion-icon name="chevron-forward-outline" style="vertical-align: middle;"></ion-icon></span></button></a>
+            <a href="apfel-birne-minze.html"><button class="bt-base bt-abm bt-sound hoverable"><span>Jetzt Entdecken <ion-icon name="chevron-forward-outline" style="vertical-align: middle;"></ion-icon></span></button></a>
         </div>
     </div>
 </section>
 <!-- Product Section "Orange-Ingwer" -->
 <section data-scroll-section class="base-section product-section-oi" data-color="orange">
     <div class="container flex-container">
-        <div class="flex-item">
-            <canvas class="webgl-oi" data-scroll data-scroll-speed="5" data-scroll-offset="20%" data-scroll-delay="0.3" ></canvas>
+        <div class="flex-item canvas-box"  data-scroll data-scroll-speed="-2" data-scroll-class="visible" data-scroll-direction="horizontal" >
+            <canvas class="webgl-oi" data-scroll data-scroll-speed="-2"  data-scroll-direction="horizontal"></canvas>
         </div>
         <div class="flex-item combi-item">
             <div class="text-box">
@@ -116,7 +119,68 @@
                     <span class="letters">Ingwer</span>
                 </h2>
             </div>
-            <a href="orange-ingwer.html"><button class="bt-base bt-oi hoverable bt-sound"><span>Jetzt Entdecken <ion-icon name="chevron-forward-outline" style="vertical-align: middle;"></ion-icon></span></button></a>
+            <a href="orange-ingwer.html"><button class="bt-base bt-oi bt-scound hoverable"><span>Jetzt Entdecken <ion-icon name="chevron-forward-outline" style="vertical-align: middle;"></ion-icon></span></button></a>
+        </div>
+    </div>
+</section>
+<!-- "Siegel" Section -->
+<section id="ingredients" data-scroll-section class="base-section siegel-section" data-color="multicol0">
+    <div class="container flex-container">
+        <div class="flex-item">
+            <h4>Das ist drin</h4>
+            <div class="icon-container">
+                <div class="icon-box">
+                    <img src="assets/icons/neutral_genfrei.png" class="hoverable" alt="Frei von Gentechnik">
+                    <p>Frei von Gentechnik</p>
+                </div>
+                <div class="icon-box">
+                    <img src="assets/icons/neutral_bio.png" class="hoverable" alt="Biologischer Anbau">
+                    <p>Biologischer Anbau</p>
+                </div>
+                <div class="icon-box">
+                    <img src="assets/icons/neutral_glutenfrei.png" class="hoverable" alt="Glutenfrei">
+                    <p>Glutenfrei</p>
+                </div>
+                <div class="icon-box">
+                    <img src="assets/icons/neutral_laktosefrei.png" class="hoverable" alt="Laktosefrei">
+                    <p>Laktosefrei</p>
+                </div>
+                <div class="icon-box">
+                    <img src="assets/icons/neutral_vegan.png" class="hoverable" alt="Vegan">
+                    <p>Vegan</p>
+                </div>
+            </div>
+            <p> 
+                Unsere Limonade zu trinken bedeutet nicht nur
+                unvergleichlichen Genuss, sondern jeder Schluck
+                bedeutet auch, etwas Gutes zu tun. <br>
+                Daher sind alle unsere Produkt frei von Gentechnik, Glutenfrei,
+                Vegan und aus biologischer Herstellung</p>
+        </div>
+    </div>
+</section>
+<!-- "Über uns" Section -->
+<section id="aboutus" data-scroll-section class="base-section info-section-home" data-color="multicol0">
+    <div class="container flex-container">
+        <div class="flex-item">
+            <h4 class="hd-info-0 hl">Über uns</h4>
+            <h4 class="hd-info-1">Nachhaltigkeit</h4>
+            <h4 class="hd-info-2">Klimawandel</h4>
+            <h4 class="hd-info-3">Unsere Geschichte</h4>
+            <h4 class="hd-info-4">Recycling</h4>
+            <h4 class="hd-info-5">Landwirtschaft</h4>
+            <a class="l1" data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal" href="nachhaltigkeit.html"><button class="bt-social bt-info-1 hoverable hover-sound"><span><ion-icon name="add-outline" style="vertical-align: middle;"></ion-icon></span></button></a>
+            <a class="l2"   href="./assets/pdf/LandLimo_Klimawandel.pdf" target="_blank"><button data-scroll data-scroll-speed="3" data-scroll-direction="vertical"  class="bt-social bt-info-2 hoverable hover-sound"><span><ion-icon name="add-outline" style="vertical-align: middle;"></ion-icon></span></button></a>
+            <a class="l3" data-scroll data-scroll-speed="2" data-scroll-direction="horizontal"  href="./assets/pdf/LandLimo_GeschichteUnsererLimonade.pdf" target="_blank"><button data-scroll data-scroll-speed="-2" data-scroll-direction="vertical"  class="bt-social bt-info-3 hoverable hover-sound"><span><ion-icon name="add-outline" style="vertical-align: middle;"></ion-icon></span></button></a>
+            <a class="l4" data-scroll data-scroll-speed="2" data-scroll-direction="horizontal" data-scroll-delay="0.5" href="./assets/pdf/LandLimo_Recycling.pdf" target="_blank"><button data-scroll data-scroll-speed="2" data-scroll-direction="vertical" data-scroll-delay="0.5" class="bt-social bt-info-4 hoverable hover-sound"><span><ion-icon name="add-outline" style="vertical-align: middle;"></ion-icon></span></button></a>
+            <a class="l5" data-scroll data-scroll-speed="2" data-scroll-direction="vertical" data-scroll-delay="0.5" href="./assets/pdf/LandLimo_OekologischeLandwirtschaft.pdf" target="_blank"><button data-scroll-speed="1" data-scroll-direction="horizontal" data-scroll-direction="vertical" class="bt-social bt-info-5 hoverable hover-sound"><span><ion-icon name="add-outline" style="vertical-align: middle;"></ion-icon></span></button></a>
+            <p>Im Jahr 2018 haben wir unser Familienunternehmen
+                gegründet. Wir nehmen jede Herausforderung an und
+                widmen uns unseren Projekten mit maximaler Energie
+                und Aufmerksamkeit. Jeder Kunde ist einzigartig für
+                uns. Deshalb passen wir unser Angebot entsprechend
+                euren Wünschen an. Was wir tun, tun wir mit Freude
+                und aus vollem Herzen.</p>
         </div>
     </div>
 </section>
@@ -130,19 +194,19 @@
             </div>
             <div class="links">
                 <ul>
-                    <li><a href="impressum.html" class="klick-sound link-underline hoverable">Impressum</a></li>
-                    <li><a href="datenschutz.html" class="klick-sound link-underline hoverable">Datenschutz</a></li>
-                    <li><a href="index.html" class="klick-sound link-underline hoverable">Start</a></li>
+                    <li><a href="impressum.html" class="hover-sound link-underline hoverable">Impressum</a></li>
+                    <li><a href="datenschutz.html" class="hover-sound link-underline hoverable">Datenschutz</a></li>
+                    <li><a href="index.html" class="hover-sound link-underline hoverable">Start</a></li>
                 </ul>
                 <ul>
-                    <li><a href="erdbeer-rhabarber.html" class="klick-sound link-underline hoverable">Erdbeer-Rhabarber</a></li>
-                    <li><a href="apfel-birne-minze.html" class="klick-sound link-underline hoverable">Apfel-Birne</a></li>
-                    <li><a href="orange-ingwer.html" class="klick-sound link-underline hoverable">Orange-Ingwer</a></li>
+                    <li><a href="erdbeer-rhabarber.html" class="hover-sound link-underline hoverable">Erdbeer-Rhabarber</a></li>
+                    <li><a href="apfel-birne-minze.html" class="hover-sound link-underline hoverable">Apfel-Birne</a></li>
+                    <li><a href="orange-ingwer.html" class="hover-sound link-underline hoverable">Orange-Ingwer</a></li>
                 </ul>
                 <ul>
-                    <li><a class="klick-sound link-underline hoverable">Menu#4</a></li>
-                    <li><a class="klick-sound link-underline hoverable">Menu#5</a></li>
-                    <li><a class="klick-sound link-underline hoverable">Menu#6</a></li>
+                    <li><a href="nachhaltigkeit.html" class="hover-sound link-underline hoverable">Nachhaltigkeit</a></li>
+                    <li><a href="/#aboutus" class="hover-sound link-underline hoverable">Über Uns</a></li>
+                    <li><a href="/#ingredients" class="hover-sound link-underline hoverable">Das ist drin</a></li>
                 </ul>
             </div>
             <div class="contact">

@@ -50,6 +50,7 @@ footer{
             }
         }
         .links{
+            color:$font_grey;
             flex-grow: 0.2;
             display: flex;
             justify-content: space-between;
@@ -63,8 +64,8 @@ footer{
                 }
             }
             @include tablet(){
-                flex-grow: 0.3;
-                font-size: 1rem;
+                flex-grow: 0.6;
+                font-size: 0.9em;
             }
             ul{
                 li:not(:last-child){
@@ -78,6 +79,7 @@ footer{
                 margin-bottom: 15%;
             }
             #text{
+                color:$font_grey;
                 @include smartphone(){
                     font-size: 7vw;
                 }
@@ -88,6 +90,7 @@ footer{
             #mail{
                 margin-top: 10px;
                 a{
+                    color:$font_grey;
                     font-weight: 700;
                     font-size: 1.2rem;
                     @include smartphone(){
